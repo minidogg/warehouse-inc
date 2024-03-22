@@ -3,16 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect</title>
+    <title>Warehouse INC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+             font-size: 2em;
+            color: #e3ebec;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #e4dede;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <a href="/src/index.html">If you don't get redirected click this link</a>
+    <div class="container">
+        <h1>Warehouse INC</h1>
+        <p>Click the button below to start playing!</p>
+        <button onclick="startGame()">Play</button>
+    </div>
+
     <script>
-        setTimeout(() => window.location.href = "/src/index.html", 500)
+        function startGame() {
+            window.location.href = "/src/index.html";
+            console.log("started game")
+        }
     </script>
 </body>
 </html>
