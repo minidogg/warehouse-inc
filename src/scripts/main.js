@@ -14,3 +14,12 @@ var game = {version:version}
 function addProperty(obj,property,value){
     if(!obj.hasOwnProperty(property))obj[property]=value
 }
+
+// generates a random name for your warehouse :3
+function randomName() {
+    var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited'];
+    var nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator'];
+    document.getElementById('name').value = nameAdjs[Math.floor(Math.random()*nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random()*nameNouns.length)];
+}
+
+window.onload = randomName();
