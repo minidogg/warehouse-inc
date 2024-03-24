@@ -1,10 +1,20 @@
 /* Things that you are unsure of where to put go here. */
 #companyName {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     text-align: center;
-    width:100%;
+    width: 100%;
     font-size: 3vmin;
+    margin-top: 0vh; /* Adjust as needed */
+    padding: 1vh 0; /* Adjust as needed */
+    background-color: #333; /* Adjust as needed */
 }
+
+/* New style for #name */
 #name {
     text-align: right;
+    color: #fff; /* Adjust as needed */
+    margin-top: 0vh; /* Adjust as needed */
+    padding: 1vh 0; /* Adjust as needed */
+    background-color: #333; /* Adjust as needed */
+    font-size: 3vmin;
 }
