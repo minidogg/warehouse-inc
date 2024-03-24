@@ -17,9 +17,10 @@ function addProperty(obj,property,value){
 
 // generates a random name for your warehouse :3
 function randomName() {
-    var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited'];
-    var nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator'];
+    var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored'];
+    var nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer','',''];
     document.getElementById('name').value = nameAdjs[Math.floor(Math.random()*nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random()*nameNouns.length)];
 }
+
 
 window.onload = randomName();
