@@ -1,5 +1,17 @@
 /* This stylesheet should only ever be modified to add basic styling, or styling that is used often */
 *{
     /* Haha, Comic sans goes brrr */
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* font-family: 'Comic Sans MS', cursive, sans-serif; */
+    font-family: Arial, sans-serif;
+
+}
+
+body {
+    background-color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
