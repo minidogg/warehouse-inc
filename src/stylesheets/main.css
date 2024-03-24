@@ -3,6 +3,8 @@
     /* Haha, Comic sans goes brrr */
     /* font-family: 'Comic Sans MS', cursive, sans-serif; */
     font-family: Arial, sans-serif;
-
+    margin:0;
 }
-
+body{
+    overflow: hidden;
+}
