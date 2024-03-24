@@ -1,1 +1,6 @@
 /* This has stuff to do with the main containers. */
+.leftContainer {
+    background-color: #2c2c2c;
+    width:20vw;
+    height: 100vh;
+}
