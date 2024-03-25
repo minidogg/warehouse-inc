@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Warehouse INC</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -70,82 +71,36 @@
             .buttonText{
                 margin-left:10px;
 
-                font-family: Arial, sans-serif;
-                line-height:100%;
-                font-size: 2.5vmin;
-                /*font-weight: normal;*/
-            }
-
-            @keyframes rotateEndlessly
-    {
-        from 
-        {
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+            font-family: Arial, sans-serif;
+            line-height:100%;
+            font-size: 2.5vmin;
+            /*font-weight: normal;*/
         }
-        to 
-        {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    html,body {
-        height:100%;
-    }
-
-    #bgscroll {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-
-        z-index: -1;
-        background:url("/src/images/warehouse-panorama.jpg");
-        background-size: 200%;
-        background-position-y: center;
-        animation: bgscroll 13s linear infinite;
-    }
-
-    @keyframes fadeout{
-        from {opacity: 1;}
-        to   {opacity: 0;}
-    }
-
-    @keyframes bgscroll{  
-        from {background-position-x: -100%;}
-        to   {background-position-x: 100%;}
-    } 
-        </style>
-    </head>
-    <body>
-        <div id="bgscroll" class="fadeout"></div>
-        <div id="container">
-            <h1>Welcome to Warehouse INC</h1>
-            <p>Embark on an epic adventure in the world of warehousing!</p>
-            <button onclick="startGame()">
-                <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to Warehouse INC</h1>
+        <p>Embark on an epic adventure in the world of warehousing!</p>
+        <button onclick="startGame()">
+            <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
+        </button>
+        <a href="credits.html" target="_blank">
+            <button>
+                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
             </button>
-            <a href="credits.html" target="_blank">
-                <button>
-                    <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
-                </button>
-            </a>
-        </div>
+        </a>
+    </div>
 
-        <script>
-            function startGame() {
-                const bgscroll = document.getElementById("bgscroll");
-                const container = document.getElementById("container")
-
-                container.style.transform = "translateY(100vh)";
-                bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
-                bgscroll.style.animation = "fadeout 1s";
-
-                setTimeout(()=>{
-                    window.location.href = "./src/index.html";
-                    console.log("Started game");
-                },1100)
-                
-            }
-        </script>
-    </body>
+    <script>
+        function startGame() {
+            document.getElementById("container").style.transform = "translateY(100vh)";
+            setTimeout(()=>{
+                window.location.href = "./src/index.html";
+                console.log("Started game");
+            },1100)
+            
+        }
+    </script>
+</body>
 </html>

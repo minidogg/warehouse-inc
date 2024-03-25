@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-    <title>Warehouse INC</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="stylesheet" href="stylesheets/input.css">
-    <link rel="stylesheet" href="stylesheets/container.css">
-    <link rel="stylesheet" href="stylesheets/misc.css">
-    <link rel="stylesheet" href="stylesheets/resources.css">
-    <link rel="stylesheet" href="stylesheets/load.css">
+  <title>Warehouse INC</title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <link rel="stylesheet" href="stylesheets/input.css">
+  <link rel="stylesheet" href="stylesheets/container.css">
+  <link rel="stylesheet" href="stylesheets/misc.css">
+  <link rel="stylesheet" href="stylesheets/resources.css">
+  <link rel="stylesheet" href="stylesheets/load.css">
+  <link rel="stylesheet" href="stylesheets/save.css">
 
 
-    <link rel="icon" type="image/x-icon" href="images\favicon.ico">
+  <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
 </head>
+
 <body>
+<<<<<<< HEAD
     <div id="coverDiv"></div>
     <div class="leftContainer">
         <!-- some stuff related to collecting resources -->
@@ -43,8 +47,63 @@
                 
             </div>
         </div>
+=======
+  <div id="coverDiv"></div>
+  <div class="leftContainer">
+    <!-- some stuff related to collecting resources -->
+    <h1 id="companyName" class="coolFade">Loading...</h1>
+    <div class="resourcesContainer">
+      <span style="width:100%;">
+        <p id="resourceCount" class="coolFade">Sugar Ready For Collecting: 0</p>
+        <button id="clickButton">Collect Sugar</button>
+        <!-- <h1 id="titlebar" class="coolFade">Stats!</h1> -->
+      </span>
+
+>>>>>>> c8cd116deec1130c597f1d06dec7559dc24a9d83
+    </div>
+  </div>
+  <div class="middleContainer">
+    <!-- some stuff related to menus should be here -->
+  </div>
+  <div class="rightContainer">
+    <!-- some stuff related to buying most thing should be here -->
+    <div class="buyContainer">
+      <h1 id="companyName" class="coolFade">Warehouse Store</h1>
+      <div class="upgradebuttons">
+
+      </div>
     </div>
 
+  </div>
+  <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+  <div class="save-icon"></div>
+
+  <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
+
+  <script>
+    var render = {}
+    render.renderFunctions = []
+    render.render = () => {
+      render.renderFunctions.forEach((e) => {
+        e()
+      })
+    }
+  </script>
+  <!-- This script should always be first unless needed to be otherwise. -->
+  <script src="scripts/util.js"></script>
+
+  <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/save.js"></script>
+
+  <!-- Melons Epic Utils & Stuff-->
+  <script src="scripts/melonutils.js"></script>
+
+  <!-- game scripts -->
+  <script src="scripts/name.js"></script>
+  <script src="scripts/resources.js"></script>
+
+<<<<<<< HEAD
     <!-- This script should always be first unless needed to be otherwise. -->
     <script src="scripts/util.js"></script>
     
@@ -56,6 +115,15 @@
     <script src="scripts/name.js"></script>
     <script src="scripts/resources.js"></script>
     <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+=======
+
+  <!--     This should always be the last script/element here -->
+  <script>
+    render.render()
+  </script>
+
+>>>>>>> c8cd116deec1130c597f1d06dec7559dc24a9d83
 
 </body>
+
 </html>
