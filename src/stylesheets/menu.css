@@ -3,14 +3,6 @@
   color: white;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-
-  max-height: 5vh;
-  height:5vh;
-  overflow-y: scroll;
 
   border: black solid 2px;
 }
