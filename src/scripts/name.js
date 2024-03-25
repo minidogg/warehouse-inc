@@ -1,8 +1,9 @@
 // generates a random name for your warehouse :3
-function randomName() {
-  var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting'];
+function randomName(overwrite=false) {
+  var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly'];
   var nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict'];
-  addProperty(game, "name", nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)])
+  if (overwrite) removeProperty(game, "name");
+  addProperty(game, "name", nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]);
 
   saving.save()
 }
@@ -12,8 +13,13 @@ render.renderFunctions.push(() => {
 
 // todo: update this to an actual prompt
 document.getElementById('companyName').onclick = () => {
-  game.name = prompt("Name?")
-  render.render()
+  const name = prompt("Name? (leave blank to generate a new random name)");
+  if (!name) {
+    randomName(true);
+  } else {
+    game.name = name;
+  }
+  render.render();
 }
 
 

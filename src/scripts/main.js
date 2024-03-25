@@ -15,6 +15,9 @@ var game = {version:version}
 function addProperty(obj,property,value){
     if(!obj.hasOwnProperty(property))obj[property]=value
 }
+function removeProperty(obj, property){
+    if(obj.hasOwnProperty(property))delete obj[property]
+}
 
 //slightly unrelated but its cool.
 document.getElementById("coverDiv").classList.add("coverDivAnimate")
