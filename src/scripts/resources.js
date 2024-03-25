@@ -1,5 +1,6 @@
 addProperty(game, "sugar", 0);
 addProperty(game, "multiplier", 1); // Add sugar property to the game object
+addProperty(game, "productionspeed", 200)
 
 var sugar = {};
 
@@ -11,7 +12,7 @@ sugar.startSugarGeneration = () => {
   setInterval(() => {
     game.sugar += game.multiplier;
     sugar.updateSugarCount();
-  }, 1000);
+  }, 10);
 }
 
 sugar.showNotification = (message) => {
