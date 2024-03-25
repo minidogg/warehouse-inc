@@ -19,3 +19,12 @@
     font-size: 3vmin;
     border: none;
 }
+#titlebar {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    font-size: 3vmin;
+    margin-top: 0vh; 
+    padding: 1vh 0; 
+    background-color: #333; 
+}
