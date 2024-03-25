@@ -2,8 +2,7 @@
 
 .resourcesContainer{
     width:90%;
-    position:absolute;
-    top:10vh;
+    margin-top:2vh;
     display: flex;
     justify-content: center;
 }

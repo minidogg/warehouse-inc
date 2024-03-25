@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warehouse INC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,49 +15,77 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-image: url('background.jpg'); 
+            background-size: cover;
         }
 
         .container {
             text-align: center;
+            color: #fff;
         }
 
         h1 {
-             font-size: 2em;
-            color: #e3ebec;
-        }
-
+            font-size: 3em;
+            margin-bottom: 20px; 
+        }   
         p {
             font-size: 1.2em;
-            color: #e4dede;
+            margin-bottom: 30px; 
         }
 
+        .icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
         button {
             padding: 10px 20px;
-            font-size: 1.2em;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-align: center;
+            line-height: 100%;
+            display: inline-block;
+            justify-content: center; 
+            align-items: center;
+
         }
 
+
         button:hover {
-            background-color: #0056b3;
+            background-color: #004793d2;
+        }
+
+        .buttonText{
+            margin-left:10px;
+
+            font-family: Arial, sans-serif;
+            line-height:100%;
+            font-size: 1.2em;
+            /*font-weight: normal;*/
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Warehouse INC</h1>
-        <p>Click the button below to start playing!</p>
-        <button onclick="startGame()">Play</button>
+        <h1>Welcome to Warehouse INC</h1>
+        <p>Embark on an epic adventure in the world of warehousing!</p>
+        <button onclick="startGame()">
+            <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
+        </button>
+        <a href="credits.html" target="_blank">
+            <button>
+                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
+            </button>
+        </a>
     </div>
 
     <script>
         function startGame() {
-            window.location.href = "/src/index.html";
-            console.log("started game")
+            window.location.href = "./src/index.html";
+            console.log("Started game");
         }
     </script>
 </body>

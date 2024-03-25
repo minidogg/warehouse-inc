@@ -9,7 +9,8 @@ colorLog("E","Version "+version,"15px")
 
 
 //Everything you want to save should be in this object.
-var game = {}
+var game = {version:version}
+
 //use this function to add new properties to something in the game object. (Make sure to specify the game object)
 function addProperty(obj,property,value){
     if(!obj.hasOwnProperty(property))obj[property]=value
