@@ -1,6 +1,5 @@
-
-
-addProperty(game, "sugar", 0); // Add sugar property to the game object
+addProperty(game, "sugar", 0);
+addProperty(game, "multiplier", 1); // Add sugar property to the game object
 
 var sugar = {};
 
@@ -10,20 +9,30 @@ sugar.updateSugarCount = () => {
 
 sugar.startSugarGeneration = () => {
   setInterval(() => {
-    game.sugar += game.multiplier; // Increment sugar by multiplier every second
+    game.sugar += game.multiplier;
     sugar.updateSugarCount();
-  }, 1000); // 1000 milliseconds = 1 second
+  }, 1000);
+}
+
+sugar.showNotification = (message) => {
+  const notificationElement = document.getElementById("notification");
+  notificationElement.textContent = message;
+  notificationElement.classList.add("notification-show");
+
+  setTimeout(() => {
+    notificationElement.classList.remove("notification-show");
+  }, 3000); // Adjust the duration here (in milliseconds)
 }
 
 sugar.collectSugar = () => {
-  game.resourcesCollected = game.sugar; // Store the sugar waiting to be collected
-  game.sugar = 0; // Reset the sugar to 0
+  game.resourcesCollected = game.sugar;
+  game.sugar = 0;
   sugar.updateSugarCount();
-  alert("You collected " + game.resourcesCollected + " sugar!"); // Inform the user about collected sugar
+  sugar.showNotification("You collected " + game.resourcesCollected + " sugar!");
 }
 
-document.getElementById("clickButton").addEventListener("mousedown", () => {
-  sugar.collectSugar(); // Change to collectSugar function
+document.getElementById("clickButton").addEventListener("click", () => {
+  sugar.collectSugar();
 });
 
-sugar.startSugarGeneration(); // Start sugar generation
+sugar.startSugarGeneration();
