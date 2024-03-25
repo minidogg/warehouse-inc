@@ -1,17 +1,18 @@
 addProperty(game, "sugar", 0);
+addProperty(game, "collectableSugar", 0);
 addProperty(game, "multiplier", 1); 
 addProperty(game, "productionspeed", 1000)
 
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumbers(game.sugar.toString());
-  document.getElementById("realResourceCount").textContent = "Sugar: " + FormatNumbers(game.resourcesCollected.toString());
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + formatNumber(game.collectableSugar)
+  document.getElementById("realResourceCount").textContent = "Sugar: " + formatNumber(game.sugar)
 }
 
 sugar.startSugarGeneration = () => {
   setInterval(() => {
-    game.sugar += game.multiplier;
+    game.collectableSugar += game.multiplier;
   }, game.productionspeed);
 }
 
@@ -22,10 +23,11 @@ sugar.updateSugarCount();
 
 
 sugar.collectSugar = () => {
-  game.resourcesCollected = game.resourcesCollected + game.sugar;
-  game.sugar = 0;
+  showNotification("You collected " + game.collectableSugar + " sugar!"); 
+
+  game.sugar= game.sugar + game.collectableSugar;
+  game.collectableSugar = 0;
   sugar.updateSugarCount();
-  showNotification("You collected " + game.resourcesCollected + " sugar!"); 
 }
 
 document.getElementById("clickButton").addEventListener("click", () => {
