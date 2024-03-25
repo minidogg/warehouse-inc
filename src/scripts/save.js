@@ -1,24 +1,28 @@
 //saving system code will go here.
 var saving = {}
 
-saving.genSave = (gameData)=>{
-    return JSON.stringify(gameData)
-}
-
 saving.save = ()=>{
-    localStorage.setItem("save",saving.genSave(game))
-}
-
-
-saving.getSave = ()=>{
-    return localStorage.getItem("save")
+    localStorage.setItem("save",btoa(JSON.stringify(game)))
 }
 
 saving.loadSave = ()=>{
-    if(saving.getSave()==undefined){
+    if(localStorage.getItem("save")==undefined){
         saving.save()
     }
-    game = saving.getSave()
+    try{
+    game = JSON.parse(atob(localStorage.getItem("save")))
+    }catch(err){
+        saving.resetSave()
+        console.warn(err)
+    }
+}
+
+saving.resetSave = ()=>{
+    // todo: Make this into an actual popup instead of basic alerts
+    if(prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")){
+        localStorage.removeItem("save")
+        window.location.reload(true)
+    }
 }
 
 saving.loadSave()

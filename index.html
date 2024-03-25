@@ -17,29 +17,32 @@
             height: 100vh;
             background-image: url('background.jpg'); 
             background-size: cover;
+
+            overflow:hidden;
         }
 
-        .container {
+        #container {
             text-align: center;
             color: #fff;
+
+            transition: transform 1s ease-in-out;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 8vmin;
             margin-bottom: 20px; 
         }   
         p {
-            font-size: 1.2em;
+            font-size: 3vmin;
             margin-bottom: 30px; 
         }
 
         .icon {
-            font-size: 2em;
+            font-size: 2.5vmin;
             margin-right: 10px;
         }
         button {
             padding: 10px 20px;
-            font-size: 1.2em;
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -47,36 +50,50 @@
             cursor: pointer;
             transition: background-color 0.3s;
             text-align: center;
-            line-height: inherit;
+            line-height: 100%;
             display: inline-block;
             justify-content: center; 
             align-items: center;
+
         }
 
 
         button:hover {
             background-color: #004793d2;
         }
+
+        .buttonText{
+            margin-left:10px;
+
+            font-family: Arial, sans-serif;
+            line-height:100%;
+            font-size: 2.5vmin;
+            /*font-weight: normal;*/
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <h1>Welcome to Warehouse INC</h1>
         <p>Embark on an epic adventure in the world of warehousing!</p>
         <button onclick="startGame()">
-            <i class="fas fa-play icon"></i> Play Now
+            <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
         </button>
         <a href="credits.html" target="_blank">
             <button>
-                <i class="fas fa-info-circle icon"></i> Credits
+                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
             </button>
         </a>
     </div>
 
     <script>
         function startGame() {
-            window.location.href = "./src/index.html";
-            console.log("Started game");
+            document.getElementById("container").style.transform = "translateY(100vh)";
+            setTimeout(()=>{
+                window.location.href = "./src/index.html";
+                console.log("Started game");
+            },1100)
+            
         }
     </script>
 </body>

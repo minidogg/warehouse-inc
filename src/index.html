@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="stylesheets/container.css">
     <link rel="stylesheet" href="stylesheets/misc.css">
     <link rel="stylesheet" href="stylesheets/resources.css">
+    <link rel="stylesheet" href="stylesheets/load.css">
 
 
     <link rel="icon" type="image/x-icon" href="images\favicon.ico">
 </head>
 <body>
+    <div id="coverDiv"></div>
     <div class="leftContainer">
         <!-- some stuff related to collecting resources -->
         <h1 id="companyName" class="coolFade"><input placeholder="Warehouse name here" id="name"></input>'s Warehouse</h1>
@@ -49,13 +51,14 @@
     <!-- This script should always be first unless needed to be otherwise. -->
     <script src="scripts/util.js"></script>
     
-    <!-- This script should always be second unless needed to be otherwise.-->
+    <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
     <script src="scripts/main.js"></script>
+    <script src="scripts/save.js"></script>
 
     <!-- game scripts -->
-    <script src="scripts/save.js"></script>
+    <script src="scripts/name.js"></script>
     <script src="scripts/resources.js"></script>
-
+    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
 
 </body>
 </html>
