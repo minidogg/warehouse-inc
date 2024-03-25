@@ -35,8 +35,14 @@ saving.loadSave()
 saving.autoSave = () => {
   console.log("Auto saving")
   
-  if (game.autoSave == true) saving.save();
-  setTimeout(() => { document.querySelector('.save-icon').style.display = 'block'; }, 500);
+  if (game.autoSave == true) {
+    saving.save();
+  }else{
+    return
+  }
+  setTimeout(() => { 
+    document.querySelector('.save-icon').style.display = 'block'; 
+  }, 500);
   document.querySelector('.save-icon').style.display = 'none';
   setTimeout(() => { saving.autoSave() }, game.autoSaveRate);
 }

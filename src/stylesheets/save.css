@@ -2,7 +2,7 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 10px;
+    bottom: 1vh;
     left: 10px;
     background-image: url("https://github.com/minidogg/warehouse-inc/blob/dev/src/images/save-icon.png?raw=true");
     background-size: 100px;
@@ -11,6 +11,8 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     display: none;
+
+    transition:bottom 0.5s;
 }
 
 @keyframes spin {
