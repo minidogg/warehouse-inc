@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="stylesheets/misc.css">
     <link rel="stylesheet" href="stylesheets/resources.css">
     <link rel="stylesheet" href="stylesheets/load.css">
+    <link rel="stylesheet" href="stylesheets/save.css">
 
 
-    <link rel="icon" type="image/x-icon" href="images\favicon.ico">
+    <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
 </head>
 <body>
     <div id="coverDiv"></div>
@@ -45,8 +46,10 @@
         </div>
 
     </div>
+    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+    <div class="save-icon"></div>
 
-
+<!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 
     <!-- This script should always be first unless needed to be otherwise. -->
     <script src="scripts/util.js"></script>
@@ -58,7 +61,13 @@
     <!-- game scripts -->
     <script src="scripts/name.js"></script>
     <script src="scripts/resources.js"></script>
-    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+
+
+<!--     This should always be the last script/element here -->
+<script>
+    render.render()
+  </script>
+    
 
 </body>
 </html>

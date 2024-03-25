@@ -1,12 +1,20 @@
-addProperty(game,"resources",0)
+addProperty(game, "resources", 0)
 
-function updateResourceCount() {
-    document.getElementById("resourceCount").textContent = "Resources: " + game.resources;
+var resources = {}
+
+resources.updateResourceCount = () => {
+  document.getElementById("resourceCount").textContent = "Resources: " + game.resources;
 }
 
-function handleClick() {
-    game.resources++;
-    updateResourceCount();
+resources.handleClick = () => {
+  game.resources++;
+  resources.updateResourceCount();
 }
 
-document.getElementById("clickButton").addEventListener("click", handleClick);
+
+document.getElementById("clickButton").addEventListener("mousedown", () => {
+  resources.handleClick()
+})
+render.renderFunctions.push(() => {
+  resources.updateResourceCount()
+})
