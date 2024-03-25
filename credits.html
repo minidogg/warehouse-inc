@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #2c2c2c;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                color: white;
+                overflow: hidden;
+            }
+
+            .content {
+                max-width: 400px;
+                overflow: scroll;
+            }
+
+            /* Stuff related to loading animations and stuff */
+#coverDiv{
+    z-index:100000;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #2c2c2c;
+
+    width: 100vw;
+    height:100vh;
+    transition: transform 1s ease-in-out;
+    
+    text-align:center;
+    font-size: 0vmin;
+}
+.coverDivAnimate{
+    transform: translateY(100vh);
+}
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Credits</h1>
+        </div>
+        <div id="coverDiv"></div>
+        <script>
+            window.onload = document.getElementById("coverDiv").classList.add("coverDivAnimate");
+        </script>
+    </body>
+</html>
