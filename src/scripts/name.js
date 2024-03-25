@@ -23,4 +23,4 @@ document.getElementById('companyName').onclick = () => {
 }
 
 
-window.addEventListener("load", randomName)
+randomName()
