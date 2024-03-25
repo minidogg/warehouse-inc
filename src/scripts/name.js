@@ -1,11 +1,28 @@
 // generates a random name for your warehouse :3
 function randomName(overwrite=false) {
-  var nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling"];
-  var nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia"];
+  const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling"];
+  const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia"];
+  const creatorNameAdjs = ['Unlucky', 'Code', 'Shadow', 'Really Bad'];
+  const creatorNameNouns = ['Crafter', 'Mob', 'Dev'];
+
+
+  var name = 'this shouldn\'t be your name and if it does then something probably went wrong';
+  if (Math.random() > 0.075) {
+    name = nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]
+  } else {
+    let mode = Math.floor(Math.random() * 3);
+    if (mode == 0) {
+      name = creatorNameAdjs[Math.floor(Math.random() * creatorNameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]
+    } else if (mode == 1) {
+      name = nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + creatorNameNouns[Math.floor(Math.random() * creatorNameNouns.length)]
+    } else if (mode == 2) {
+      name = creatorNameAdjs[Math.floor(Math.random() * creatorNameAdjs.length)] + ' ' + creatorNameNouns[Math.floor(Math.random() * creatorNameNouns.length)]
+    }
+  }
 
   if (overwrite) removeProperty(game, "name");
-  addProperty(game, "name", nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]);
-  addProperty(game, "goldenName",goldenNames.includes(game.name) );
+  addProperty(game, "name", name);
+  addProperty(game, "goldenName", goldenNames.includes(name));
 
 
   saving.save()
