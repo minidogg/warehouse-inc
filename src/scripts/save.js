@@ -12,14 +12,15 @@ saving.loadSave = ()=>{
     try{
     game = JSON.parse(atob(localStorage.getItem("save")))
     }catch(err){
-        saving.resetSave()
+        localStorage.removeItem("save")
+        window.location.reload(true)
         console.warn(err)
     }
 }
 
 saving.resetSave = ()=>{
     // todo: Make this into an actual popup instead of basic alerts
-    if(prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")){
+    if(prompt("Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm")){
         localStorage.removeItem("save")
         window.location.reload(true)
     }
