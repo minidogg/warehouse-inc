@@ -58,3 +58,20 @@ function throttle(func, limit) {
         }
     };
 }
+function getCookieCount() {
+    return document.cookie.split(';').length;
+}
+
+
+function getStoreName() {
+    return localStorage.getItem('storeName');
+}
+
+function popup(message) {
+    alert(message);
+}
+
+function formatDate(date) {
+    return new Date(date).toLocaleDateString();
+}
+  
