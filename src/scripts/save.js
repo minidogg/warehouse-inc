@@ -41,6 +41,6 @@ saving.autoSave = () => {
   setTimeout(() => { saving.autoSave() }, game.autoSaveRate);
 }
 
-addProperty(game, "autoSaveRate", 30000);
+addProperty(game, "autoSaveRate", 1000);
 addProperty(game, "autoSave", true);
 saving.autoSave();
