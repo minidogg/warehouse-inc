@@ -35,5 +35,5 @@ saving.autoSave = () => {
   setTimeout(() => { saving.autoSave() }, game.autoSaveRate)
 }
 
-addProperty(game, "autoSaveRate", 5000)
+addProperty(game, "autoSaveRate", 1000)
 saving.autoSave()
