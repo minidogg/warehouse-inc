@@ -4,7 +4,7 @@ addProperty(game, "multiplier", 1); // Add sugar property to the game object
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumbers(game.sugar);
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumbers(game.sugar.toString());
 }
 
 sugar.startSugarGeneration = () => {
