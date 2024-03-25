@@ -9,4 +9,6 @@ function handleClick() {
     updateResourceCount();
 }
 
-document.getElementById("clickButton").addEventListener("click", handleClick);
+document.getElementById("clickButton").addEventListener("mousedown", () => {
+  handleClick()
+})
