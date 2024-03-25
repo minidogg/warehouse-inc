@@ -19,7 +19,7 @@ saving.loadSave = () => {
 
 saving.resetSave = () => {
   // todo: Make this into an actual popup instead of basic alerts
-  if (prompt("Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm")) {
+  if (prompt("Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm").toString() == 'yes') {
     game.autoSave = false
 document.getElementById("coverDiv").classList.remove("coverDivAnimate")
     setTimeout(() => {
