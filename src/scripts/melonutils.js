@@ -1,3 +1,25 @@
+function showNotification(message, duration) {
+    console.log('Showing notification:', message);
+    
+    var notificationContainer = document.querySelector('.notification-container');
+    var notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notificationContainer.appendChild(notification);
+  
+    setTimeout(function() {
+      notification.style.opacity = 1;
+      setTimeout(function() {
+        notification.style.opacity = 0;
+        setTimeout(function() {
+          notificationContainer.removeChild(notification);
+          console.log('Notification removed:', message);
+        }, 500);
+      }, duration);
+    }, 100);
+}
+
+
 // FormatNumbers
 function FormatNumbers(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -74,24 +96,4 @@ function popup(message) {
 
 function formatDate(date) {
     return new Date(date).toLocaleDateString();
-}
-
-function showNotification(message, duration) {
-    console.log('Showing notification:', message);
-    
-    var notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-  
-    setTimeout(function() {
-      notification.style.opacity = 1;
-      setTimeout(function() {
-        notification.style.opacity = 0;
-        setTimeout(function() {
-          document.body.removeChild(notification);
-          console.log('Notification removed:', message);
-        }, 500);
-      }, duration);
-    }, 100);
 }
