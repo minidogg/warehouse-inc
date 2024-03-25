@@ -4,6 +4,22 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background-image: url("https://warehouse-inc.vercel.app/src/images/save-icon.png");
+    background-image: url("https://github.com/minidogg/warehouse-inc/blob/dev/src/images/save-icon.png?raw=true");
     background-size: 100px;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)scale(1);
+    }
+    50% {
+        transform: rotate(180deg)scale(0.8);
+    }
+    100% {
+        transform: rotate(360deg)scale(1);
+    }
 }
