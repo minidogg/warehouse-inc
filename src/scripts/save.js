@@ -12,7 +12,8 @@ saving.loadSave = ()=>{
     try{
     game = JSON.parse(atob(localStorage.getItem("save")))
     }catch(err){
-        saving.resetSave()
+        localStorage.removeItem("save")
+        window.location.reload(true)
         console.warn(err)
     }
 }
