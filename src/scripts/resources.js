@@ -3,7 +3,7 @@ addProperty(game, "resources", 0)
 var resources = {}
 
 resources.updateResourceCount = () => {
-  document.getElementById("resourceCount").textContent = "Resources: " + game.resources;
+  document.getElementById("resourceCount").textContent = "Resources: " + FormatNumbers(game.resources);
 }
 
 resources.handleClick = () => {
