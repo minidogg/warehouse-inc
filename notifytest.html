@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification Utility Example</title>
+<style>
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+</style>
+</head>
+<body>
+
+<button onclick="showNotification('This is a test notification!', 5000)">Show Notification</button>
+
+<script>
+function showNotification(message, duration) {
+  console.log('Showing notification:', message);
+  
+  var notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.textContent = message;
+  document.body.appendChild(notification);
+
+  setTimeout(function() {
+    notification.style.opacity = 1;
+    setTimeout(function() {
+      notification.style.opacity = 0;
+      setTimeout(function() {
+        document.body.removeChild(notification);
+        console.log('Notification removed:', message);
+      }, 500);
+    }, duration);
+  }, 100);
+}
+</script>
+
+</body>
+</html>
