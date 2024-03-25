@@ -58,6 +58,7 @@ function throttle(func, limit) {
         }
     };
 }
+
 function getCookieCount() {
     return document.cookie.split(';').length;
 }
@@ -74,4 +75,4 @@ function popup(message) {
 function formatDate(date) {
     return new Date(date).toLocaleDateString();
 }
-  
+
