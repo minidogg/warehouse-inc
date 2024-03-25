@@ -1,0 +1,9 @@
+.save-icon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-image: url("https://warehouse-inc.vercel.app/src/images/save-icon.png");
+    background-size: 100px;
+}
