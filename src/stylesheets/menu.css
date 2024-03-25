@@ -1,0 +1,29 @@
+.menuContainer {
+  background-color: black;
+  color: white;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  max-height: 5vh;
+  overflow-y: scroll;
+
+  border: black solid 2px;
+}
+
+.menuTab {
+  background-color: #4f4f4f;
+  border: #363636 solid 2px;
+  transition: background-color 0.1s;
+}
+
+.menuTab:hover {
+  background-color: #666666;
+}
+
+.menuTab:active {
+  background-color: #5c5c5c;
+}
