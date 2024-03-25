@@ -6,3 +6,5 @@ function colorLog(text,color="lime",fontSize="15px"){
         font-size:${fontSize};
     `);
 }
+
+document.body.scrollTop = document.body.scrollHeight;

@@ -20,8 +20,13 @@ saving.loadSave = () => {
 saving.resetSave = () => {
   // todo: Make this into an actual popup instead of basic alerts
   if (prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")) {
-    localStorage.removeItem("save")
-    window.location.reload(true)
+    game.autoSave = false
+//document.getElementById("coverDiv").classList.remove("coverDivAnimate")
+    setTimeout(() => {
+      localStorage.removeItem("save")
+      window.location.reload(true)
+    }, 1000)
+
   }
 }
 
@@ -30,10 +35,11 @@ saving.loadSave()
 saving.autoSave = () => {
   console.log("Auto saving")
 
-  saving.save()
+  if (game.autoSave == true) saving.save()
 
   setTimeout(() => { saving.autoSave() }, game.autoSaveRate)
 }
 
 addProperty(game, "autoSaveRate", 1000)
+addProperty(game, "autoSave", true)
 saving.autoSave()
