@@ -118,6 +118,7 @@
     </style>
 </head>
 <body>
+    <div id="bgscroll" class="fadeout"></div>
     <div id="container">
         <h1>Welcome to Warehouse INC</h1>
         <p>Embark on an epic adventure in the world of warehousing!</p>
@@ -133,6 +134,13 @@
 
     <script>
         function startGame() {
+            const bgscroll = document.getElementById("bgscroll");
+            const container = document.getElementById("container")
+
+            container.style.transform = "translateY(100vh)";
+            bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
+            bgscroll.style.animation = "fadeout 1s";
+
             document.getElementById("container").style.transform = "translateY(100vh)";
             setTimeout(()=>{
                 window.location.href = "./src/index.html";
