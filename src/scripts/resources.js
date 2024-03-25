@@ -6,8 +6,8 @@ addProperty(game, "productionspeed", 1000)
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + formatNumber(game.collectableSugar)
-  document.getElementById("realResourceCount").textContent = "Sugar: " + formatNumber(game.sugar)
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumber(game.collectableSugar)
+  document.getElementById("realResourceCount").textContent = "Sugar: " + FormatNumber(game.sugar)
 }
 
 sugar.startSugarGeneration = () => {
