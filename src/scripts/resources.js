@@ -25,7 +25,7 @@ sugar.collectSugar = () => {
   game.resourcesCollected = game.resourcesCollected + game.sugar;
   game.sugar = 0;
   sugar.updateSugarCount();
-  // sugar.showNotification("You collected " + game.resourcesCollected + " sugar!"); this will not be in here melon
+  showNotification("You collected " + game.resourcesCollected + " sugar!"); 
 }
 
 document.getElementById("clickButton").addEventListener("click", () => {
