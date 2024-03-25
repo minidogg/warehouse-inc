@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="stylesheets/load.css">
   <link rel="stylesheet" href="stylesheets/save.css">
   <link rel="stylesheet" href="stylesheets/menu.css">
-  <link rel="stylesheet" href="stylesheets/notification.css" <link rel="icon" type="image/x-icon"
-    href="src\images\favicon.ico">
+  <link rel="stylesheet" href="stylesheets/notification.css">
+  <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
 </head>
 
 <body>
@@ -30,7 +30,8 @@
     <div class="resourcesContainer">
       <span style="width:100%;">
         <p id="resourceCount" class="coolFade">Sugar Ready For Collecting: 0</p>
-        <button id="clickButton">Collect Sugar</button>
+        <button id="clickButton" onclick="showNotification('You collected your sugar!', 1000)">Collect Sugar</button>
+        
 
         <!-- <h1 id="titlebar" class="coolFade">Stats!</h1> -->
       </span>
@@ -42,13 +43,11 @@
     <div class="menuContainer">
       <div class="menuTab">Stats</div>
       <div class="menuTab">Settings</div>
-
+      <div class="menuTab">Account</div>
+      <div class="menuTab" href="../credits.html">Credits</div>
     </div>
     <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
 
-    <div class="notification-container">
-      <div id="notification"></div>
-    </div>
   </div>
   <div class="rightContainer">
     <!-- some stuff related to buying most thing should be here -->
@@ -62,6 +61,7 @@
   </div>
   <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
   <div class="save-icon"></div>
+  <div class="notification-container"></div>
 
   <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 

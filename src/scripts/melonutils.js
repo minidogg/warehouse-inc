@@ -1,3 +1,25 @@
+function showNotification(message, duration) {
+    console.log('Showing notification:', message);
+    
+    var notificationContainer = document.querySelector('.notification-container');
+    var notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notificationContainer.appendChild(notification);
+  
+    setTimeout(function() {
+      notification.style.opacity = 1;
+      setTimeout(function() {
+        notification.style.opacity = 0;
+        setTimeout(function() {
+          notificationContainer.removeChild(notification);
+          console.log('Notification removed:', message);
+        }, 500);
+      }, duration);
+    }, 100);
+}
+
+
 // FormatNumbers
 function FormatNumbers(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -60,12 +82,12 @@ function throttle(func, limit) {
 }
 
 function getCookieCount() {
-    return document.cookie.split(';').length;
+
 }
 
 
 function getStoreName() {
-    return localStorage.getItem('storeName');
+    
 }
 
 function popup(message) {
@@ -75,4 +97,3 @@ function popup(message) {
 function formatDate(date) {
     return new Date(date).toLocaleDateString();
 }
-
