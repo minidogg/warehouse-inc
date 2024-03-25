@@ -27,3 +27,8 @@ button:active {
     bottom: 15px;
     right: 10px;
 }
+
+input[type="text"] {
+    all:unset;
+    background-color: #218cff;
+}

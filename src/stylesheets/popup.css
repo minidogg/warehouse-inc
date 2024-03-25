@@ -1,0 +1,29 @@
+#popup{
+    background-color: gray;
+    z-index: 10000;
+    position: fixed;
+    top:20vh;
+    left:70vh;
+
+
+    width:fit-content;
+    height: fit-content;
+    padding: 2vmin;
+
+
+
+    border-radius: 10px;
+
+}
+
+#popupSubmit{
+    display:block;
+    margin:auto;
+
+    margin-top:10px;
+}
+
+#popupHeader{
+    text-align: center;
+    font-size:5vmin;
+}
