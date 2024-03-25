@@ -1,4 +1,5 @@
 addProperty(game, "sugar", 0);
+addProperty(game, "multiplier", 1); // Add sugar property to the game object
 
 var sugar = {};
 
