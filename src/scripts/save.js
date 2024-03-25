@@ -21,7 +21,7 @@ saving.resetSave = () => {
   // todo: Make this into an actual popup instead of basic alerts
   if (prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")) {
     game.autoSave = false
-document.getElementById("coverDiv").classList.remove("coverDivAnimate")
+//document.getElementById("coverDiv").classList.remove("coverDivAnimate")
     setTimeout(() => {
       localStorage.removeItem("save")
       window.location.reload(true)
