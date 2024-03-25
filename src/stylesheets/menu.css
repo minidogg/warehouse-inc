@@ -9,6 +9,7 @@
   grid-row-gap: 0px;
 
   max-height: 5vh;
+  height:5vh;
   overflow-y: scroll;
 
   border: black solid 2px;
