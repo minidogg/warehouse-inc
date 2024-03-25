@@ -22,9 +22,11 @@ saving.loadSave = ()=>{
 }
 
 saving.resetSave = ()=>{
-    // todo: Make this into an actual popup instead of basic alert
+    // todo: Make this into an actual popup instead of basic alerts
     if(alert("Are you sure you want to reset you save and lose all progress?")){
         localStorage.removeItem("save")
         loadSave()
     }
 }
+
+saving.save()
