@@ -24,6 +24,31 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+    <div id="coverDiv"></div>
+    <div class="leftContainer">
+        <!-- some stuff related to collecting resources -->
+        <h1 id="companyName" class="coolFade"><input placeholder="Warehouse name here" id="name"></input>'s Warehouse</h1>
+        <div class="resourcesContainer">
+        <span style="width:100%;">        
+            <p id="resourceCount" class="coolFade">Resources: 0</p>
+            <button id="clickButton" tabindex="-1">Collect Resources</button>
+        </span>                    <!-- /\ makes it tabby tabby enter proof -->
+
+        </div>
+    </div>
+    <div class="middleContainer">
+        <!-- some stuff related to menus should be here -->
+    </div>
+    <div class="rightContainer">
+        <!-- some stuff related to buying most thing should be here -->
+        <div class="buyContainer">
+            <h1 id="companyName" class="coolFade">Warehouse Store</h1>
+            <div class="upgradebuttons">
+                
+            </div>
+        </div>
+=======
   <div id="coverDiv"></div>
   <div class="leftContainer">
     <!-- some stuff related to collecting resources -->
@@ -36,6 +61,7 @@
         <!-- <h1 id="titlebar" class="coolFade">Stats!</h1> -->
       </span>
 
+>>>>>>> c8cd116deec1130c597f1d06dec7559dc24a9d83
     </div>
   </div>
   <div class="middleContainer">
@@ -84,12 +110,26 @@
   <script src="scripts/name.js"></script>
   <script src="scripts/resources.js"></script>
 
+<<<<<<< HEAD
+    <!-- This script should always be first unless needed to be otherwise. -->
+    <script src="scripts/util.js"></script>
+    
+    <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/save.js"></script>
+
+    <!-- game scripts -->
+    <script src="scripts/name.js"></script>
+    <script src="scripts/resources.js"></script>
+    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+=======
 
   <!--     This should always be the last script/element here -->
   <script>
     render.render()
   </script>
 
+>>>>>>> c8cd116deec1130c597f1d06dec7559dc24a9d83
 
 </body>
 
