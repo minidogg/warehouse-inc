@@ -14,9 +14,9 @@ saving.loadSave = ()=>{
 
 saving.resetSave = ()=>{
     // todo: Make this into an actual popup instead of basic alerts
-    if(alert("Are you sure you want to reset you save and lose all progress?")){
+    if(prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")){
         localStorage.removeItem("save")
-        loadSave()
+        window.location.assign("/")
     }
 }
 
