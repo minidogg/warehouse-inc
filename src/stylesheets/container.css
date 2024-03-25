@@ -1,0 +1,33 @@
+/* This has stuff to do with the main containers. */
+.leftContainer {
+    position: absolute;
+    left:0;
+    top:0;
+
+    background-color: #3b3b3b;
+    width:30vw;
+    height: 100vh;
+}
+.middleContainer {
+    position: absolute;
+    left:30vw;
+    top:0;
+
+    background-color: #585858;
+    width:45vw;
+    height: 100vh;
+    border-right: #181818 5px solid;
+    border-left: #181818 5px solid;
+    z-index: 5;
+}
+.rightContainer {
+    position: absolute;
+    left:64vw;
+    top:0;
+
+    background-color: #3b3b3b;
+    width:36vw;
+    height: 100vh;
+    border-right: #181818 5px solid;
+}
+

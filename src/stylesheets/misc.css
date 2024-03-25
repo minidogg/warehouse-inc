@@ -1,0 +1,21 @@
+/* Things that you are unsure of where to put go here. */
+#companyName {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    font-size: 3vmin;
+    margin-top: 0vh; 
+    padding: 1vh 0; 
+    background-color: #333; 
+}
+
+/* New style for #name */
+#name {
+    text-align: right;
+    color: #fff; 
+    margin-top: 0vh;
+    padding: 1vh 0; 
+    background-color: #33333300; 
+    font-size: 3vmin;
+    border: none;
+}
