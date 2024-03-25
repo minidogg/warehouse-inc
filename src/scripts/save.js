@@ -9,7 +9,11 @@ saving.loadSave = ()=>{
     if(localStorage.getItem("save")==undefined){
         saving.save()
     }
+    try{
     game = JSON.parse(atob(localStorage.getItem("save")))
+    }catch(err){
+        saving.resetSave()
+    }
 }
 
 saving.resetSave = ()=>{
