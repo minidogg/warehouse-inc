@@ -39,7 +39,6 @@
         }
         button {
             padding: 10px 20px;
-            font-size: 1.2em;
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -47,15 +46,25 @@
             cursor: pointer;
             transition: background-color 0.3s;
             text-align: center;
-            line-height: inherit;
+            line-height: 100%;
             display: inline-block;
             justify-content: center; 
             align-items: center;
+
         }
 
 
         button:hover {
             background-color: #004793d2;
+        }
+
+        .buttonText{
+            margin-left:10px;
+
+            font-family: Arial, sans-serif;
+            line-height:100%;
+            font-size: 1.2em;
+            /*font-weight: normal;*/
         }
     </style>
 </head>
@@ -64,11 +73,11 @@
         <h1>Welcome to Warehouse INC</h1>
         <p>Embark on an epic adventure in the world of warehousing!</p>
         <button onclick="startGame()">
-            <i class="fas fa-play icon"></i> Play Now
+            <i class="fas fa-play icon"><span class="buttonText">Credits</span></i>
         </button>
         <a href="credits.html" target="_blank">
             <button>
-                <i class="fas fa-info-circle icon"></i> Credits
+                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
             </button>
         </a>
     </div>

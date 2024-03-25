@@ -1,24 +1,15 @@
 //saving system code will go here.
 var saving = {}
 
-saving.genSave = (gameData)=>{
-    return atob(JSON.stringify(gameData))
-}
-
 saving.save = ()=>{
-    localStorage.setItem("save",saving.genSave(game))
-}
-
-
-saving.getSave = ()=>{
-    return btoa(localStorage.getItem("save"))
+    localStorage.setItem("save",btoa(JSON.stringify(game)))
 }
 
 saving.loadSave = ()=>{
-    if(saving.getSave()==undefined){
+    if(localStorage.getItem("save")==undefined){
         saving.save()
     }
-    game = saving.getSave()
+    game = JSON.parse(atob(localStorage.getItem("save")))
 }
 
 saving.resetSave = ()=>{
@@ -29,4 +20,4 @@ saving.resetSave = ()=>{
     }
 }
 
-saving.save()
+saving.loadSave()
