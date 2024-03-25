@@ -11,19 +11,14 @@ sugar.updateSugarCount = () => {
 sugar.startSugarGeneration = () => {
   setInterval(() => {
     game.sugar += game.multiplier;
-    sugar.updateSugarCount();
   }, game.productionspeed);
 }
 
-sugar.showNotification = (message) => {
-  const notificationElement = document.getElementById("notification");
-  notificationElement.textContent = message;
-  notificationElement.classList.add("notification-show");
+render.renderFunctions.push(()=>{
+sugar.updateSugarCount();
+})
 
-  setTimeout(() => {
-    notificationElement.classList.remove("notification-show");
-  }, 3000); // Adjust the duration here (in milliseconds)
-}
+
 
 sugar.collectSugar = () => {
   game.resourcesCollected = game.sugar;
