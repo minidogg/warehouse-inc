@@ -6,6 +6,7 @@ var sugar = {};
 
 sugar.updateSugarCount = () => {
   document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumbers(game.sugar.toString());
+  document.getElementById("realResourceCount").textContent = "Sugar: " + FormatNumbers(game.resourcesCollected.toString());
 }
 
 sugar.startSugarGeneration = () => {
@@ -21,10 +22,10 @@ sugar.updateSugarCount();
 
 
 sugar.collectSugar = () => {
-  game.resourcesCollected = game.sugar;
+  game.resourcesCollected = game.resourcesCollected + game.sugar;
   game.sugar = 0;
   sugar.updateSugarCount();
-  // sugar.showNotification("You collected " + game.resourcesCollected + " sugar!"); this will not be in here melon
+  showNotification("You collected " + game.resourcesCollected + " sugar!"); 
 }
 
 document.getElementById("clickButton").addEventListener("click", () => {

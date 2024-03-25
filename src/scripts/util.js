@@ -10,7 +10,7 @@ function colorLog(text,color="lime",fontSize="15px"){
 document.body.scrollTop = document.body.scrollHeight;
 
 
-sugar.showNotification = (message) => {
+showNotification = (message) => {
   const notificationElement = document.getElementById("notification");
   notificationElement.textContent = message;
   notificationElement.classList.add("notification-show");
