@@ -23,4 +23,4 @@ document.getElementById('companyName').onclick = () => {
 }
 
 
-randomName( )
+randomName()
