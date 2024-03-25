@@ -2,7 +2,7 @@
 var saving = {}
 
 saving.genSave = (gameData)=>{
-    return JSON.stringify(gameData)
+    return atob(JSON.stringify(gameData))
 }
 
 saving.save = ()=>{
@@ -11,7 +11,7 @@ saving.save = ()=>{
 
 
 saving.getSave = ()=>{
-    return localStorage.getItem("save")
+    return btoa(localStorage.getItem("save"))
 }
 
 saving.loadSave = ()=>{
@@ -21,4 +21,10 @@ saving.loadSave = ()=>{
     game = saving.getSave()
 }
 
-saving.loadSave()
+saving.resetSave = ()=>{
+    // todo: Make this into an actual popup instead of basic alert
+    if(alert("Are you sure you want to reset you save and lose all progress?")){
+        localStorage.removeItem("save")
+        loadSave()
+    }
+}
