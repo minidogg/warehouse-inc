@@ -8,4 +8,4 @@ function randomName() {
 }
 
 
-window.onload = randomName();
+window.addEventListener("load",randomName)

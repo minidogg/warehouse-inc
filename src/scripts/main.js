@@ -16,3 +16,5 @@ function addProperty(obj,property,value){
     if(!obj.hasOwnProperty(property))obj[property]=value
 }
 
+//slightly unrelated but its cool.
+document.getElementById("coverDiv").classList.add("coverDivAnimate")
