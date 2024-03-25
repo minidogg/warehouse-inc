@@ -21,3 +21,9 @@ button:active {
     box-shadow: 0px 4px 0px 0px #00346c;
     transform: translateY(6px);
 }
+
+#resetBtn {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
