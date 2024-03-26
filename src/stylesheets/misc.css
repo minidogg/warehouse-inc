@@ -7,6 +7,7 @@
     margin-top: 0vh; 
     padding: 1vh 0; 
     background-color: #333; 
+    cursor: pointer;
 }
 
 /* New style for #name */

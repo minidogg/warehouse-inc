@@ -1,4 +1,4 @@
-//saving system code will go here.
+//saving system code will go here.stringify
 var saving = {}
 
 saving.save = () => {
@@ -19,7 +19,7 @@ saving.loadSave = () => {
 
 saving.resetSave = () => {
   // todo: Make this into an actual popup instead of basic alerts
-  if (prompt("Are you sure you want to reset you save and lose all progress? Type 'yes' to confirm")) {
+  if (prompt("Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm").toString() == 'yes') {
     game.autoSave = false
 document.getElementById("coverDiv").classList.remove("coverDivAnimate")
     setTimeout(() => {
@@ -34,12 +34,19 @@ saving.loadSave()
 
 saving.autoSave = () => {
   console.log("Auto saving")
-
-  if (game.autoSave == true) saving.save()
-
-  setTimeout(() => { saving.autoSave() }, game.autoSaveRate)
+  
+  if (game.autoSave == true) {
+    saving.save();
+  }else{
+    return
+  }
+  setTimeout(() => { 
+    document.querySelector('.save-icon').style.display = 'block'; 
+  }, 500);
+  document.querySelector('.save-icon').style.display = 'none';
+  setTimeout(() => { saving.autoSave() }, game.autoSaveRate);
 }
 
-addProperty(game, "autoSaveRate", 1000)
-addProperty(game, "autoSave", true)
-saving.autoSave()
+addProperty(game, "autoSaveRate", 1000);
+addProperty(game, "autoSave", true);
+saving.autoSave();

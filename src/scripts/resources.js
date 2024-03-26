@@ -1,35 +1,33 @@
 addProperty(game, "sugar", 0);
+addProperty(game, "collectableSugar", 0);
 addProperty(game, "multiplier", 1); 
 addProperty(game, "productionspeed", 1000)
 
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + FormatNumbers(game.sugar.toString());
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + game.collectableSugar
+  document.getElementById("realResourceCount").textContent = "Sugar: " + game.sugar
 }
 
 sugar.startSugarGeneration = () => {
   setInterval(() => {
-    game.sugar += game.multiplier;
-    sugar.updateSugarCount();
+    game.collectableSugar += game.multiplier;
   }, game.productionspeed);
 }
 
-sugar.showNotification = (message) => {
-  const notificationElement = document.getElementById("notification");
-  notificationElement.textContent = message;
-  notificationElement.classList.add("notification-show");
+render.renderFunctions.push(()=>{
+sugar.updateSugarCount();
+})
 
-  setTimeout(() => {
-    notificationElement.classList.remove("notification-show");
-  }, 3000); // Adjust the duration here (in milliseconds)
-}
+
 
 sugar.collectSugar = () => {
-  game.resourcesCollected = game.sugar;
-  game.sugar = 0;
+  showNotification("You collected " + game.collectableSugar + " sugar!"); 
+
+  game.sugar= game.sugar + game.collectableSugar;
+  game.collectableSugar = 0;
   sugar.updateSugarCount();
-  // sugar.showNotification("You collected " + game.resourcesCollected + " sugar!"); this will not be in here melon
 }
 
 document.getElementById("clickButton").addEventListener("click", () => {
