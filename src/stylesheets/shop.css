@@ -25,7 +25,7 @@
     background-color: #3f3f3f!important;
 }
 
-.buyOption[disabled]{
+.buyOptionDisabled{
     opacity:0.2!important;
     cursor: unset!important;;
     pointer-events:none;

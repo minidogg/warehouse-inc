@@ -1,7 +1,32 @@
 addProperty(game, "sugar", 0);
 addProperty(game, "collectableSugar", 0);
 addProperty(game, "multiplier", 1); 
-addProperty(game, "productionspeed", 1000)
+addProperty(game, "productionSpeed", 1000)
+addProperty(game, "producers",{})
+/*Producer schema, expect that once a save is started and gets the producer it won't change.
+    "interalId":{
+        "name":"Some name",
+        "sps":1, //sugar per second
+        "owned":0,
+        "baseCost":1,
+        "costMultiplier":1.5,
+        "metadata":{someData:someData}
+    }
+    
+*/
+
+//add producers below this only
+
+addProperty(game.producers,"deliveryTruck",{
+    "name":"Delivery Truck",
+    "sps":1, //sugar per second
+    "owned":0,
+    "baseCost":1,
+    "costMultiplier":1.5,
+    "metadata":{}
+})
+
+//add producers above this only
 
 var sugar = {};
 
@@ -11,9 +36,16 @@ sugar.updateSugarCount = () => {
 }
 
 sugar.startSugarGeneration = () => {
-  setInterval(() => {
+    sugar.sugarGenerationLoop()
+}
+sugar.sugarGenerationLoop = ()=>{
     game.collectableSugar += game.multiplier;
-  }, game.productionspeed);
+    Object.entries(game.producers).forEach((ee)=>{
+        let e= ee[1]
+        game.collectableSugar += e.sps*e.owned
+    })
+
+    setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
 }
 
 render.renderFunctions.push(()=>{
