@@ -14,6 +14,7 @@
 
     border-radius: 10px;
 
+    transition:top 0.5s ease-in-out;
 }
 
 #popupSubmit{
@@ -26,4 +27,8 @@
 #popupHeader{
     text-align: center;
     font-size:5vmin;
+}
+
+.popupClose{
+    top: 110vh!important;;
 }

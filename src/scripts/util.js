@@ -22,17 +22,17 @@ showNotification = (message) => {
 }
 
 
-document.querySelector("#popup").style.display = "none"
+document.querySelector("#popup").classList.add("popupClose")
 
 showPopup = (title,html,callback)=>{
-    document.querySelector("#popup").style.display = "block"
+    document.querySelector("#popup").classList.remove("popupClose")
     document.querySelector("#popupHeader").textContent = title
     document.querySelector("#popupHtml").innerHTML = ""
     document.querySelector("#popupHtml").appendChild(html)
 
     var listener = document.body.querySelector("#popupSubmit").onclick = (ev)=>{
         callback(ev)
-        document.querySelector("#popup").style.display = "none"
+        document.querySelector("#popup").classList.add("popupClose")
     }
 
 }
