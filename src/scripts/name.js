@@ -7,7 +7,7 @@ async function randomName(overwrite=false) {
   const creatorNameNouns = ['Crafter', 'Mob', 'Dev', 'Melon'];
 
 
-  var name = 'this shouldn\'t be your name and if it does then something probably went wrong';
+  var name = "this shouldn't be your name and if it does then something probably went wrong";
   if (Math.random() > 0.075) {
     name = nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]
   } else {
