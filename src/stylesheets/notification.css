@@ -15,4 +15,8 @@
   margin-bottom: 10px; 
   opacity: 0;
   transition: opacity 0.5s ease;
+
+  font-size:1.5vmin;
+
+  z-index:10000000000;
 }
