@@ -9,6 +9,8 @@
   border: #363636 solid 2px;
   transition: background-color 0.1s;
   font-size:2vmin;
+  cursor:pointer!important;
+  padding-left:1em;
 }
 
 .menuTab:hover {

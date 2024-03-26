@@ -3,7 +3,7 @@
     border-bottom:black 2px solid;
     cursor:pointer;
     user-select: none;
-
+    margin-left: 10px;
 }
 .buyOptionName{
     font-size: 3vmin;
