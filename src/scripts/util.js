@@ -36,8 +36,16 @@ showPopup = (title,html,callback)=>{
     }
 
 }
-let testEl = document.createElement("h1")
-testEl.innerHTML = "Hello!"
-showPopup("This is a title",testEl,()=>{
-    console.log("Popup submitted :D")
-})
+showPrompt = async (title,placeholder="",maxLen=-1)=>{
+    return await new Promise((resolve, reject) => {
+        let input = document.createElement("input")
+        input.type = "text"
+        input.placeholder = placeholder
+        input.maxLength = maxLen
+        input.style.width = "100%"
+
+        showPopup(title,input,()=>{
+            resolve(input.value)
+        })
+    })
+}

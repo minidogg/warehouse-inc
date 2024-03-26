@@ -1,6 +1,6 @@
 // generates a random name for your warehouse :3
 var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon"]
-function randomName(overwrite=false) {
+async function randomName(overwrite=false) {
   const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling"];
   const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia"];
   const creatorNameAdjs = ['Unlucky', 'Code', 'Shadow', 'Really Bad', 'Abstract'];
@@ -35,8 +35,8 @@ render.renderFunctions.push(() => {
 })
 
 // todo: update this to an actual prompt
-document.getElementById('companyName').onclick = () => {
-  const name = prompt("Name? (leave blank to generate a new random name)");
+document.getElementById('companyName').onclick = async () => {
+  const name = await showPrompt("Company Name","Unluckycrafter",5);
   if (!name) {
     randomName(true);
   } else {
