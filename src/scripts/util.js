@@ -50,7 +50,7 @@ showPrompt = async (title,placeholder="",maxLen=-1)=>{
         input.type = "text"
         input.placeholder = placeholder
         input.maxLength = maxLen
-        input.style.width = "100%"
+        input.style.width = "93%"
 
         showPopup(title,input,()=>{
             resolve(input.value)
