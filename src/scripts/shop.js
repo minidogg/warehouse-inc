@@ -9,8 +9,8 @@ Object.entries(game.producers).forEach((ee)=>{
 
     let el = document.createElement("div")
     el.innerHTML = `
-        <h1 class="buyOptionName">Loading...</h1>
-        <span class="buyOptionPrice">$1000 - 1 SPS - 0 Owned</span>
+        <h1 class="buyOptionName">Loading your mother... this will only take 69.420 nanoseconds...</h1>
+        <span class="buyOptionPrice">$69420 - 42069 SPS - 69 Owned</span>
     `
     el.classList.add("buyOption")
     el.q(".buyOptionName").textContent = data.name
