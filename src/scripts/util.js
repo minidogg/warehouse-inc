@@ -59,5 +59,5 @@ showPrompt = async (title,placeholder="",maxLen=-1)=>{
     })
 }
 const removeExtraDecimals = (num,decimal)=>{
-    return parseFloat(num).toPrecision(Math.round(num).toString().length + 2);
+    return parseFloat(num).toPrecision(Math.round(num).toString().length + decimal);
   }
