@@ -32,11 +32,8 @@ async function randomName(overwrite=false) {
 render.renderFunctions.push(() => {
   document.getElementById('companyName').textContent = game.name + "'s Warehouse"
 
-  if(game.goldenName==true){
-    document.getElementById('companyName').style.color = "gold"
-  }else{
-    document.getElementById('companyName').style.color = ""
-  }
+    document.getElementById('companyName').style.color = game.goldenName==true?"gold":""
+
 })
 
 // todo: update this to an actual prompt
@@ -48,7 +45,7 @@ document.getElementById('companyName').onclick = async () => {
     game.name = name;
   }
   if(!goldenNames.includes(game.name))game.goldenName = false
-  
+
   render.render();
 }
 
