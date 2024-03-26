@@ -2,15 +2,16 @@
 
 var shop = {}
 shop.compileNum = genRanHex(16)
-shop.findCost = (baseCost,costMultiplier,owned)=>(baseCost^costMultiplier*owned)+baseCost
+shop.findCost=(a,b,c)=>Math.floor(a*Math.pow(1+b,c));
+
 Object.entries(game.producers).forEach((ee)=>{
     let id = ee[0]
     let data = ee[1]
 
     let el = document.createElement("div")
     el.innerHTML = `
-        <h1 class="buyOptionName">Loading...</h1>
-        <span class="buyOptionPrice">$1000 - 1 SPS - 0 Owned</span>
+        <h1 class="buyOptionName">Loading your mother... this will only take 69.420 nanoseconds...</h1>
+        <span class="buyOptionPrice">$69420 - 42069 SPS - 69 Owned</span>
     `
     el.classList.add("buyOption")
     el.q(".buyOptionName").textContent = data.name
