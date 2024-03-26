@@ -30,6 +30,31 @@ button:active {
 
 input[type="text"] {
     all:unset;
+    color:black;
+
+    border:none;
+
+    background-color: rgb(63, 63, 63);
+    font-size: 2vmin;
+    border-radius:1vmin;
+
+    text-align: center;
+
+    padding:10px;
+}
+
+input[type="checkbox"]{
+    width:1vmin;
+    height:1vmin;
+}
+
+input[type="number"]{
+    all:unset;
+    color:black;
+
+    border:none;
+
+    background-color: rgb(63, 63, 63);
     color: black;
     background-color: #545c65;
     font-size: 2vmin;
