@@ -37,6 +37,7 @@ settings.reset = ()=>{
                 li.q("input").type="number"
                 break;
             default:
+                li.q("input").type="text"
                 break;
         }
         li.ariaLabel = name
