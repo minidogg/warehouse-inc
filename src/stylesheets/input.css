@@ -30,15 +30,19 @@ button:active {
 
 input[type="text"] {
     all:unset;
-    color:black;
-
-    border:none;
-
-    background-color: #218cff;
+    color: black;
+    background-color: #545c65;
     font-size: 2vmin;
     border-radius:1vmin;
-
     text-align: center;
-
     padding:10px;
+    border-left: 2px solid #00346c;
+    border-right: 2px solid #00346c;
+}
+input[type="text"]:hover {
+    background-color: #5c6773;
+}
+
+input[type="text"]::placeholder {
+    color: #82899b;
 }
