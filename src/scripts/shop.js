@@ -22,9 +22,9 @@ Object.entries(game.producers).forEach((ee)=>{
     q("#buyMenu").appendChild(el)
 
     el.onclick = ()=>{
-        let dataa = game.producers[id]
-        let cost = shop.findCost(dataa.baseCost,dataa.costMultiplier,dataa.owned)
-        if(game.sugar<=cost)showNotification("Not enough money for: '"+dataa.name+"'")
+        let fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk = game.producers[id]
+        let cost = shop.findCost(fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.baseCost,fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.costMultiplier,fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.owned)
+        if(game.sugar<=cost)showNotification("Not enough money for: '"+fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.name+"'")
 
         game.sugar-=cost
         game.producers[id].owned += 1
