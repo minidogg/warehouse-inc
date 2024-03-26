@@ -22,7 +22,7 @@ showNotification = (message) => {
 }
 
 
-document.querySelector("#popup").classList.add("popupClose")
+q("#popup").classList.add("popupClose")
 
 showPopup = (title,html,callback)=>{
     q("#popup").classList.remove("popupClose")
