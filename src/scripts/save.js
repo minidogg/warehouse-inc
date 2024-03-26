@@ -51,3 +51,13 @@ saving.autoSave = () => {
 addProperty(game.settings, "autoSaveRate", 1000);
 addProperty(game.settings, "autoSave", true);
 saving.autoSave();
+
+//make funny prompt if try to close
+window.onbeforeunload = confirmExit;
+    function confirmExit() {
+        if(game.settings.autoSave==false)return "Are you sure you want to leave? You have auto-saving disabled.";
+        if(game.settings.autoSave==true){
+            saving.save()
+            return "Are you sure you want to leave?"
+        }
+    }
