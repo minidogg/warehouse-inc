@@ -20,10 +20,10 @@ addProperty(game, "producers",{})
 // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING
 addProperty(game.producers,"deliveryTruck",{
     "name":"Delivery Truck",
-    "sps":1, //sugar per second
+    "sps":1.1, //sugar per second
     "owned":0,
-    "baseCost":1,
-    "costMultiplier":1.5,
+    "baseCost":2,
+    "costMultiplier":2,
     "metadata":{}
 })
 
@@ -32,8 +32,8 @@ addProperty(game.producers,"deliveryTruck",{
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + game.collectableSugar
-  document.getElementById("realResourceCount").textContent = "Sugar: " + game.sugar
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + removeExtraDecimals(game.collectableSugar)
+  document.getElementById("realResourceCount").textContent = "Sugar: " + removeExtraDecimals(game.sugar)
 }
 
 sugar.startSugarGeneration = () => {
@@ -50,9 +50,8 @@ sugar.sugarGenerationLoop = ()=>{
 }
 
 render.renderFunctions.push(()=>{
-sugar.updateSugarCount();
+    sugar.updateSugarCount();
 })
-
 
 
 sugar.collectSugar = () => {
