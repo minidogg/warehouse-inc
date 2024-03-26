@@ -23,7 +23,7 @@ addProperty(game.producers,"deliveryTruck",{
     "sps":1.1, //sugar per second
     "owned":0,
     "baseCost":2,
-    "costMultiplier":2,
+    "costMultiplier":1.4,
     "metadata":{}
 })
 
