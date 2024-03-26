@@ -1,0 +1,32 @@
+.buyOption{
+    background-color: #2c2c2c!important;
+    border-bottom:black 2px solid;
+    cursor:pointer;
+    user-select: none;
+
+}
+.buyOptionName{
+    font-size: 3vmin;
+    font-weight: normal;
+    color:white;
+    margin-left: 1vmin;
+}
+.buyOptionPrice{
+    font-size: 2vmin;
+    font-weight: normal;
+    color:rgb(0, 255, 0);
+    margin-left: 1vmin;
+}
+
+.buyOption:hover{
+    background-color: #4f4f4f!important;
+}
+.buyOption:active{
+    background-color: #3f3f3f!important;
+}
+
+.buyOption[disabled]{
+    opacity:0.2!important;
+    cursor: unset!important;;
+    pointer-events:none;
+}
