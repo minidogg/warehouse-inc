@@ -34,7 +34,6 @@ render.renderFunctions.push(() => {
 
   if(game.goldenName==true){
     document.getElementById('companyName').style.color = "gold"
-    if(!goldenNames.includes(game.name))game.goldenName = false
   }else{
     document.getElementById('companyName').style.color = ""
   }
@@ -48,6 +47,8 @@ document.getElementById('companyName').onclick = async () => {
   } else {
     game.name = name;
   }
+  if(!goldenNames.includes(game.name))game.goldenName = false
+  
   render.render();
 }
 
