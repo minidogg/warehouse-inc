@@ -1,3 +1,5 @@
+// ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING
+
 var shop = {}
 shop.compileNum = genRanHex(16)
 shop.findCost = (baseCost,costMultiplier,owned)=>(baseCost*costMultiplier*owned)+baseCost

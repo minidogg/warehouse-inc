@@ -15,8 +15,9 @@ addProperty(game, "producers",{})
     
 */
 
-//add producers below this only
 
+//add producers below this only
+// ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING
 addProperty(game.producers,"deliveryTruck",{
     "name":"Delivery Truck",
     "sps":1, //sugar per second
