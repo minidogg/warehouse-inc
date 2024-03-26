@@ -66,4 +66,4 @@ function camelCaseToWords(s) {
     return result.charAt(0).toUpperCase() + result.slice(1);
 }
 
-console.log("Test.")
+console.log("Testy commit")
