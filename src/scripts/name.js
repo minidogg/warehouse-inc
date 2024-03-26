@@ -8,7 +8,7 @@ async function randomName(overwrite=false) {
 
 
   var name = "this shouldn't be your name and if it does then something probably went wrong";
-  if (Math.random() > 0.075) {
+  if (Math.random() > 0.125) {
     name = nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]
   } else {
     let mode = Math.floor(Math.random() * 3);
