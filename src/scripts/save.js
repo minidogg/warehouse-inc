@@ -20,11 +20,11 @@ saving.loadSave = () => {
 saving.resetSave = async () => {
 
   if ((await showPrompt("Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm","Yes",3)).toLowerCase() == 'yes') {
-    window.onbeforeunload = ()=>{}
     game.autoSave = false
 document.getElementById("coverDiv").classList.remove("coverDivAnimate")
     setTimeout(() => {
       localStorage.removeItem("save")
+        window.onbeforeunload = ()=>{}
       window.location.reload(true)
     }, 1000)
 
