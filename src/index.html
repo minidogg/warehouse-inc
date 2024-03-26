@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="stylesheets/menu.css">
   <link rel="stylesheet" href="stylesheets/notification.css">
   <link rel="stylesheet" href="stylesheets/popup.css">
+  <link rel="stylesheet" href="stylesheets/shop.css">
+
   <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
 </head>
 
@@ -44,7 +46,6 @@
         <button id="clickButton" onclick="showNotification('You collected your sugar!', 1000)">Collect Sugar</button>
         
 
-        <!-- <h1 id="titlebar" class="coolFade">Stats!</h1> -->
       </span>
 
     </div>
@@ -55,7 +56,7 @@
       <div class="menuTab">Stats</div>
       <div class="menuTab">Settings</div>
       <div class="menuTab">Account</div>
-      <div class="menuTab" href="../credits.html">Credits</div>
+      <div class="menuTab" onclick="window.location.href = '../credits.html'">Credits</div>
     </div>
     <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
 
@@ -63,8 +64,16 @@
   <div class="rightContainer">
     <!-- some stuff related to buying most thing should be here -->
     <div class="buyContainer">
-      <h1 id="companyName" class="coolFade">Warehouse Store</h1>
-      <div class="upgradebuttons">
+      <h1 class="coolFade titlebar">Warehouse Store</h1>
+        <div id="buyMenu">
+
+            <!-- <div class="buyOption" disabled>
+                <h1 class="buyOptionName">Delivery Truck</h1>
+                <span class="buyOptionPrice">$1000 - 1 SPS - 0 Owned</span>
+            </div> -->
+
+        </div>
+
       </div>
     </div>
 
@@ -84,19 +93,22 @@
       })
     }
   </script>
-  <!-- This script should always be first unless needed to be otherwise. -->
+  <!-- General util scripts THAT DON"T INTERACT WITH ANY GAME PROPERTIES should always be first unless needed to be otherwise. -->
+  <script src="scripts/qquery.js"></script>
   <script src="scripts/util.js"></script>
+  <script src="scripts/melonutils.js"></script>
 
   <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
   <script src="scripts/main.js"></script>
   <script src="scripts/save.js"></script>
 
   <!-- Melons Epic Utils & Stuff-->
-  <script src="scripts/melonutils.js"></script>
 
   <!-- game scripts -->
   <script src="scripts/name.js"></script>
   <script src="scripts/resources.js"></script>
+  <script src="scripts/shop.js"></script>
+
 
 
   <!--     This should always be the last script/element here -->

@@ -22,11 +22,11 @@
 }
 .rightContainer {
     position: absolute;
-    left:64vw;
+    left:75vw;
     top:0;
 
     background-color: #3b3b3b;
-    width:36vw;
+    width:25vw;
     height: 100vh;
     border-right: #181818 5px solid;
 }
