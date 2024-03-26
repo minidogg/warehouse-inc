@@ -58,6 +58,6 @@ window.onbeforeunload = confirmExit;
         if(game.settings.autoSave==false)return "Are you sure you want to leave? You have auto-saving disabled.";
         if(game.settings.autoSave==true){
             saving.save()
-            return "Are you sure you want to leave?"
+            return "Are you sure you want to leave? Your game has been saved."
         }
     }
