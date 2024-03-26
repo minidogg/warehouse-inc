@@ -6,5 +6,6 @@ Your best bet for being up-to-date at nearly all times is https://minidogg.githu
 
 Primary Host: I'm gonna talk to wacky about getting a feds.contact subdomain for this with an auto-updating server.  
 Primary Vercel Host: https://warehouse-inc.vercel.app/  
-Secondary Vercel Host: https://warehouse-clicker-secondary.vercel.app/  
+Secondary Vercel Host: https://warehouse-clicker-secondary.vercel.app/
+Broken And May Never Work Host: https://national-uncommon-grouper.ngrok-free.app/warehouse-inc/
 If for whatever reason vercel isn't deploying try the github pages site: https://minidogg.github.io/warehouse-inc/  
