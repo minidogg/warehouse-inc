@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="stylesheets/popup.css">
   <link rel="stylesheet" href="stylesheets/shop.css">
 
-  <link rel="icon" type="image/x-icon" href="src\images\favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./images\favicon.ico">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 
   <div id="popup">
     <h1 id="popupHeader">Sussy baka?</h1>
-    <div id="popupHtml">
+  <div id="popupHtml">
         <input type="text" placeholder="Maybe?" style="width:100%;">
     </div>
     <button id="popupSubmit">Submit</button>
@@ -57,9 +57,20 @@
       <div class="menuTab">Settings</div>
       <div class="menuTab">Account</div>
       <div class="menuTab" onclick="window.location.href = '../credits.html'">Credits</div>
+      <div class="menuTab">Mods - <i>Coming Soon</i></div>
     </div>
     <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
 
+    <div id="menuContent">
+<!-- All menu elements should go in here. -->
+        <div id="settings">
+            <h1 class="coolFade titlebar">Settings</h1>
+            <ul id="settingList" style="font-size:1.5vmin;margin:10px;">
+                <!-- <li>Auto Save: <input type="checkbox"></li> -->
+            </ul>
+        </div>
+
+    </div>
   </div>
   <div class="rightContainer">
     <!-- some stuff related to buying most thing should be here -->
@@ -109,6 +120,7 @@
   <script src="scripts/resources.js"></script>
   <script src="scripts/shop.js"></script>
 
+  <script src="scripts/menu.js"></script>
 
 
   <!--     This should always be the last script/element here -->

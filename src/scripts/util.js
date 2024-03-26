@@ -60,4 +60,8 @@ showPrompt = async (title,placeholder="",maxLen=-1)=>{
 }
 const removeExtraDecimals = (num,decimal)=>{
     return parseFloat(num).toPrecision(Math.round(num).toString().length + decimal);
-  }
+}
+function camelCaseToWords(s) {
+    const result = s.replace(/([A-Z])/g, ' $1');
+    return result.charAt(0).toUpperCase() + result.slice(1);
+}

@@ -15,4 +15,10 @@
   margin-bottom: 10px; 
   opacity: 0;
   transition: opacity 0.5s ease;
+
+  font-size:1.5vmin;
+
+  max-width:25vw!important;
+
+  z-index:10000000000;
 }
