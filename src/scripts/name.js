@@ -1,8 +1,8 @@
 // generates a random name for your warehouse :3
-var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon", "Really Bad Drug Lord", "Macky Water"]
+var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon", "Really Bad Drug Lord", "Macky Water", "Warehouse Owning Warehouse Owner", "Enslaved Minor"];
 async function randomName(overwrite=false) {
-  const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling", "Enslaved"];
-  const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia"];
+  const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling", "Enslaved", "Warehouse Owning"];
+  const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia", "Warehouse Owner"];
   const creatorNameAdjs = ['Unlucky', 'Code', 'Shadow', 'Really Bad', 'Abstract', 'Macky'];
   const creatorNameNouns = ['Crafter', 'Mob', 'Dev', 'Melon', 'Water'];
 
@@ -22,6 +22,7 @@ async function randomName(overwrite=false) {
   }
 
   if (overwrite) removeProperty(game, "name");
+  if (overwrite) removeProperty(game, "goldenName");
   addProperty(game, "name", name);
   addProperty(game, "goldenName", goldenNames.includes(name));
 
