@@ -18,6 +18,7 @@ function addProperty(obj,property,value){
 function removeProperty(obj, property){
     if(obj.hasOwnProperty(property))delete obj[property]
 }
+addProperty(game,"settings",{})
 
 //slightly unrelated but its cool.
 document.getElementById("coverDiv").classList.add("coverDivAnimate")

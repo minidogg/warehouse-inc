@@ -35,18 +35,19 @@ saving.loadSave()
 saving.autoSave = () => {
   console.log("Auto saving")
   
-  if (game.autoSave == true) {
+  if (game.settings.autoSave == true) {
     saving.save();
   }else{
+    setTimeout(() => { saving.autoSave() }, parseInt(game.settings.autoSaveRate));
     return
   }
+  document.querySelector('.save-icon').style.display = 'block'; 
   setTimeout(() => { 
-    document.querySelector('.save-icon').style.display = 'block'; 
+    document.querySelector('.save-icon').style.display = 'none';
   }, 500);
-  document.querySelector('.save-icon').style.display = 'none';
-  setTimeout(() => { saving.autoSave() }, game.autoSaveRate);
+  setTimeout(() => { saving.autoSave() }, parseInt(game.settings.autoSaveRate));
 }
 
-addProperty(game, "autoSaveRate", 1000);
-addProperty(game, "autoSave", true);
+addProperty(game.settings, "autoSaveRate", 1000);
+addProperty(game.settings, "autoSave", true);
 saving.autoSave();
