@@ -24,6 +24,7 @@ saving.resetSave = async () => {
 document.getElementById("coverDiv").classList.remove("coverDivAnimate")
     setTimeout(() => {
       localStorage.removeItem("save")
+        window.onbeforeunload = ()=>{}
       window.location.reload(true)
     }, 1000)
 

@@ -9,6 +9,8 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
+  <link rel="manifest" href="src/manifest.json">
+
   <title>Warehouse INC</title>
   <link rel="stylesheet" href="stylesheets/main.css">
   <link rel="stylesheet" href="stylesheets/input.css">
@@ -90,6 +92,7 @@
 
   </div>
   <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+  <button id="resetBtn" style="bottom: 70px !important;" onclick="saving.save()">Save</button>
   <div class="save-icon"></div>
   <div class="notification-container"></div>
 
@@ -129,6 +132,7 @@
     setInterval(()=>{
       render.render()
     },20)
+    console.log("Haha E")
   </script>
 
 

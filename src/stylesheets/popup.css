@@ -2,19 +2,17 @@
     background-color: grey;
     z-index: 10000;
     position: fixed;
-    top:20vh;
-    left:70vh;
 
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
 
     width:fit-content;
     height: fit-content;
     padding: 2vmin;
-
-
-
     border-radius: 10px;
 
-    transition:top 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
 }
 
 #popupSubmit{
@@ -30,5 +28,6 @@
 }
 
 .popupClose{
-    top: 110vh!important;;
+    top: 100%!important;
+    transform: translate(-50%, 50%)!important;
 }
