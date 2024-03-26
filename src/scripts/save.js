@@ -43,13 +43,13 @@ saving.autoSave = () => {
     return
   }
   document.querySelector('.save-icon').style.display = 'block'; 
-  setTimeout(() => { 
+  setTimeout(() => {
     document.querySelector('.save-icon').style.display = 'none';
   }, 500);
   setTimeout(() => { saving.autoSave() }, parseInt(game.settings.autoSaveRate));
 }
 
-addProperty(game.settings, "autoSaveRate", 1000);
+addProperty(game.settings, "autoSaveRate", 25000);
 addProperty(game.settings, "autoSave", true);
 saving.autoSave();
 

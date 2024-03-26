@@ -21,11 +21,11 @@ const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 
 //   }, 3000); // Adjust the duration here (in milliseconds)
 // }
 
-
-q("#popup").classList.add("popupClose")
+document.addEventListener("keypress",(event)=>{if(event.key==="Enter")document.getElementById("popupSubmit").click()});
 
 showPopup = (title,html,callback)=>{
     q("#popup").classList.remove("popupClose")
+    q("#popupCover").classList.remove("popupCoverClose")
     q("#popupHeader").textContent = title
     q("#popupHtml").innerHTML = ""
     q("#popupHtml").appendChild(html)
@@ -33,6 +33,7 @@ showPopup = (title,html,callback)=>{
     let thisCallback = (ev)=>{
         callback(ev)
         q("#popup").classList.add("popupClose")
+        q("#popupCover").classList.add("popupCoverClose")
     }
 
     q("#popupSubmit").onclick = thisCallback
@@ -65,5 +66,3 @@ function camelCaseToWords(s) {
     const result = s.replace(/([A-Z])/g, ' $1');
     return result.charAt(0).toUpperCase() + result.slice(1);
 }
-
-console.log("Testy commit 123")
