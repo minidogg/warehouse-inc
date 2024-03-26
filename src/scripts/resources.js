@@ -32,8 +32,8 @@ addProperty(game.producers,"deliveryTruck",{
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + removeExtraDecimals(game.collectableSugar)
-  document.getElementById("realResourceCount").textContent = "Sugar: " + removeExtraDecimals(game.sugar)
+  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + removeExtraDecimals(game.collectableSugar,0)
+  document.getElementById("realResourceCount").textContent = "Sugar: " + removeExtraDecimals(game.sugar,0)
 }
 
 sugar.startSugarGeneration = () => {
