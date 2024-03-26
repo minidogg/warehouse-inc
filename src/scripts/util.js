@@ -11,15 +11,15 @@ document.body.scrollTop = document.body.scrollHeight;
 
 const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
 
-showNotification = (message) => {
-  const notificationElement = document.getElementById("notification");
-  notificationElement.textContent = message;
-  notificationElement.classList.add("notification-show");
+// showNotification = (message) => {
+//   const notificationElement = document.getElementById("notification");
+//   notificationElement.textContent = message;
+//   notificationElement.classList.add("notification-show");
 
-  setTimeout(() => {
-    notificationElement.classList.remove("notification-show");
-  }, 3000); // Adjust the duration here (in milliseconds)
-}
+//   setTimeout(() => {
+//     notificationElement.classList.remove("notification-show");
+//   }, 3000); // Adjust the duration here (in milliseconds)
+// }
 
 
 q("#popup").classList.add("popupClose")
@@ -58,3 +58,6 @@ showPrompt = async (title,placeholder="",maxLen=-1)=>{
         })
     })
 }
+const removeExtraDecimals = (num,decimal)=>{
+    return parseFloat(num).toPrecision(Math.round(num).toString().length + 2);
+  }
