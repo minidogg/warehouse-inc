@@ -12,7 +12,7 @@
     padding: 2vmin;
     border-radius: 10px;
 
-    transition:top 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
 }
 
 #popupSubmit{
@@ -28,5 +28,6 @@
 }
 
 .popupClose{
-    top: 110vh!important;;
+    top: 100%!important;
+    transform: translate(-50%, 50%)!important;
 }
