@@ -1,9 +1,6 @@
 .menuContainer {
   background-color: black;
   color: white;
-
-  display: grid;
-
   border: black solid 2px;
 }
 
@@ -11,6 +8,7 @@
   background-color: #4f4f4f;
   border: #363636 solid 2px;
   transition: background-color 0.1s;
+  font-size:2vmin;
 }
 
 .menuTab:hover {
