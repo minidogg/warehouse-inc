@@ -30,5 +30,15 @@ button:active {
 
 input[type="text"] {
     all:unset;
+    color:black;
+
+    border:none;
+
     background-color: #218cff;
+    font-size: 2vmin;
+    border-radius:1vmin;
+
+    text-align: center;
+
+    padding:10px;
 }
