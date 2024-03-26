@@ -7,7 +7,7 @@ async function randomName(overwrite=false) {
   const creatorNameNouns = ['Crafter', 'Mob', 'Dev', 'Melon'];
 
 
-  var name = 'this shouldn\'t be your name and if it does then something probably went wrong';
+  var name = "this shouldn't be your name and if it does then something probably went wrong";
   if (Math.random() > 0.075) {
     name = nameAdjs[Math.floor(Math.random() * nameAdjs.length)] + ' ' + nameNouns[Math.floor(Math.random() * nameNouns.length)]
   } else {
@@ -36,7 +36,7 @@ render.renderFunctions.push(() => {
 
 // todo: update this to an actual prompt
 document.getElementById('companyName').onclick = async () => {
-  const name = await showPrompt("Company Name","Unluckycrafter",100);
+  const name = await showPrompt("Warehouse Name","Warehouse name here...",100);
   if (!name) {
     randomName(true);
   } else {
