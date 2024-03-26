@@ -32,7 +32,12 @@ async function randomName(overwrite=false) {
 render.renderFunctions.push(() => {
   document.getElementById('companyName').textContent = game.name + "'s Warehouse"
 
-  if(game.goldenName==true)document.getElementById('companyName').style.color = "gold"
+  if(game.goldenName==true){
+    document.getElementById('companyName').style.color = "gold"
+    if(!goldenNames.includes(game.name))game.goldenName = false
+  }else{
+    document.getElementById('companyName').style.color = ""
+  }
 })
 
 // todo: update this to an actual prompt
