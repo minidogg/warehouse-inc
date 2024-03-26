@@ -15,3 +15,5 @@ Secondary Vercel Host: https://warehouse-clicker-secondary.vercel.app/
 Broken And May Never Work Host: https://national-uncommon-grouper.ngrok-free.app/warehouse-inc/
 
 If for whatever reason vercel isn't deploying try the github pages site: https://minidogg.github.io/warehouse-inc/  
+
+Dev Host: 
