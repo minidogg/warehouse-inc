@@ -1,10 +1,10 @@
 // generates a random name for your warehouse :3
-var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev"]
+var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon"]
 function randomName(overwrite=false) {
   const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling"];
   const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia"];
-  const creatorNameAdjs = ['Unlucky', 'Code', 'Shadow', 'Really Bad'];
-  const creatorNameNouns = ['Crafter', 'Mob', 'Dev'];
+  const creatorNameAdjs = ['Unlucky', 'Code', 'Shadow', 'Really Bad', 'Abstract'];
+  const creatorNameNouns = ['Crafter', 'Mob', 'Dev', 'Melon'];
 
 
   var name = 'this shouldn\'t be your name and if it does then something probably went wrong';
