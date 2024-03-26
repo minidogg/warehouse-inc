@@ -25,18 +25,18 @@ showNotification = (message) => {
 document.querySelector("#popup").classList.add("popupClose")
 
 showPopup = (title,html,callback)=>{
-    document.querySelector("#popup").classList.remove("popupClose")
-    document.querySelector("#popupHeader").textContent = title
-    document.querySelector("#popupHtml").innerHTML = ""
-    document.querySelector("#popupHtml").appendChild(html)
+    q("#popup").classList.remove("popupClose")
+    q("#popupHeader").textContent = title
+    q("#popupHtml").innerHTML = ""
+    q("#popupHtml").appendChild(html)
 
     let thisCallback = (ev)=>{
         callback(ev)
-        document.querySelector("#popup").classList.add("popupClose")
+        q("#popup").classList.add("popupClose")
     }
 
-    document.body.querySelector("#popupSubmit").onclick = thisCallback
-    document.querySelector("#popup").onkeydown = (ev)=>{
+    q("#popupSubmit").onclick = thisCallback
+    q("#popup").onkeydown = (ev)=>{
 
         if(ev.key=="Enter"){
             thisCallback()
