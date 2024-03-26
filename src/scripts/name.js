@@ -36,7 +36,7 @@ render.renderFunctions.push(() => {
 
 // todo: update this to an actual prompt
 document.getElementById('companyName').onclick = async () => {
-  const name = await showPrompt("Company Name","Unluckycrafter",5);
+  const name = await showPrompt("Company Name","Unluckycrafter",100);
   if (!name) {
     randomName(true);
   } else {

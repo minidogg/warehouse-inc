@@ -30,11 +30,19 @@ showPopup = (title,html,callback)=>{
     document.querySelector("#popupHtml").innerHTML = ""
     document.querySelector("#popupHtml").appendChild(html)
 
-    var listener = document.body.querySelector("#popupSubmit").onclick = (ev)=>{
+    let thisCallback = (ev)=>{
         callback(ev)
         document.querySelector("#popup").classList.add("popupClose")
     }
 
+    document.body.querySelector("#popupSubmit").onclick = thisCallback
+    document.querySelector("#popup").onkeydown = (ev)=>{
+
+        if(ev.key=="Enter"){
+            thisCallback()
+        }
+
+    }
 }
 showPrompt = async (title,placeholder="",maxLen=-1)=>{
     return await new Promise((resolve, reject) => {
