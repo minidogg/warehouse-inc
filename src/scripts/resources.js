@@ -39,19 +39,17 @@ sugar.updateSugarCount = () => {
 sugar.startSugarGeneration = () => {
     sugar.sugarGenerationLoop()
 }
-sugar.sugarGenerationLoop = ()=>{
+sugar.sugarGenerationLoop = () => {
     game.collectableSugar += game.multiplier;
     Object.entries(game.producers).forEach((ee)=>{
         let e= ee[1]
         game.collectableSugar += e.sps*e.owned
-    })
+    });
 
     setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
 }
 
-render.renderFunctions.push(()=>{
-    sugar.updateSugarCount();
-})
+render.renderFunctions.push(sugar.updateSugarCount);
 
 
 sugar.collectSugar = () => {
