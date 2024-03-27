@@ -12,9 +12,6 @@
 </head>
 <body>
     <div id="bgscroll" class="fadeout"></div>
-    <audio id="backgroundAudio" loop autoplay>
-        <source src="/src/sfx/music/FastMenuLiteHeavy.mp3" type="audio/mp3">
-    </audio>        
     <div id="container">
         <h1>Welcome to Warehouse INC</h1>
         <p>Embark on an epic adventure in the world of warehousing!</p>
@@ -27,7 +24,6 @@
         </button>
     </div>
 
-    <script src="./src/scripts/sounds.js"></script> 
     <script>
         function switchTo(site) {
             const bgscroll = document.getElementById("bgscroll");
@@ -44,11 +40,11 @@
         }
     </script>
     <script>
+        const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
+
         document.addEventListener("DOMContentLoaded", function() {
-            let BGAudio = document.getElementById("backgroundAudio");
-            if (BGAudio.paused) {
-                BGAudio.play();
-            }
+            bgMusic.loop = true;
+            bgMusic.play();
         });
     </script>
 </body>

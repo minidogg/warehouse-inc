@@ -95,7 +95,7 @@ html,body {
     background:url("./src/images/warehouse-panorama.jpg");
     background-size: 200%;
     background-position-y: center;
-    animation: bgscroll 13s linear infinite;
+    animation: bgscroll 25s linear infinite;
 }
 
 @keyframes fadeout{
