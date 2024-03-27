@@ -7,30 +7,31 @@ shop.findCost=(baseCost,costMultiplier,numOwned)=>
         baseCost*Math.pow(1+costMultiplier,numOwned)
     );
 
-Object.entries(game.producers).forEach((ee)=>{
-    let id = ee[0]
-    let data = ee[1]
+Object.entries(game.producers).forEach((producerNameData)=>{
+    let id = producerNameData[0]
+    let data = producerNameData[1]
 
-    let el = document.createElement("div")
-    el.innerHTML = `
+    let shopItemElement = document.createElement("div")
+    shopItemElement.innerHTML = `
         <h1 class="buyOptionName">Loading your mother... this will only take 69.420 nanoseconds...</h1>
         <span class="buyOptionPrice">$69420 - 42069 SPS - 69 Owned</span>
     `
-    el.classList.add("buyOption")
-    el.q(".buyOptionName").textContent = data.name
-    el.q(".buyOptionPrice").textContent = `${shop.findCost(data.baseCost,data.costMultiplier,data.owned)} sugar - ${data.sps} SPS - ${data.owned} Owned`
+    shopItemElement.classList.add("buyOption");
+    shopItemElement.q(".buyOptionName").textContent = data.name;
+    shopItemElement.q(".buyOptionPrice").textContent = `${shop.findCost(data.baseCost,data.costMultiplier,data.owned)} sugar - ${data.sps} SPS - ${data.owned} Owned`;
 
-    el.id = shop.compileNum+"_buyOption_"+id
+    shopItemElement.id = shop.compileNum+"_buyOption_"+id;
     
 
-    q("#buyMenu").appendChild(el)
+    q("#buyMenu").appendChild(shopItemElement);
 
-    el.onclick = ()=>{
-        let fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk = game.producers[id]
-        let cost = shop.findCost(fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.baseCost,fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.costMultiplier,fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.owned)
-        if(game.sugar<=cost)showNotification("Not enough money for: '"+fun_variable_with_the_dataa_of_the_game_producers_id_thing_idk.name+"'")
+    shopItemElement.onclick = ()=>{
+        let producerData = game.producers[id]
+        let cost = shop.findCost(producerData.baseCost,producerData.costMultiplier,producerData.owned)
+        if(game.sugar <= cost)
+            showNotification("Not enough money for: '"+producerData.name+"'");
 
-        game.sugar-=cost
+        game.sugar -= cost
         game.producers[id].owned += 1
 
         shop.update()
