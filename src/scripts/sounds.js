@@ -12,6 +12,10 @@
     }
 */
 
+var sounds = {
+    click1:new Audio("./sfx/Click/Click-1.mp3")
+}
+
 const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
 
 document.addEventListener("DOMContentLoaded", function() {
