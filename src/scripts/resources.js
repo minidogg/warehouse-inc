@@ -1,6 +1,7 @@
 addProperty(game, "sugar", 0);
 addProperty(game, "collectableSugar", 0);
 addProperty(game, "multiplier", 1); 
+addProperty(game, "maxPickup", 1); 
 addProperty(game, "productionSpeed", 1000);
 addProperty(game, "producers",{});
 
@@ -27,6 +28,16 @@ sugar.sugarGenerationLoop = () => {
     setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
 }
 
+sugar.sugarPickupCalc = () => {
+    var maxPickup = game.maxPickup;
+    Object.entries(game.producers).forEach((producerNameValue)=>{
+        let producer = producerNameValue[1];
+        maxPickup += producer.pickup*producer.owned;
+    });
+
+    return maxPickup
+}
+
 render.renderFunctions.push(sugar.updateSugarCount);
 
 
@@ -34,8 +45,9 @@ sugar.collectSugar = () => {
     if (removeExtraDecimals(game.collectableSugar,0) > 0) 
         showNotification(`You collected ${removeExtraDecimals(game.collectableSugar,0)} sugar!`); 
 
-    game.sugar += game.collectableSugar;
-    game.collectableSugar = 0;
+    let collectedSugar = Math.min(game.collectableSugar, sugar.sugarPickupCalc());
+    game.sugar += collectedSugar;
+    game.collectableSugar -= collectedSugar;
     sugar.updateSugarCount();
 }
 
