@@ -2,7 +2,10 @@
 
 var shop = {}
 shop.compileNum = genRanHex(16)
-shop.findCost=(a,b,c)=>Math.floor(a*Math.pow(1+b,c));
+shop.findCost=(baseCost,costMultiplier,numOwned)=>
+    Math.floor(
+        baseCost*Math.pow(1+costMultiplier,numOwned)
+    );
 
 Object.entries(game.producers).forEach((ee)=>{
     let id = ee[0]
