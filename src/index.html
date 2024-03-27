@@ -122,13 +122,25 @@
         <script src="scripts/menu.js"></script>
 
         <script>
-            const bgMusic = new Audio('./sfx/music/ThemeBGheavy.mp3');
+            var bgMusic = [
+    '/music/ConceptualFruit.mp3',
+    '/music/ThemeBGheavy.mp3'
+];
+
+const randomMusic = bgMusic[Math.floor(Math.random() * bgMusic.length)];
+
+var finalMusic = new Audio(`./sfx/${randomMusic}`);
+
+document.addEventListener("DOMContentLoaded", function() {
+    finalMusic.play();
+});
+   /*       const bgMusic = new Audio('./sfx/music/ThemeBGheavy.mp3');
 
             document.addEventListener("DOMContentLoaded", function() {
                 bgMusic.loop = true;
                 bgMusic.play();
             });
-
+*/
         </script>
 
         <!--     This should always be the last script/element here -->

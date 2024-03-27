@@ -16,9 +16,15 @@ var sounds = {
     click1:new Audio("./sfx/Click/Click-1.mp3")
 }
 
-const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
+var bgMusic = [
+    '/music/ConceptualFruit.mp3',
+    '/music/ThemeBGheavy.mp3'
+];
+
+const randomMusic = bgMusic[Math.floor(Math.random() * bgMusic.length)];
+
+var finalMusic = new Audio(`./sfx/${randomMusic}`);
 
 document.addEventListener("DOMContentLoaded", function() {
-    bgMusic.loop = true;
-    bgMusic.play();
+    finalMusic.play();
 });
