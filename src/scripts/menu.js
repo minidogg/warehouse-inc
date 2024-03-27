@@ -22,24 +22,39 @@ settings.reset = ()=>{
         li.q("span").textContent = camelCaseToWords(name)
 
         li.q("input").value = game.settings[name]
-
-        switch (typeof(game.settings[name])) {
-            case "boolean":
-                li.q("input").type="checkbox"
-                li.q("input").checked = game.settings[name]
-                break;
-            case "number":
-                li.q("input").type="number"
-                li.q("input").pattern="\d*"
-                li.q("input").required=true
-                break;
-            case "bigint":
-                li.q("input").type="number"
-                break;
-            default:
-                li.q("input").type="text"
-                break;
+        if(typeof(game.settingsMd[name])!="undefined"){
+            console.log(game.settingsMd[name])
+            switch (game.settingsMd[name].type) {
+                case "slider":
+                    li.q("input").type="range"
+                    li.q("input").min = game.settingsMd[name].min
+                    li.q("input").max = game.settingsMd[name].max
+                    break;
+                default:
+                    li.q("input").type="text"
+                    break;
+            }
+        
+        }else{
+            switch (typeof(game.settings[name])) {
+                case "boolean":
+                    li.q("input").type="checkbox"
+                    li.q("input").checked = game.settings[name]
+                    break;
+                case "number":
+                    li.q("input").type="number"
+                    li.q("input").pattern="\d*"
+                    li.q("input").required=true
+                    break;
+                case "bigint":
+                    li.q("input").type="number"
+                    break;
+                default:
+                    li.q("input").type="text"
+                    break;
+            }
         }
+
         li.ariaLabel = name
         settingEls.push(li)
 
