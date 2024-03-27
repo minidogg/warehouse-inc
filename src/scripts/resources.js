@@ -59,6 +59,7 @@ sugar.collectSugar = () => {
       'DiabetteiseSuger.mp3',
       'AsianBetter.mp3',
       'Moogar.mp3',
+      'SugarYourCollect.mp3',
     ];
     const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
 
