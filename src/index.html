@@ -118,8 +118,18 @@
         <script src="scripts/shopitems.js"></script>
         <script src="scripts/resources.js"></script>
         <script src="scripts/shop.js"></script>
-
+        <!-- <script src="scripts/sounds.js"></script> -->
         <script src="scripts/menu.js"></script>
+
+        <script>
+            const bgMusic = new Audio('./src/sfx/music/ThemeBGheavy.mp3');
+
+            document.addEventListener("DOMContentLoaded", function() {
+                bgMusic.loop = true;
+                bgMusic.play();
+            });
+
+        </script>
 
         <!--     This should always be the last script/element here -->
         <script>

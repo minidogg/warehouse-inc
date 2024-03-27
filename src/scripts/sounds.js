@@ -11,3 +11,10 @@
         }
     }
 */
+
+const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
+
+document.addEventListener("DOMContentLoaded", function() {
+    bgMusic.loop = true;
+    bgMusic.play();
+});
