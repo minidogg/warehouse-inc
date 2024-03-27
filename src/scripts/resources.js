@@ -49,6 +49,22 @@ sugar.collectSugar = () => {
     game.sugar += collectedSugar;
     game.collectableSugar -= collectedSugar;
     sugar.updateSugarCount();
+
+    const soundFiles = [
+      'SugarAsian.mp3',
+      'SugerHighPitched.mp3',
+      'AnoyingSugar.mp3',
+      'InvertedSugar.mp3',
+      'Meep.mp3',
+      'DiabetteiseSuger.mp3',
+      'AsianBetter.mp3',
+      'Moogar.mp3',
+    ];
+    const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+
+    const audio = new Audio(`./sfx/${randomSound}`);
+
+    audio.play();
 }
 
 sugar.sugarGenerationLoop();
