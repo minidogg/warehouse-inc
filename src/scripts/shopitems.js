@@ -11,7 +11,7 @@ function loadShopItems() {
         }
     */
 
-    // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING
+    // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING // -- too bad, -Melon :)
     addProperty(game.producers,"deliveryTruck",{
         "name":"Delivery Truck",
         "sps":1.1, //sugar per second
@@ -31,4 +31,5 @@ function loadShopItems() {
         "costMultiplier":.7,
         "metadata":{}
     });
+    
 }
