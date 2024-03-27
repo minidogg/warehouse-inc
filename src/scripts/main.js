@@ -11,3 +11,6 @@ colorLog("Version " + version);
 //Everything you want to save should be in this object.
 var game = {version:version}
 addProperty(game,"settings",{});
+
+//slightly unrelated but its cool.
+document.getElementById("coverDiv").classList.add("coverDivAnimate")
