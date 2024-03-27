@@ -23,7 +23,7 @@ addProperty(game.producers,"deliveryTruck",{
     "sps":1.1, //sugar per second
     "owned":0,
     "baseCost":2,
-    "costMultiplier":1.1,
+    "costMultiplier":.7,
     "metadata":{}
 })
 
@@ -32,36 +32,36 @@ addProperty(game.producers,"deliveryTruck",{
 var sugar = {};
 
 sugar.updateSugarCount = () => {
-  document.getElementById("resourceCount").textContent = "Sugar Ready For Collecting: " + removeExtraDecimals(game.collectableSugar,0)
-  document.getElementById("realResourceCount").textContent = "Sugar: " + removeExtraDecimals(game.sugar,0)
+  q("#uncollectedCount").textContent = removeExtraDecimals(game.collectableSugar,0);
+  q("#totalCount").textContent       = removeExtraDecimals(game.sugar,0);
+  q("#spsCount").textContent         = removeExtraDecimals(game.sps, 0);
 }
 
 sugar.startSugarGeneration = () => {
-    sugar.sugarGenerationLoop()
+  sugar.sugarGenerationLoop()
 }
-sugar.sugarGenerationLoop = () => {
-    game.collectableSugar += game.multiplier;
-    Object.entries(game.producers).forEach((ee)=>{
-        let e= ee[1]
-        game.collectableSugar += e.sps*e.owned
-    });
 
-    setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
+sugar.sugarGenerationLoop = () => {
+  var newSugar = game.multiplier;
+  Object.entries(game.producers).forEach((producerNameValue)=>{
+    let producer = producerNameValue[1];
+    newSugar += producer.sps*producer.owned;
+  });
+  game.collectableSugar += newSugar;
+  game.sps = newSugar;
+
+  setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
 }
 
 render.renderFunctions.push(sugar.updateSugarCount);
 
 
 sugar.collectSugar = () => {
-  showNotification("You collected " + game.collectableSugar + " sugar!"); 
+  if (removeExtraDecimals(game.collectableSugar,0) > 0) showNotification("You collected " + removeExtraDecimals(game.collectableSugar,0) + " sugar!", 1000); 
 
-  game.sugar= game.sugar + game.collectableSugar;
+  game.sugar += game.collectableSugar;
   game.collectableSugar = 0;
   sugar.updateSugarCount();
 }
-
-document.getElementById("clickButton").addEventListener("click", () => {
-  sugar.collectSugar();
-});
 
 sugar.startSugarGeneration();

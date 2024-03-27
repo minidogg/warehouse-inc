@@ -44,11 +44,10 @@
     <h1 id="companyName" class="coolFade">Loading...</h1>
     <div class="resourcesContainer">
       <span style="width:100%;">
-        <p id="realResourceCount" class="coolFade">Total Sugar: 0</p>
-        <p id="resourceCount" class="coolFade">Sugar Ready For Collecting: 0</p>
-        <button id="clickButton" onclick="showNotification('You collected your sugar!', 1000)">Collect Sugar</button>
-        
-
+        <p class="coolFade resourceCount">Total Sugar: <span id="totalCount">0</span></p>
+        <p class="coolFade resourceCount">SPS (Sugar Per Second): <span id="spsCount">0</span></p>
+        <p class="coolFade resourceCount">Sugar Ready For Collecting: <span id="uncollectedCount">0</span></p>
+        <button id="clickButton" onclick="sugar.collectSugar();">Collect Sugar</button>
       </span>
 
     </div>
