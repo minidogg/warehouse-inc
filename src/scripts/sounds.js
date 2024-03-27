@@ -1,13 +1,12 @@
-document.getElementById('SugarCollectSoundButton').addEventListener('click', function() {
-    const soundFiles = [
-      'SugarAsian.mp3',
-      'SugerHighPitched.mp3',
-      'AnoyingSugar.mp3',
-    ];
-    const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+window.onload = setInterval(GameLoop, 1000 / 10); //10fps
 
-    const audio = new Audio(`./sfx/${randomSound}`);
+let BGAudio = new Audio();
 
-    audio.play();
-  });
-  
+BGAudio.src = '../sfx/music/FastMenuLiteHeavy.mp3';
+
+function Gameloop() {
+    BGAudio.play();
+    if (BGAudio.paused == true) {
+        BGAudio.play();
+    }
+}

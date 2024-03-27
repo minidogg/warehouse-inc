@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Warehouse INC</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse INC</title>
+    
+    <link rel="manifest" href="src/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    <link rel="icon" type="image/x-icon" href="src/images/favicon.ico">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="bgscroll" class="fadeout"></div>
+    <audio id="backgroundAudio" loop autoplay>
+        <source src="/src/sfx/music/FastMenuLiteHeavy.mp3" type="audio/mp3">
+    </audio>        
+    <div id="container">
+        <h1>Welcome to Warehouse INC</h1>
+        <p>Embark on an epic adventure in the world of warehousing!</p>
         
-        <link rel="manifest" href="src/manifest.json">
+        <button onclick="switchTo('./src/index.html')">
+            <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
+        </button>
+        <button onclick="switchTo('./credits.html')">
+            <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
+        </button>
+    </div>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
-        <link rel="icon" type="image/x-icon" href="src/images/favicon.ico">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div id="bgscroll" class="fadeout"></div>
-        <div id="container">
-            <h1>Welcome to Warehouse INC</h1>
-            <p>Embark on an epic adventure in the world of warehousing!</p>
-            
-            <button onclick="switchTo('./src/index.html')">
-                <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
-            </button>
-            <button onclick="switchTo('./credits.html')">
-                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
-            </button>
-        </div>
+    <script src="./src/scripts/sounds.js"></script> 
+    <script>
+        function switchTo(site) {
+            const bgscroll = document.getElementById("bgscroll");
+            const container = document.getElementById("container")
 
-        <script>
-            function switchTo(site) {
-                const bgscroll = document.getElementById("bgscroll");
-                const container = document.getElementById("container")
+            container.style.transform = "translateY(100vh)";
+            bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
+            bgscroll.style.animation = "fadeout 1s";
 
-                container.style.transform = "translateY(100vh)";
-                bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
-                bgscroll.style.animation = "fadeout 1s";
-
-                container.style.transform = "translateY(100vh)";
-                setTimeout(()=>{
-                    window.location.href = site;
-                },1100)
+            container.style.transform = "translateY(100vh)";
+            setTimeout(()=>{
+                window.location.href = site;
+            },1100)
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let BGAudio = document.getElementById("backgroundAudio");
+            if (BGAudio.paused) {
+                BGAudio.play();
             }
-        </script>
-    </body>
+        });
+    </script>
+</body>
 </html>
