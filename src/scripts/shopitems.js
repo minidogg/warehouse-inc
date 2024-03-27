@@ -15,7 +15,7 @@ function loadShopItems() {
     addProperty(game.producers,"deliveryTruck",{
         "name":"Delivery Truck",
         "sps":1.1, //sugar per second
-        "pickup":0.5, //how much sugar you can pick up
+        "pickup":0, //how much sugar you can pick up
         "owned":0,
         "baseCost":2,
         "costMultiplier":.7,
