@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div id="autoplayPopup" style="display: fix;">Autoplay is disabled for this site. Click <a onclick="bgMusic.play();document.getElementById('autoplayPopup').classList.add('autoplayPopupLeave')">here</a> to play background music.</div>
     <div id="bgscroll" class="fadeout"></div>
     <div id="container">
         <h1>Welcome to Warehouse INC</h1>
@@ -44,7 +45,11 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             bgMusic.loop = true;
-            bgMusic.play();
+            try {
+                bgMusic.play();
+            } catch {
+                delete document.getElementById("autoplayPopup").style.display;
+            }
         });
     </script>
 </body>
