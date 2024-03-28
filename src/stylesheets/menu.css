@@ -15,6 +15,7 @@
 
 .menuTab:hover {
   background-color: #666666;
+  padding-left:1.5em;
 }
 
 .menuTab:active {
