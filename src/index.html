@@ -86,6 +86,16 @@
             </div>
         </div>
 
+        <script>
+            function mainMenuButton() {
+                document.getElementById("coverDiv").classList.remove("coverDivAnimate")
+                setTimeout(() => {
+                    window.location.href = "../"
+                }, 1000);
+            }
+        </script>
+        
+        <button id="mainMenuButton" onclick="mainMenuButton()"><div class="burguerer"></div><div class="burguerer"></div><div class="burguerer"></div></button>
         <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
         <button id="resetBtn" style="bottom: 70px !important;" onclick="saving.save()">Save</button>
         <div class="save-icon"></div>
