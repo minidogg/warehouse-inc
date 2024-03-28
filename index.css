@@ -51,6 +51,21 @@ body {
     padding: 20px;
 }
 
+#crapOfTheDay {
+    position: fixed;
+    text-align: center;
+    color: #fff;
+
+    transition: transform 1s ease-in-out;
+
+    background-color: #333333ad;
+    border-top: #242424 5px solid;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 h1 {
     font-size: 8vmin;
     margin-bottom: 20px; 
@@ -92,20 +107,6 @@ button:hover {
     line-height:100%;
     font-size: 2.5vmin;
     /*font-weight: normal;*/
-}
-
-@keyframes rotateEndlessly
-{
-    from 
-    {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to 
-    {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
 }
 
 html,body {
