@@ -42,13 +42,14 @@ render.renderFunctions.push(sugar.updateSugarCount);
 
 
 sugar.collectSugar = () => {
-    if (removeExtraDecimals(game.collectableSugar,0) > 0) 
-        showNotification(`You collected ${removeExtraDecimals(game.collectableSugar,0)} sugar!`); 
 
     let collectedSugar = Math.min(game.collectableSugar, sugar.sugarPickupCalc());
     game.sugar += collectedSugar;
     game.collectableSugar -= collectedSugar;
     sugar.updateSugarCount();
+
+    if (removeExtraDecimals(collectedSugar, 0) > 0) 
+        showNotification(`You collected ${removeExtraDecimals(collectedSugar,0)} sugar!`); 
 
     const soundFiles = [
       '/Collect/SugarAsian.mp3',

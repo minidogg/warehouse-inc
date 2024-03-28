@@ -7,10 +7,36 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('background.jpg'); 
     background-size: cover;
 
     overflow:hidden;
+}
+
+#autoplayPopup {
+    position: fixed;
+    text-align: center;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    padding-left:   .5vw;
+    padding-right:  .5vw;
+    padding-top:    .25vw;
+    padding-bottom: .25vw;
+    border-radius:  .25vw;
+    background-color: #302727b0;
+    top: 2vh;
+    font-size: 2vmin;
+    color: rgb(247, 66, 66);
+}
+#autoplayPopup a {
+    text-decoration: underline;
+    color: rgb(172, 42, 42);
+    cursor: pointer;
+}
+
+.autoplayPopupLeave {
+    top: 0!important;
+    transform: translate(-50%, -100%)!important;
+    transition: all 0.25s ease-in-out;
 }
 
 #container {
