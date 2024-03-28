@@ -23,9 +23,23 @@ button:active {
 }
 
 #resetBtn {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
     right: 10px;
+}
+
+#mainMenuButton {
+    position: fixed;
+    left: 2vmin;
+    bottom: 2vmin;
+    text-decoration: underline overline;
+}
+
+.burguerer {
+    width: 5vmin;
+    height: 0.5vmin;
+    background-color: white;
+    margin: 6px 0;
 }
 
 input[type="text"] {

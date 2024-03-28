@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 }
-#resourceCount{
+.resourceCount{
     font-size: 2.5vmin!important;
 
     color:white;
@@ -16,16 +16,7 @@
     text-align: center;
 
 }
-#realResourceCount{
-    font-size: 2.5vmin!important;
 
-    color:white;
-    width:25vw;
-    margin-left:2.5vw;
-
-    text-align: center;
-
-}
 #clickButton{
     margin-top:0.5vh;
     display: block;
