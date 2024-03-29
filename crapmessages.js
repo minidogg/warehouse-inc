@@ -18,5 +18,6 @@ const crapMessages = [
   }
 </style>
 <div style="font-size:8vmin" id=spinny>SPIN</div>
-`
+`,
+"<span style='color:#800000; font-weight:bold; '>int</span> age <span style='color:#808030; '>=</span> just a number  <span style='color:#ba6ca1; '>:3</span>"
 ];
