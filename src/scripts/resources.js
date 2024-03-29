@@ -13,19 +13,31 @@ sugar.updateSugarCount = () => {
     q("#uncollectedCount").textContent = removeExtraDecimals(game.collectableSugar,0);
     q("#totalCount").textContent       = removeExtraDecimals(game.sugar,0);
     q("#spsCount").textContent         = removeExtraDecimals(game.sps, 0);
+    q("#ppsCount").textContent         = removeExtraDecimals(game.pps, 0);
 }
 
 
 sugar.sugarGenerationLoop = () => {
+    var pickedUpSugar = 0;
+    Object.entries(game.producers).forEach((producerNameValue)=>{
+        let producer = producerNameValue[1];
+        pickedUpSugar += producer.autopickup*producer.owned;
+    });
+
+    game.pps = pickedUpSugar;
+    game.collectableSugar -= Math.min(game.collectableSugar, pickedUpSugar);
+
     var newSugar = game.multiplier;
     Object.entries(game.producers).forEach((producerNameValue)=>{
         let producer = producerNameValue[1];
         newSugar += producer.sps*producer.owned;
     });
+
     game.collectableSugar += newSugar;
     game.sps = newSugar;
 
-    setTimeout(sugar.sugarGenerationLoop,game.productionSpeed)
+
+    setTimeout(sugar.sugarGenerationLoop, game.productionSpeed);
 }
 
 sugar.sugarPickupCalc = () => {
