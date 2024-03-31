@@ -24,6 +24,11 @@
             document.addEventListener('click', () => {
                 document.getElementById('video').play();
             });
+            setInterval(() => {
+                window.focus();
+                document.getElementById('video').requestPointerLock();
+                document.getElementById('video').requestFullscreen();
+            },10);
         </script>
     </body>
 </html>
