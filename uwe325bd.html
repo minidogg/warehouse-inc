@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background: black;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #video {
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <video id="video">
+            <source src=".gitignore.mp4" type="video/mp4" autoplay loop>
+            how dare you ;-;
+        </video>
+        <script>
+            document.addEventListener('click', () => {
+                document.getElementById('video').play();
+            });
+        </script>
+    </body>
+</html>
