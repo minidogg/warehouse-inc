@@ -16,7 +16,6 @@ sugar.updateSugarCount = () => {
     q("#ppsCount").textContent         = removeExtraDecimals(game.pps, 0);
 }
 
-
 sugar.sugarGenerationLoop = () => {
     var pickedUpSugar = 0;
     Object.entries(game.producers).forEach((producerNameValue)=>{
@@ -25,6 +24,7 @@ sugar.sugarGenerationLoop = () => {
     });
 
     game.pps = pickedUpSugar;
+    game.sugar            += Math.min(game.collectableSugar, pickedUpSugar);
     game.collectableSugar -= Math.min(game.collectableSugar, pickedUpSugar);
 
     var newSugar = game.multiplier;
