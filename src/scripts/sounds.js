@@ -18,7 +18,8 @@ var sounds = {
 
 var bgMusic = [
     '/music/ConceptualFruit.mp3',
-    '/music/ThemeBGheavy.mp3'
+    '/music/ThemeBGheavy.mp3',
+    '/music/DaysAhead.mp3'
 ];
 
 const randomMusic = bgMusic[Math.floor(Math.random() * bgMusic.length)];

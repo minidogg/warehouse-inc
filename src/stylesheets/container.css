@@ -24,6 +24,7 @@
     position: absolute;
     left:75vw;
     top:0;
+    overflow: auto;
 
     background-color: #3b3b3b;
     width:25vw;
