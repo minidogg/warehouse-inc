@@ -9,7 +9,7 @@ const crapMessages = [
 '<span style="color:#6bc5b9; font-family:\'Comic Sans MS\', \'Comic Sans\', cursive">Comic sans is the superior font</span>',
 'Please don\'t look at quotes\" -@ʌǝp pɐq ʎllɐǝɹ :3 2024',
 '\"OMG DONT SCROLL UP\" -@ʌǝp pɐq ʎllɐǝɹ :3 2024',
-'\"erm \"I mean there\'s mayonnaise cakes, I don\'t know why there wouldn\'t be mayonnaise cookies.\"* they exist\" - d_zrugger :3 — 03/27/2024 3:57 PM',
+// '\"erm \"I mean there\'s mayonnaise cakes, I don\'t know why there wouldn\'t be mayonnaise cookies.\"* they exist\" - d_zrugger :3 — 03/27/2024 3:57 PM',
 '\"I\'m fine. I\'m just having a bit of a seisure.\" - @ʌǝp pɐq ʎllɐǝɹ :3 2024',
 '\"WHY IS EVERYONE TYPING\" - @ʌǝp pɐq ʎllɐǝɹ :3 2024',
 '\"very loud wooshing noises\" @mackywater! 2024',
