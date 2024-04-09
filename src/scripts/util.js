@@ -141,7 +141,9 @@ function getStoreName() {
     
 }
 
-//kind of like a hooking system
+/*
+The deep below util's purpose is to allow the ability to call functions that are deeper down in the script chain.
+*/
 var deepBelow = {refs:{}}
 deepBelow.add = (funcName,func)=>{
     deepBelow.refs[funcName]=func
