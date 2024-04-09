@@ -140,3 +140,23 @@ function getCookieCount() {
 function getStoreName() {
     
 }
+
+//kind of like a hooking system
+var deepBelow = {refs:{}}
+deepBelow.add = (funcName,func)=>{
+    deepBelow.refs[funcName]=func
+}
+deepBelow.runSync = (funcName,...args)=>{
+    try{
+        return deepBelow.refs[funcName](...args)
+    }catch(err){
+        console.warn(`When attempting to run func: ${funcName}`+err)
+    }
+}
+deepBelow.run = async(funcName,...args)=>{
+    try{
+        return await deepBelow.refs[funcName](...args)
+    }catch(err){
+        console.warn(`When attempting to run func: ${funcName}`+err)
+    }
+}
