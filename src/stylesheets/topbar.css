@@ -18,7 +18,7 @@
     top: 40px; 
 }
 
-.newsFeed {
+#newsFeed {
     overflow: hidden;
     white-space: nowrap;
 }
