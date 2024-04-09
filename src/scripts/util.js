@@ -159,6 +159,6 @@ deepBelow.run = async(funcName,...args)=>{
     try{
         return await deepBelow.refs[funcName](...args)
     }catch(err){
-        console.warn(`When attempting to run func: ${funcName}`+err)
+        console.warn(`When attempting to run func: '${funcName}', with args: [${args}], using Deep Below Util, got error: `+err)
     }
 }
