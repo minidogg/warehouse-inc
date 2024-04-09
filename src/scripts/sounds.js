@@ -42,6 +42,9 @@ music.musicLoop=()=>{
     music.current = music.randomMusic()
     music.currentAudio = undefined
     music.currentAudio = music.toSound(music.current)
+    
+    music.currentAudio.volume = parseFloat(game.settings.musicVolume/100)
+
     music.currentAudio.play()
     music.currentAudio.addEventListener("ended",()=>{
         console.log("Music ended!")
