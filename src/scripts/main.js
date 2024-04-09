@@ -12,6 +12,7 @@ document.getElementById('versionNumber').innerText = version;
 //Everything you want to save should be in this object.
 var game = {version:version}
 addProperty(game,"settings",{});
+addProperty(game,"settingsMd",{});
 
 //slightly unrelated but its cool.
 document.getElementById("coverDiv").classList.add("coverDivAnimate")
