@@ -1,20 +1,19 @@
-/* Adjusted main containers */
 .leftContainer {
     position: absolute;
     left: 0;
-    top: 40px; /* Adjusted to make room for the top bar */
+    top: 40px; 
     background-color: #3b3b3b;
     width: 30vw;
-    height: calc(100vh - 40px); /* Adjusted height to fit remaining viewport height */
+    height: calc(100vh - 40px); 
 }
 
 .middleContainer {
     position: absolute;
     left: 30vw;
-    top: 40px; /* Adjusted to make room for the top bar */
+    top: 40px; 
     background-color: #585858;
     width: 45vw;
-    height: calc(100vh - 40px); /* Adjusted height to fit remaining viewport height */
+    height: calc(100vh - 40px);
     border-right: #181818 5px solid;
     border-left: #181818 5px solid;
     z-index: 5;
@@ -23,10 +22,10 @@
 .rightContainer {
     position: absolute;
     left: 75vw;
-    top: 40px; /* Adjusted to make room for the top bar */
+    top: 40px; 
     overflow: auto;
     background-color: #3b3b3b;
     width: 25vw;
-    height: calc(100vh - 40px); /* Adjusted height to fit remaining viewport height */
+    height: calc(100vh - 40px); 
     border-right: #181818 5px solid;
 }
