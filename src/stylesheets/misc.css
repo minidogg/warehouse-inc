@@ -44,7 +44,7 @@
     cursor: pointer;
     width: 80%;
     position: absolute;
-    bottom: 15vmin;
+    bottom: 12vmin;
     transform: translateX(12%);
     transition: transform 0.2s;
 }
