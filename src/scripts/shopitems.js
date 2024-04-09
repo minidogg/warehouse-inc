@@ -13,168 +13,298 @@ function loadShopItems() {
     */
 
     // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING // -- too bad, -Melon :)
-    addProperty(game.producers,"deliveryTruck",{
-        "name":"Delivery Truck",
-        "sps":1.1, //sugar per second
-        "pickup":0, //how much sugar you can pick up
-        "autopickup": 0, //how much sugar is picked up automatically every second
-        "owned":0,
-        "baseCost":2,
-        "costMultiplier":.7,
-        "metadata":{}
+    addProperty(game.producers, "deliveryTruck", {
+        "name": "Delivery Truck",
+        "sps": 1.1,
+        "pickup": 0,
+        "autopickup": 0,
+        "owned": 0,
+        "baseCost": 2,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"collectingCrew",{
-        "name":"Collecting Crew",
-        "sps": .2, //sugar per second
-        "pickup": 2, //how much sugar you can pick up
-        "autopickup": .5, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "collectingCrew", {
+        "name": "Collecting Crew",
+        "sps": 0.5,
+        "pickup": 2,
+        "autopickup": 0.3,
         "owned": 0,
-        "baseCost":16,
-        "costMultiplier":.7,
-        "metadata":{}
+        "baseCost": 20,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"forklift",{
-        "name":"Forklift",
-        "sps": .1, //sugar per second
-        "pickup": 4, //how much sugar you can pick up
-        "autopickup": 6, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "forklift", {
+        "name": "Forklift",
+        "sps": 0.2,
+        "pickup": 4,
+        "autopickup": 1,
         "owned": 0,
-        "baseCost":256,
-        "costMultiplier":.7,
-        "metadata":{}
+        "baseCost": 200,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"childLabor",{
-        "name":"Child Labor",
-        "sps": 8, //sugar per second
-        "pickup": 6, //how much sugar you can pick up
-        "autopickup": 12, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "childLabor", {
+        "name": "Child Labor",
+        "sps": 1,
+        "pickup": 6,
+        "autopickup": 1.5,
         "owned": 0,
-        "baseCost":1334,
-        "costMultiplier":.6,
-        "metadata":{}
+        "baseCost": 1500,
+        "costMultiplier": 0.6,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"artificialFarms",{
-        "name":"Artificial Farms",
-        "sps": 12, //sugar per second
-        "pickup": 15, //how much sugar you can pick up
-        "autopickup": 10, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "artificialFarms", {
+        "name": "Artificial Farms",
+        "sps": 5,
+        "pickup": 20,
+        "autopickup": 0,
         "owned": 0,
-        "baseCost":8000,
-        "costMultiplier":.7,
-        "metadata":{}
+        "baseCost": 10000,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"machinery",{
-        "name":"Machinery",
-        "sps": 50, //sugar per second
-        "pickup": 50, //how much sugar you can pick up
-        "autopickup": 50, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "machinery", {
+        "name": "Machinery",
+        "sps": 10,
+        "pickup": 50,
+        "autopickup": 5,
         "owned": 0,
-        "baseCost":25000,
-        "costMultiplier":.7,
-        "metadata":{}
+        "baseCost": 50000,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"conveyor",{
-        "name":"Conveyor",
-        "sps": 0, //sugar per second
-        "pickup": 1, //how much sugar you can pick up
-        "autopickup": 80, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "conveyor", {
+        "name": "Conveyor",
+        "sps": 0,
+        "pickup": 1,
+        "autopickup": 80,
         "owned": 0,
-        "baseCost":30000,
-        "costMultiplier":.7,
-        "metadata":{}
+        "baseCost": 80000,
+        "costMultiplier": 0.7,
+        "metadata": {}
     });
 
-    addProperty(game.producers,"smallStartups",{
-        "name":"Small Startups",
-        "sps": 120, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "smallStartups", {
+        "name": "Small Startups",
+        "sps": 20,
+        "pickup": 10,
+        "autopickup": 20,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 200000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 
-    addProperty(game.producers,"FlourFactories",{
-        "name":"Flour Factories",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "flourFactories", {
+        "name": "Flour Factories",
+        "sps": 15,
+        "pickup": 30,
+        "autopickup": 25,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 500000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 
-    addProperty(game.producers,"WheatFarm",{
-        "name":"Wheat Farm",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "wheatFarm", {
+        "name": "Wheat Farm",
+        "sps": 25,
+        "pickup": 25,
+        "autopickup": 30,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 700000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 
-    addProperty(game.producers,"chocolate",{
-        "name":"Chocolate",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "chocolateFactory", {
+        "name": "Chocolate Factory",
+        "sps": 40,
+        "pickup": 40,
+        "autopickup": 35,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 1000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 
-    addProperty(game.producers,"CaocoFarm",{
-        "name":"CaocoFarm",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "cacaoFarm", {
+        "name": "Cacao Farm",
+        "sps": 30,
+        "pickup": 20,
+        "autopickup": 40,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 800000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    addProperty(game.producers, "sugarPlantation", {
+        "name": "Sugar Plantation",
+        "sps": 60,
+        "pickup": 50,
+        "autopickup": 45,
+        "owned": 0,
+        "baseCost": 1500000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "sugarRefinery", {
+        "name": "Sugar Refinery",
+        "sps": 100,
+        "pickup": 80,
+        "autopickup": 60,
+        "owned": 0,
+        "baseCost": 3000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "candyFactory", {
+        "name": "Candy Factory",
+        "sps": 150,
+        "pickup": 120,
+        "autopickup": 80,
+        "owned": 0,
+        "baseCost": 6000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "sugarEmpire", {
+        "name": "Sugar Empire",
+        "sps": 300,
+        "pickup": 200,
+        "autopickup": 150,
+        "owned": 0,
+        "baseCost": 12000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "sweetMegaCorp", {
+        "name": "Sweet MegaCorp",
+        "sps": 500,
+        "pickup": 300,
+        "autopickup": 250,
+        "owned": 0,
+        "baseCost": 25000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "sugarExtravaganza", {
+        "name": "Sugar Extravaganza",
+        "sps": 1000,
+        "pickup": 600,
+        "autopickup": 500,
+        "owned": 0,
+        "baseCost": 50000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "sugarHeaven", {
+        "name": "Sugar Heaven",
+        "sps": 2000,
+        "pickup": 1200,
+        "autopickup": 1000,
+        "owned": 0,
+        "baseCost": 100000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    addProperty(game.producers, "SugarHarvester", {
+        "name": "Sugar Harvester",
+        "sps": 4000,
+        "pickup": 3000,
+        "autopickup": 2500,
+        "owned": 0,
+        "baseCost": 200000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "SweetenerFactory", {
+        "name": "Sweetener Factory",
+        "sps": 8000,
+        "pickup": 6000,
+        "autopickup": 5000,
+        "owned": 0,
+        "baseCost": 400000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "SugarMonopoly", {
+        "name": "Sugar Monopoly",
+        "sps": 16000,
+        "pickup": 12000,
+        "autopickup": 10000,
+        "owned": 0,
+        "baseCost": 800000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "CandyKingdom", {
+        "name": "Candy Kingdom",
+        "sps": 32000,
+        "pickup": 24000,
+        "autopickup": 20000,
+        "owned": 0,
+        "baseCost": 1600000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "SugarGalaxy", {
+        "name": "Sugar Galaxy",
+        "sps": 64000,
+        "pickup": 48000,
+        "autopickup": 40000,
+        "owned": 0,
+        "baseCost": 3200000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "CandyUniverse", {
+        "name": "Candy Universe",
+        "sps": 128000,
+        "pickup": 96000,
+        "autopickup": 80000,
+        "owned": 0,
+        "baseCost": 6400000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
+    
+    addProperty(game.producers, "SugarCosmos", {
+        "name": "Sugar Cosmos",
+        "sps": 256000,
+        "pickup": 192000,
+        "autopickup": 160000,
+        "owned": 0,
+        "baseCost": 12800000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 
-    addProperty(game.producers,"smallStartups",{
-        "name":"Small Startups",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
+    addProperty(game.producers, "SugarSupremacy", {
+        "name": "Sugar Supremacy",
+        "sps": 8192000,
+        "pickup": 6144000,
+        "autopickup": 5120000,
         "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
-
-    addProperty(game.producers,"smallStartups",{
-        "name":"Small Startups",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
-        "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
-
-    addProperty(game.producers,"smallStartups",{
-        "name":"Small Startups",
-        "sps": 80, //sugar per second
-        "pickup": 20, //how much sugar you can pick up
-        "autopickup": 60, //how much sugar is picked up automatically every second
-        "owned": 0,
-        "baseCost":200000,
-        "costMultiplier":.7,
-        "metadata":{}
-    }); 
+        "baseCost": 409600000000,
+        "costMultiplier": 0.7,
+        "metadata": {}
+    });
 }

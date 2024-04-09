@@ -1,33 +1,31 @@
-/* This has stuff to do with the main containers. */
 .leftContainer {
     position: absolute;
-    left:0;
-    top:0;
-
+    left: 0;
+    top: 40px; 
     background-color: #3b3b3b;
-    width:30vw;
-    height: 100vh;
+    width: 30vw;
+    height: calc(100vh - 40px); 
 }
+
 .middleContainer {
     position: absolute;
-    left:30vw;
-    top:0;
-
+    left: 30vw;
+    top: 40px; 
     background-color: #585858;
-    width:45vw;
-    height: 100vh;
+    width: 45vw;
+    height: calc(100vh - 40px);
     border-right: #181818 5px solid;
     border-left: #181818 5px solid;
     z-index: 5;
 }
+
 .rightContainer {
     position: absolute;
-    left:75vw;
-    top:0;
-
+    left: 75vw;
+    top: 40px; 
+    overflow: auto;
     background-color: #3b3b3b;
-    width:25vw;
-    height: 100vh;
+    width: 25vw;
+    height: calc(100vh - 40px); 
     border-right: #181818 5px solid;
 }
-

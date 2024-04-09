@@ -9,11 +9,29 @@ loadShopItems();
 
 var sugar = {};
 
+const newsData = [
+    { threshold: 100, content: "News for users with less than 100 sugar" },
+    { threshold: 500, content: "News for users with less than 500 sugar" },
+];
+
+const newsFeedElement = document.getElementById('newsFeed');
+
 sugar.updateSugarCount = () => {
     q("#uncollectedCount").textContent = removeExtraDecimals(game.collectableSugar,0);
     q("#totalCount").textContent       = removeExtraDecimals(game.sugar,0);
     q("#spsCount").textContent         = removeExtraDecimals(game.sps, 0);
     q("#ppsCount").textContent         = removeExtraDecimals(game.pps, 0);
+}
+
+function updateNews(totalSugar) {
+    let selectedNews = newsData.find(item => totalSugar < item.threshold);
+
+    if (!selectedNews) {
+        selectedNews = newsData[newsData.length - 1];
+    }
+
+    console.log(selectedNews)
+    newsFeedElement.innerText = selectedNews.content;
 }
 
 sugar.sugarGenerationLoop = () => {
@@ -59,6 +77,7 @@ sugar.collectSugar = () => {
     game.sugar += collectedSugar;
     game.collectableSugar -= collectedSugar;
     sugar.updateSugarCount();
+    updateNews(sugar);
 
     if (removeExtraDecimals(collectedSugar, 0) > 0) 
         showNotification(`You collected ${removeExtraDecimals(collectedSugar,0)} sugar!`); 
@@ -85,3 +104,4 @@ sugar.collectSugar = () => {
 }
 
 sugar.sugarGenerationLoop();
+

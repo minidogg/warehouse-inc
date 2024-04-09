@@ -26,15 +26,15 @@
         </div>
 
         <div id="crapOfTheDay">
-            <span style="font-size: 4vmin;color: #a6a7cf;">Quote of the day:</span><br>
+            <span style="font-size: 4vmin;color: #a6a7cf;">Quote of the minute:</span><br>
             <span id="crapContents" style="font-size: 3vmin;"></span>
         </div>
 
-        <script src="crapmessages.js"></script>
+        <script src="./src/data/crapmessages.js"></script>
 
         <script>
             const firstCrapDate = new Date(2024, 2, 28);
-            let daysSinceCrapCreation = Math.floor((new Date() - firstCrapDate) / (1000 * 3600 * 24));
+            let daysSinceCrapCreation = Math.floor((new Date() - firstCrapDate) / (1000 * 60)); // et daysSinceCrapCreation = Math.floor((new Date() - firstCrapDate) / (1000 * 3600 * 24));
             const crapContents = document.getElementById("crapContents");
             
             crapContents.innerHTML = crapMessages[daysSinceCrapCreation % crapMessages.length];

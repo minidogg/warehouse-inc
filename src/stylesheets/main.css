@@ -1,8 +1,8 @@
 /* This stylesheet should only ever be modified to add basic styling, or styling that is used often */
 *{
     /* Haha, Comic sans goes brrr */
-    /* font-family: 'Comic Sans MS', cursive, sans-serif; */
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    /* font-family: Arial, sans-serif; */
     margin:0;
 }
 body{
@@ -12,4 +12,38 @@ body{
 .coolFade{
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.9) 80%, rgba(255,0,0,0) 100%); 
+}
+
+
+/* FIREFOX! */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #333 #555; 
+}
+
+*::-moz-scrollbar-thumb {
+    background-color: #555; 
+    border-radius: 5px; 
+}
+
+*::-moz-scrollbar-thumb:hover {
+    background-color: #777; 
+}
+
+/* Google and edge */
+
+::-webkit-scrollbar {
+    width: 10px; 
+    background-color: #333; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #555; 
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777; 
 }

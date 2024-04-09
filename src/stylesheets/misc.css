@@ -39,3 +39,20 @@
     padding: 1vh 0; 
     background-color: #333; 
 }
+
+.warehouseicon {
+    cursor: pointer;
+    width: 80%;
+    position: absolute;
+    bottom: 12vmin;
+    transform: translateX(12%);
+    transition: transform 0.2s;
+}
+
+.warehouseicon:hover {
+    transform: scale(1.01) translateX(12%);
+}
+
+.warehouseicon:active {
+    transform: scale(0.95) translateX(12%);
+}
