@@ -42,7 +42,7 @@ music.musicLoop=()=>{
     music.current = music.randomMusic()
     music.currentAudio = undefined
     music.currentAudio = music.toSound(music.current)
-    
+
     music.currentAudio.volume = parseFloat(game.settings.musicVolume/100)
 
     music.currentAudio.play()
@@ -55,22 +55,23 @@ setInterval(()=>{
     music.currentAudio.volume = parseFloat(game.settings.musicVolume/100)
 })
 
+music.soundFiles = [
+    '/Collect/SugarAsian.mp3',
+    '/Collect/SugerHighPitched.mp3',
+    '/Collect/AnoyingSugar.mp3',
+    '/Collect/AnoyingSugar.mp3',
+    '/Collect/InvertedSugar.mp3',
+    '/Collect/Meep.mp3',
+    '/Collect/DiabetteiseSuger.mp3',
+    '/Collect/AsianBetter.mp3',
+    '/Collect/AsianBetter.mp3',
+    '/Collect/Moogar.mp3',
+    '/Collect/SugarYourCollect.mp3',
+    '/Collect/SugarYourCollect.mp3',
+  ];
+
 deepBelow.add("collectSound",()=>{
-    const soundFiles = [
-        '/Collect/SugarAsian.mp3',
-        '/Collect/SugerHighPitched.mp3',
-        '/Collect/AnoyingSugar.mp3',
-        '/Collect/AnoyingSugar.mp3',
-        '/Collect/InvertedSugar.mp3',
-        '/Collect/Meep.mp3',
-        '/Collect/DiabetteiseSuger.mp3',
-        '/Collect/AsianBetter.mp3',
-        '/Collect/AsianBetter.mp3',
-        '/Collect/Moogar.mp3',
-        '/Collect/SugarYourCollect.mp3',
-        '/Collect/SugarYourCollect.mp3',
-      ];
-      const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+      const randomSound = music.soundFiles[Math.floor(Math.random() * soundFiles.length)];
   
       const audio = new Audio(`./sfx/${randomSound}`);
       audio.volume = game.settings.soundVolume/100
