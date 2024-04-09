@@ -59,6 +59,7 @@ sugar.collectSugar = () => {
     game.sugar += collectedSugar;
     game.collectableSugar -= collectedSugar;
     sugar.updateSugarCount();
+    updateNews(sugar);
 
     if (removeExtraDecimals(collectedSugar, 0) > 0) 
         showNotification(`You collected ${removeExtraDecimals(collectedSugar,0)} sugar!`); 

@@ -3,10 +3,11 @@ colorLog("Starting Warehouse Inc.","green","30px");
 
 //This should be using Semantic Versioning from https://semver.org/
 //You should use a to show alpha and b to show beta. Any other short terms should be stated after the dash.
-var version = "0.2.0a-";
+var version = "0.2.0-alpha";
 
 colorLog("Version " + version);
 
+document.getElementById('versionNumber').innerText = version;
 
 //Everything you want to save should be in this object.
 var game = {version:version}
