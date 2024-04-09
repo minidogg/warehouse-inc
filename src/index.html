@@ -12,6 +12,8 @@
         <link rel="manifest" href="manifest.json">
 
         <title>Warehouse INC</title>
+
+        <!-- dats a lot of styles-->
         <link rel="stylesheet" href="stylesheets/main.css">
         <link rel="stylesheet" href="stylesheets/input.css">
         <link rel="stylesheet" href="stylesheets/container.css">
@@ -45,9 +47,11 @@
             <div class="resourcesContainer">
                 <span style="width:100%;">
                     <p class="coolFade resourceCount">Total Sugar: <span id="totalCount">0</span></p>
-                    <p class="coolFade resourceCount">SPS (Sugar Per Second): <span id="spsCount">0</span></p>
+                    <p class="coolFade resourceCount">Sugar Per Second: <span id="spsCount">0</span></p>
+                    <p class="coolFade resourceCount">Auto Collect Per Second: <span id="ppsCount">0</span></p>
                     <p class="coolFade resourceCount">Sugar Ready For Collecting: <span id="uncollectedCount">0</span></p>
                     <button id="clickButton" onclick="sugar.collectSugar();">Collect Sugar</button>
+                    <img src="./images/warehouseicon.png" alt="Clickable Image" onclick="game.sugar += 5;" class="warehouseicon" style="cursor:pointer;">
                 </span>
 
             </div>
@@ -86,8 +90,18 @@
             </div>
         </div>
 
+        <script>
+            function mainMenuButton() {
+                document.getElementById("coverDiv").classList.remove("coverDivAnimate")
+                setTimeout(() => {
+                    window.location.href = "../"
+                }, 1000);
+            }
+        </script>
+        
+        <button id="mainMenuButton" onclick="mainMenuButton()"><div class="burguerer"></div><div class="burguerer"></div><div class="burguerer"></div></button>
         <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
-        <button id="resetBtn" style="bottom: 70px !important;" onclick="saving.save()">Save</button>
+        <button id="resetBtn" style="bottom: 80px !important;" onclick="saving.save()">Save</button>
         <div class="save-icon"></div>
         <div class="notification-container"></div>
 
@@ -111,8 +125,6 @@
         <script src="scripts/main.js"></script>
         <script src="scripts/save.js"></script>
 
-        <!-- Melons Epic Utils & Stuff-->
-
         <!-- game scripts -->
         <script src="scripts/name.js"></script>
         <script src="scripts/shopitems.js"></script>
@@ -123,6 +135,28 @@
         <!-- This contains settings so it has to be after pretty much ever game script -->
         <script src="scripts/menu.js"></script>
 
+        <script>
+            var bgMusic = [
+                '/music/ConceptualFruit.mp3',
+                '/music/ThemeBGheavy.mp3'
+            ];
+
+            const randomMusic = bgMusic[Math.floor(Math.random() * bgMusic.length)];
+
+            var finalMusic = new Audio(`./sfx/${randomMusic}`);
+
+            document.addEventListener("DOMContentLoaded", function() {
+                finalMusic.play();
+            });
+            /*
+            const bgMusic = new Audio('./sfx/music/ThemeBGheavy.mp3');
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    bgMusic.loop = true;
+                    bgMusic.play();
+                });
+            */
+        </script>
 
         <!--     This should always be the last script/element here -->
         <script>

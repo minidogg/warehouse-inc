@@ -20,7 +20,8 @@ var music = {}
 
 music.bgMusic = [
     '/music/ConceptualFruit.mp3',
-    '/music/ThemeBGheavy.mp3'
+    '/music/ThemeBGheavy.mp3',
+    '/music/DaysAhead.mp3'
 ];
 music.randomMusic = ()=>music.bgMusic[Math.floor(Math.random() * music.bgMusic.length)]
 music.toSound = (music)=>new Audio(`./sfx/${music}`);

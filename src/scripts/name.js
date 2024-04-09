@@ -1,5 +1,5 @@
 // generates a random name for your warehouse :3
-var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon", "Really Bad Drug Lord", "Macky Water", "Warehouse Owning Warehouse Owner", "Enslaved Minor"];
+var goldenNames = ["Sugar Smuggling Minor", "Unlucky Crafter", "Code Mob", "Shadow Dev", "Really Bad Dev", "Abstract Melon", "Really Bad Drug Lord", "Macky Water", "Warehouse Owning Warehouse Owner", "Enslaved Minor", "Melon", "Toki"];
 async function randomName(overwrite=false) {
     const nameAdjs = ['Tired', 'High', 'Hungry', 'Agitated', 'Excited', 'Grumpy', 'Sleepy', 'Angry', 'Bored', 'Thirsty', 'Extremely High', 'Illegal', 'Scamming', 'Scammed', 'Screaming', 'Drug Promoting', 'Your Friendly',"Sugar Smuggling", "Enslaved", "Warehouse Owning"];
     const nameNouns = ['Cartel Leader', 'Addict', 'Mafia Boss', 'Discord Moderator', 'Internet Troll', 'Slacker', 'Loser', 'Scammer', 'Karen', 'Drug Lord', 'Mother', 'Minor', 'Crack Addict',"Mafia", "Warehouse Owner"];

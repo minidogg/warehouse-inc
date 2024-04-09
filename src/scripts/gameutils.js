@@ -1,5 +1,5 @@
 function showNotification(message, duration=1000) {
-    console.log('Showing notification:', message);
+    // console.log('Showing notification:', message);
 
     var notificationContainer = document.querySelector('.notification-container');
     var notification = document.createElement('div');
@@ -13,7 +13,7 @@ function showNotification(message, duration=1000) {
         notification.style.opacity = 0;
         setTimeout(function() {
             notificationContainer.removeChild(notification);
-            console.log('Notification removed:', message);
+            // console.log('Notification removed:', message);
         }, 500);
         }, duration);
     }, 100);

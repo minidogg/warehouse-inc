@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warehouse INC</title>
-    
-    <link rel="manifest" href="src/manifest.json">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
-    <link rel="icon" type="image/x-icon" href="src/images/favicon.ico">
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div id="bgscroll" class="fadeout"></div>
-    <div id="container">
-        <h1>Welcome to Warehouse INC</h1>
-        <p>Embark on an epic adventure in the world of warehousing!</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Warehouse INC</title>
         
-        <button onclick="switchTo('./src/index.html')">
-            <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
-        </button>
-        <button onclick="switchTo('./credits.html')">
-            <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
-        </button>
-    </div>
+        <link rel="manifest" href="src/manifest.json">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+        <link rel="icon" type="image/x-icon" href="src/images/favicon.ico">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="autoplayPopup" style="display: none;">Autoplay is disabled for this site. Click <a onclick="bgMusic.play();document.getElementById('autoplayPopup').classList.add('autoplayPopupLeave')">here</a> to play background music.</div>
+        <div id="bgscroll" class="fadeout"></div>
+        <div id="container">
+            <h1>Welcome to Warehouse INC</h1>
+            <p>Embark on an epic adventure in the world of warehousing!</p>
+            
+            <button onclick="switchTo('./src/index.html')">
+                <i class="fas fa-play icon"><span class="buttonText">Play</span></i>
+            </button>
+            <button onclick="switchTo('./credits.html')">
+                <i class="fas fa-info-circle icon"><span class="buttonText">Credits</span></i> 
+            </button>
+        </div>
 
-    <script>
-        function switchTo(site) {
-            const bgscroll = document.getElementById("bgscroll");
-            const container = document.getElementById("container")
+        <div id="crapOfTheDay">
+            <span style="font-size: 4vmin;color: #a6a7cf;">Quote of the minute:</span><br>
+            <span id="crapContents" style="font-size: 3vmin;"></span>
+        </div>
 
-            container.style.transform = "translateY(100vh)";
-            bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
-            bgscroll.style.animation = "fadeout 1s";
+        <script src="./src/data/crapmessages.js"></script>
 
-            container.style.transform = "translateY(100vh)";
-            setTimeout(()=>{
-                window.location.href = site;
-            },1100)
-        }
-    </script>
-    <script>
-        const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
+        <script>
+            const firstCrapDate = new Date(2024, 2, 28);
+            let daysSinceCrapCreation = Math.floor((new Date() - firstCrapDate) / (1000 * 60)); // et daysSinceCrapCreation = Math.floor((new Date() - firstCrapDate) / (1000 * 3600 * 24));
+            const crapContents = document.getElementById("crapContents");
+            
+            crapContents.innerHTML = crapMessages[daysSinceCrapCreation % crapMessages.length];
 
-        document.addEventListener("DOMContentLoaded", function() {
-            bgMusic.loop = true;
-            bgMusic.play();
-        });
-    </script>
-</body>
+            function switchTo(site) {
+                const bgscroll = document.getElementById("bgscroll");
+                const container = document.getElementById("container")
+
+                container.style.transform = "translateY(100vh)";
+                bgscroll.style.backgroundPositionX = getComputedStyle(bgscroll).backgroundPositionX;
+                bgscroll.style.animation = "fadeout 1s";
+
+                container.style.transform = "translateY(100vh)";
+                setTimeout(()=>{
+                    window.location.href = site;
+                },1100)
+            }
+            
+
+            const bgMusic = new Audio('./src/sfx/music/FastMenuLiteHeavy.mp3');
+
+            document.addEventListener("DOMContentLoaded", async function() {
+                try {
+                    bgMusic.loop = true;
+                    await bgMusic.play();
+                } catch {
+                    document.getElementById("autoplayPopup").style.display = "unset";
+                }
+            });
+        </script>
+    </body>
 </html>
