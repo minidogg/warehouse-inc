@@ -70,4 +70,5 @@ const crapMessages = [
 '\"It\'s coming out\" - @ʌǝp pɐq ʎllɐǝɹ :3  2024',
 '\"balls\" - @ʌǝp pɐq ʎllɐǝɹ :3 2024',
 "<span style='color:#800000; font-weight:bold; '>int</span> age <span style='color:#808030; '>=</span> just a number  <span style='color:#ba6ca1; '>:3</span>",
+'"alberts got a blowtorch" - gordon ramsay, 2024'
 ];
