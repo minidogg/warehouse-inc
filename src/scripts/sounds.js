@@ -19,12 +19,12 @@ var sounds = {
 var music = {}
 
 music.bgMusic = [
-    '/music/ConceptualFruit.mp3',
-    '/music/ThemeBGheavy.mp3',
-    '/music/DaysAhead.mp3'
+    'ConceptualFruit.mp3',
+    'ThemeBGheavy.mp3',
+    'DaysAhead.mp3'
 ];
 music.randomMusic = ()=>music.bgMusic[Math.floor(Math.random() * music.bgMusic.length)]
-music.toSound = (music)=>new Audio(`./sfx/${music}`);
+music.toSound = (music)=>new Audio(`./sfx/music/${music}`);
 music.current = "abc"
 music.currentAudio = new Audio()
 
@@ -40,6 +40,9 @@ music.startMusicListener = window.addEventListener("mousedown",()=>{
 })
 music.musicLoop=()=>{
     music.current = music.randomMusic()
+    
+    document.getElementById("songName").textContent = camelCaseToWords(music.current).replace(/(\.).+/g,"")
+
     music.currentAudio = undefined
     music.currentAudio = music.toSound(music.current)
 
@@ -71,7 +74,7 @@ music.soundFiles = [
   ];
 
 deepBelow.add("collectSound",()=>{
-      const randomSound = music.soundFiles[Math.floor(Math.random() * soundFiles.length)];
+      const randomSound = music.soundFiles[Math.floor(Math.random() * music.soundFiles.length)];
   
       const audio = new Audio(`./sfx/${randomSound}`);
       audio.volume = game.settings.soundVolume/100
