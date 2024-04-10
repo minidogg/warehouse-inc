@@ -1,7 +1,7 @@
 /* This stylesheet should only ever be modified to add basic styling, or styling that is used often */
 *{
     /* Haha, Comic sans goes brrr */
-    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', Arial; 
     /* font-family: Arial, sans-serif; */
     margin:0;
 }
