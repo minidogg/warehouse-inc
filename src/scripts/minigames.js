@@ -1,9 +1,7 @@
-var minigames = {}
 minigames.open = ()=>{
     q("#minigames").style.display = "block"
 }
-minigames.api = {}
-minigames.api.types = {}
+
 minigames.api.listener = window.addEventListener("message",function(e) {
     // console.log(e.data)
     if(typeof(minigames.api.types[e.data.type])=="undefined"){
@@ -15,7 +13,6 @@ minigames.api.listener = window.addEventListener("message",function(e) {
 
 // ? Message type functions
 minigames.api.types.addSugar = (e,data)=>{
-    console.log(data)
     game.sugar+=data.amount
 }
 
