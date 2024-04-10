@@ -23,4 +23,8 @@ menu.updateMenus = ()=>{
 
     })
 }
+menu.menus.credits = ()=>{
+    window.location.href = '../credits.html'
+}
 
+updateMenus()
