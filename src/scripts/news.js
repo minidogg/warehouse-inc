@@ -1,3 +1,4 @@
+/*
 function updateNews(totalSugar) {
     let selectedNews = newsData.find(item => totalSugar < item.threshold);
 
@@ -15,3 +16,4 @@ const newsData = [
     { threshold: 1, content: "Your Sugar is crap" },
     { threshold: 500, content: "People love your sugar!" },
 ];
+*/
