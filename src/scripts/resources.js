@@ -10,8 +10,8 @@ loadShopItems();
 var sugar = {};
 
 const newsData = [
-    { threshold: 100, content: "News for users with less than 100 sugar" },
-    { threshold: 500, content: "News for users with more than 500 sugar" },
+    { threshold: 1, content: "Your Sugar is crap" },
+    { threshold: 500, content: "People love your sugar!" },
 ];
 
 const newsFeedElement = document.getElementById('newsFeed');
