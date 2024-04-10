@@ -34,16 +34,17 @@ render.renderFunctions.push(() => {
 })
 
 document.getElementById('companyName').onclick = async () => {
-    const name = await showPrompt("Warehouse Name","Warehouse name here...",100);
+    const name = await showPrompt("Warehouse Name", "Warehouse name here...", 100);
     if (!name) {
         randomName(true);
     } else {
         game.name = name;
-        game.goldenName = false;
+        game.goldenName = goldenNames.includes(name);
+        render.render();
     }
-
-    render.render();
 }
+
+
 
 
 randomName();
