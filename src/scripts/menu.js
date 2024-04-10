@@ -11,7 +11,7 @@ menu.hideMenus()
 
 menu.updateMenus = ()=>{
     Array.from(q('.menuContainer').children).forEach((e)=>{
-        console.log(e)
+        // console.log(e)
         if(typeof(menu.menus[e.ariaLabel])!=="undefined"){
             menu.hideMenus()
             e.onclick = menu.menus[e.ariaLabel]
