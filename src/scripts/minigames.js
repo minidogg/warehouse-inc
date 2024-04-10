@@ -15,6 +15,12 @@ minigames.api.listener = window.addEventListener("message",function(e) {
 minigames.api.types.addSugar = (e,data)=>{
     game.sugar+=data.amount
 }
+minigames.api.types.setGame = (e,data)=>{
+    game = data.game
+}
+minigames.api.types.requestGame = (e,data)=>{
+    iframe.contentWindow.postMessage({"game":game}, '*');
+}
 
 minigames.main = async()=>{
     //code for handling the minigame API

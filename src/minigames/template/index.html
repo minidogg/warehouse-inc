@@ -9,9 +9,11 @@
 
 
     <script>
+        var game = {}
         window.onmessage = function(e) {  
-           // alert(JSON.stringify(e.data))
+           if(e.data.type=="game")e.data.data.game=game
         };
+        window.top.postMessage({"type":"requestGame","data":{}}, '*');
         document.querySelector("button").onclick=()=>{
             window.top.postMessage({"type":"addSugar","data":{"amount":1}}, '*');
         }
