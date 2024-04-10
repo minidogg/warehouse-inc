@@ -135,3 +135,6 @@ NodeList.prototype.each = function(func) {
 
 //createEl.js
 
+
+//sleep.js
+const sleep = ms => new Promise(r => setTimeout(r, ms));
