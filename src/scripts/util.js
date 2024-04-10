@@ -140,3 +140,25 @@ function getCookieCount() {
 function getStoreName() {
     
 }
+
+/*
+The deep below util's purpose is to allow the ability to call functions that are deeper down in the script chain.
+*/
+var deepBelow = {refs:{}}
+deepBelow.add = (funcName,func)=>{
+    deepBelow.refs[funcName]=func
+}
+deepBelow.runSync = (funcName,...args)=>{
+    try{
+        return deepBelow.refs[funcName](...args)
+    }catch(err){
+        console.warn(`When attempting to run func: ${funcName}`+err)
+    }
+}
+deepBelow.run = async(funcName,...args)=>{
+    try{
+        return await deepBelow.refs[funcName](...args)
+    }catch(err){
+        console.warn(`When attempting to run func: '${funcName}', with args: [${args}], using Deep Below Util, got error: `+err)
+    }
+}

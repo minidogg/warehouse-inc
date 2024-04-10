@@ -10,8 +10,8 @@ loadShopItems();
 var sugar = {};
 
 const newsData = [
-    { threshold: 100, content: "News for users with less than 100 sugar" },
-    { threshold: 500, content: "News for users with less than 500 sugar" },
+    { threshold: 1, content: "Your Sugar is crap" },
+    { threshold: 500, content: "People love your sugar!" },
 ];
 
 const newsFeedElement = document.getElementById('newsFeed');
@@ -54,7 +54,6 @@ sugar.sugarGenerationLoop = () => {
     game.collectableSugar += newSugar;
     game.sps = newSugar;
 
-
     setTimeout(sugar.sugarGenerationLoop, game.productionSpeed);
 }
 
@@ -82,25 +81,7 @@ sugar.collectSugar = () => {
     if (removeExtraDecimals(collectedSugar, 0) > 0) 
         showNotification(`You collected ${removeExtraDecimals(collectedSugar,0)} sugar!`); 
 
-    const soundFiles = [
-      '/Collect/SugarAsian.mp3',
-      '/Collect/SugerHighPitched.mp3',
-      '/Collect/AnoyingSugar.mp3',
-      '/Collect/AnoyingSugar.mp3',
-      '/Collect/InvertedSugar.mp3',
-      '/Collect/Meep.mp3',
-      '/Collect/DiabetteiseSuger.mp3',
-      '/Collect/AsianBetter.mp3',
-      '/Collect/AsianBetter.mp3',
-      '/Collect/Moogar.mp3',
-      '/Collect/SugarYourCollect.mp3',
-      '/Collect/SugarYourCollect.mp3',
-    ];
-    const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
-
-    const audio = new Audio(`./sfx/${randomSound}`);
-
-    audio.play();
+    deepBelow.runSync("collectSound")
 }
 
 sugar.sugarGenerationLoop();

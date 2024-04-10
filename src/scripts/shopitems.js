@@ -13,13 +13,25 @@ function loadShopItems() {
     */
 
     // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING // -- too bad, -Melon :)
+
+    addProperty(game.producers, "handWorking", {
+        "name": "Working By Hand",
+        "sps": 1,
+        "pickup": 1,
+        "autopickup": 1,
+        "owned": 0,
+        "baseCost": 1,
+        "costMultiplier": 0.3,
+        "metadata": {}
+    });
+
     addProperty(game.producers, "deliveryTruck", {
         "name": "Delivery Truck",
-        "sps": 1.1,
+        "sps": 1.4,
         "pickup": 0,
         "autopickup": 0,
         "owned": 0,
-        "baseCost": 2,
+        "baseCost": 10,
         "costMultiplier": 0.7,
         "metadata": {}
     });
@@ -32,6 +44,17 @@ function loadShopItems() {
         "owned": 0,
         "baseCost": 20,
         "costMultiplier": 0.7,
+        "metadata": {}
+    });
+
+    addProperty(game.producers, "ladders", {
+        "name": "Ladders",
+        "sps": 2.5,
+        "pickup": 0,
+        "autopickup": 0,
+        "owned": 0,
+        "baseCost": 50,
+        "costMultiplier": 0.4,
         "metadata": {}
     });
 

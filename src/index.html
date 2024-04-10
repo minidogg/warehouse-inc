@@ -45,7 +45,10 @@
                 <div class="versionInfo">
                     <p>Warehouse inc <span id="versionNumber">versionNumber</span></p>
                 </div>
-                <div id="newsFeed" class="newsFeed"></div>
+                <div class="songInfo">
+                    <p>Current Song: <span id="songName">waiting for song to play...</span></p>
+                </div>
+                <div id="newsFeed">hello world i am joe!</div>
             </div>
         </div> 
         
@@ -60,7 +63,7 @@
                     <p class="coolFade resourceCount">Auto Collect Per Second: <span id="ppsCount">0</span></p>
                     <p class="coolFade resourceCount">Sugar Ready For Collecting: <span id="uncollectedCount">0</span></p>
                     <button id="clickButton" onclick="sugar.collectSugar();">Collect Sugar</button>
-                    <img src="./images/warehouseicon.png" alt="Clickable Image" onclick="game.sugar += 100;" class="warehouseicon" style="cursor:pointer;">
+                    <img src="./images/warehouseicon.png" alt="Clickable Image" class="warehouseicon" style="cursor:pointer;">
 
                 </span>
 
@@ -145,7 +148,7 @@
         <script src="scripts/shop.js"></script>
         <script src="scripts/sounds.js"></script>
         <script src="scripts/menu.js"></script>
-        <!-- <script type="module" src="scripts/news.js"></script> -->
+        <script src="scripts/news.js"></script>
 
 
         <!--     This should always be the last script/element here -->
