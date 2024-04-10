@@ -2,19 +2,25 @@ var minigames = {}
 minigames.open = ()=>{
     q("#minigames").style.display = "block"
 }
+minigames.api = {}
+minigames.api.types = {}
+minigames.api.listener = window.addEventListener("message",function(e) {
+    // console.log(e.data)
+    if(typeof(minigames.api.types[e.data.type])=="undefined"){
+        console.warn("Invalid message type for minigame API: '"+e.data.type+"'")
+        return
+    }
+    minigames.api.types[e.data.type](e,e.data.data)
+})
+
+// ? Message type functions
+minigames.api.types.addSugar = (e,data)=>{
+    console.log(data)
+    game.sugar+=data.amount
+}
+
 minigames.main = async()=>{
     //code for handling the minigame API
-    window.addEventListener("message",function(e) {
-        // console.log(e.data)
-        switch(e.data.type){
-            case "addSugar":
-                game.sugar+=e.data.data.amount
-                break;
-            default:
-                console.warn("Invalid message type for minigame API: '"+e.data.type+"'")
-                break;
-        }
-    })
 
     //the rest of the stuff
     colorLog("Hello from the minigames.js!","lime")
