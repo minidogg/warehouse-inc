@@ -1,6 +1,7 @@
 [
     {
         "name": "Template Minigame",
-        "file": "./minigames/template/index.html"
+        "file": "./minigames/template/index.html",
+        "dev":true
     }
 ]

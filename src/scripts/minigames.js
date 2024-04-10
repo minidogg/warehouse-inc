@@ -5,7 +5,7 @@ minigames.open = ()=>{
 minigames.main = async()=>{
     //code for handling the minigame API
     window.addEventListener("message",function(e) {
-        console.log(e.data)
+        // console.log(e.data)
         switch(e.data.type){
             case "addSugar":
                 game.sugar+=e.data.data.amount
@@ -24,6 +24,9 @@ minigames.main = async()=>{
 
     minigames.minigames.forEach(ee=> {
         let e = ee
+        if(e.dev===true&&window.location.protocol!=="http:"){
+            return
+        }
         let button = document.createElement("button")
         button.textContent = e.name
 
