@@ -1,0 +1,1 @@
+colorLog("Hello from the minigames.js!","color:green;")

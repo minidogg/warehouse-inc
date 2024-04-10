@@ -27,4 +27,4 @@ menu.menus.credits = ()=>{
     window.location.href = '../credits.html'
 }
 
-updateMenus()
+menu.updateMenus()
