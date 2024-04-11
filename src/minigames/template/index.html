@@ -8,14 +8,13 @@
     <button>Money button</button>
 
 
+    <script src="../api.js"></script>
+
     <script>
-        var game = {}
-        window.onmessage = function(e) {  
-           if(e.data.type=="game")e.data.data.game=game
-        };
+        
         window.top.postMessage({"type":"requestGame","data":{}}, '*');
         document.querySelector("button").onclick=()=>{
-            window.top.postMessage({"type":"addSugar","data":{"amount":1}}, '*');
+            window.top.postMessage({"type":"addSugar","data":{"amount":1+game.sugar}}, '*');
         }
     </script>
 </body>

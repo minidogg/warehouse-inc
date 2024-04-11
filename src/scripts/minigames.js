@@ -19,7 +19,7 @@ minigames.api.types.setGame = (e,data)=>{
     game = data.game
 }
 minigames.api.types.requestGame = (e,data)=>{
-    iframe.contentWindow.postMessage({"game":game}, '*');
+    minigames.api.iframe.contentWindow.postMessage({type:"game","data":{game:game}}, '*');
 }
 
 minigames.main = async()=>{
@@ -58,6 +58,7 @@ minigames.main = async()=>{
                 return true
             })
             await sleep(100)
+            minigames.api.iframe = iframe
             iframe.contentWindow.postMessage({"ready":true}, '*');
 
         }
