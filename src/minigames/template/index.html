@@ -11,10 +11,11 @@
     <script src="../api.js"></script>
 
     <script>
+        
         console.log("abc")
         api.onReady.push(async()=>{
             console.log("ready!")
-            //console.log(await api.request.game())
+            await api.request.game() // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
             document.querySelector("button").onclick=()=>{
                 api.do.addSugar(1)
             }
