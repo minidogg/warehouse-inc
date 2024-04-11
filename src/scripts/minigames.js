@@ -33,7 +33,7 @@ minigames.main = async()=>{
 
     minigames.minigames.forEach(ee=> {
         let e = ee
-        if(e.dev===true&&window.location.protocol!=="http:"){
+        if(e.dev===true&&isDev()){
             return
         }
         let button = document.createElement("button")
