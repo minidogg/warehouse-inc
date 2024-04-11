@@ -1,3 +1,5 @@
+// ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
+
 var api = {}
 api.onReady = []
 var game = {}
