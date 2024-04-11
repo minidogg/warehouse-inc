@@ -12,11 +12,11 @@
 
     <script>
         console.log("abc")
-        api.onReady.push(()=>{
+        api.onReady.push(async()=>{
             console.log("ready!")
-            window.top.postMessage({"type":"requestGame","data":{}}, '*');
+            //console.log(await api.request.game())
             document.querySelector("button").onclick=()=>{
-                window.top.postMessage({"type":"addSugar","data":{"amount":1+game.sugar}}, '*');
+                api.do.addSugar(1)
             }
         })
     </script>
