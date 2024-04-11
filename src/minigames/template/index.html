@@ -11,11 +11,14 @@
     <script src="../api.js"></script>
 
     <script>
-        
-        window.top.postMessage({"type":"requestGame","data":{}}, '*');
-        document.querySelector("button").onclick=()=>{
-            window.top.postMessage({"type":"addSugar","data":{"amount":1+game.sugar}}, '*');
-        }
+        console.log("abc")
+        api.onReady.push(()=>{
+            console.log("ready!")
+            window.top.postMessage({"type":"requestGame","data":{}}, '*');
+            document.querySelector("button").onclick=()=>{
+                window.top.postMessage({"type":"addSugar","data":{"amount":1+game.sugar}}, '*');
+            }
+        })
     </script>
 </body>
 </html>

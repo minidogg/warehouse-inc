@@ -59,7 +59,7 @@ minigames.main = async()=>{
             })
             await sleep(100)
             minigames.api.iframe = iframe
-            iframe.contentWindow.postMessage({"ready":true}, '*');
+            iframe.contentWindow.postMessage({type:"ready"}, '*');
 
         }
 
