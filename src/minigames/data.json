@@ -3,5 +3,10 @@
         "name": "Template Minigame",
         "file": "./minigames/template/index.html",
         "dev":true
+    },
+    {
+        "name": "Government Shooter",
+        "file": "./minigames/governmentShooter/index.html",
+        "dev":true
     }
 ]

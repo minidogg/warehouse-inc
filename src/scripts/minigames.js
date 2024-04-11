@@ -33,11 +33,12 @@ minigames.main = async()=>{
 
     minigames.minigames.forEach(ee=> {
         let e = ee
-        if(e.dev===true&&isDev()){
+        if(e.dev===true&&!isDev()){
             return
         }
         let button = document.createElement("button")
         button.textContent = e.name
+        button.style.cssText = "margin:1vmin;"
 
         button.onclick = async()=>{
             let iframe = document.createElement("iframe")
@@ -57,9 +58,12 @@ minigames.main = async()=>{
                 closePopup()
                 return true
             })
-            await sleep(100)
             minigames.api.iframe = iframe
-            iframe.contentWindow.postMessage({type:"ready"}, '*');
+            iframe.contentWindow.addEventListener("load",()=>{
+                
+                iframe.contentWindow.postMessage({type:"ready"}, '*');
+                console.log("sent ready to minigame")
+            })
 
         }
 

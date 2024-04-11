@@ -3,13 +3,6 @@
 var api = {}
 api.onReady = []
 var game = {}
-//use this function to add new properties to something in the game object. (Make sure to specify the game object)
-function addProperty(obj,property,value,overwrite=false){
-    if(!obj.hasOwnProperty(property)||overwrite)obj[property]=value
-}
-function removeProperty(obj, property){
-    if(obj.hasOwnProperty(property))delete obj[property]
-}
 
 //listener stuff
 window.addEventListener("message",e=>{
