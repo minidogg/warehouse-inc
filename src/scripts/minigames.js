@@ -62,7 +62,7 @@ minigames.main = async()=>{
             iframe.contentWindow.addEventListener("load",()=>{
                 
                 iframe.contentWindow.postMessage({type:"ready"}, '*');
-                console.log("sent ready to minigame")
+                // console.log("sent ready to minigame")
             })
 
         }
