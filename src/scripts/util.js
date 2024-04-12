@@ -163,7 +163,7 @@ function getStoreName() {
 
 //is dev
 function isDev(){
-    return /.+:\d+/.test(window.location.host)
+    return /.+:\d+/.test(window.location.host)||/.+\.github\.dev/.test(window.location.host)
 }
 
 /*
