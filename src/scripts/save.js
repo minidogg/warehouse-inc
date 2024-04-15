@@ -7,7 +7,7 @@ var currentversion = "";
 // Function to fetch the current version from the URL
 async function fetchCurrentVersion() {
     try {
-        const response = await fetch("https://raw.githubusercontent.com/minidogg/warehouse-inc/dev/src/data/version");
+        const response = await fetch("https://raw.githubusercontent.com/minidogg/warehouse-inc/main/src/data/version");
         const data = await response.text();
         currentversion = data
         console.log(currentversion)

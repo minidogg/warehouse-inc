@@ -24,7 +24,7 @@ music.bgMusic = [
     'DaysAhead.mp3',
     'ForshadowingCookies.mp3',
     'WorkAgain.mp3',
-    'Dreams'
+    'Dreams.mp3'
 ];
 music.randomMusic = ()=>music.bgMusic[Math.floor(Math.random() * music.bgMusic.length)]
 music.toSound = (music)=>new Audio(`./sfx/music/${music}`);
