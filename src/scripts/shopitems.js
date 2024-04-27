@@ -5,6 +5,8 @@ function addProducer(name,data){
 function registerProducers(){
     Object.keys(game.producers).forEach(key=>{
         registeringProducers[key].owned = game.producers[key].owned
+        registeringProducers[key].metadata = game.producers[key].metadata
+
         console.log(registeringProducers[key])
     })
     game.producers = registeringProducers
@@ -35,7 +37,7 @@ function loadShopItems() {
         "baseCost": 1,
         "costMultiplier": 0.3,
         "description":"Back in my day, we had to make our sugar with our barehands!",
-        "metadata": {}
+        "metadata": {} //! metadata is preserved along with owned count across sessions.
     });
 
     addProducer("deliveryTruck", {
@@ -46,7 +48,8 @@ function loadShopItems() {
         "owned": 0,
         "baseCost": 10,
         "costMultiplier": 0.7,
-        "metadata": {}
+        "metadata": {},
+        "description":""
     });
 
     addProducer("collectingCrew", {
