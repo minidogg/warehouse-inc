@@ -1,17 +1,12 @@
 [
-    {
-        "name": "Template Minigame",
-        "file": "./minigames/template/index.html",
-        "dev":true
-    },
-    {
-        "name": "Government Shooter",
-        "file": "./minigames/governmentShooter/index.html",
-        "dev":true
-    },
-    {
-        "name": "Warehouse Boost",
-        "file": "./minigames/warehouseBoost/index.html",
-        "dev":true
-    }
+  {
+    "name": "Template Minigame",
+    "file": "./minigames/template/index.html",
+    "dev": true
+  },
+  {
+    "name": "Warehouse Boost",
+    "file": "./minigames/warehouseBoost/index.html",
+    "dev": true
+  }
 ]
