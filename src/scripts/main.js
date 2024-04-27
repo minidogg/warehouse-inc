@@ -7,7 +7,7 @@ var version = "0.2.1-alpha";
 
 colorLog("Version " + version);
 
-document.getElementById('versionNumber').innerText = version;
+document.getElementById('versionNumber').innerHTML = version+(isDev()===true?" <span style='color:yellow;'>(dev)</span>":"");
 
 //Everything you want to save should be in this object.
 var game = {version:version}
