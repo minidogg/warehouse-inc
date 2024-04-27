@@ -91,6 +91,7 @@ shop.update = () => {
             q("#buySPS").textContent = data.sps+" SPS"
             q("#buyAC").textContent = data.autopickup+" Auto Collect"
             q("#buyOwned").textContent = data.owned+" Owned"
+            q("#buyDescription").textContent = typeof(data.buyDescription)=="undefined"?"":data.buyDescription
         }
         i++;
     }

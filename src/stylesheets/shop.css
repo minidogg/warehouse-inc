@@ -41,10 +41,12 @@
 .shopTooltip{
     width:90%;
     padding:5%;
-    height:10vh;
     background-color: rgba(63, 63, 63, 0.8);
     border-radius:2vmin;
     color:white;
+    min-height:15vh;
+    height:fit-content;
+    transition:all 0.2s ease-in-out;
 }
 
 #buyMenu{
@@ -57,4 +59,9 @@
     width:100%;
     height:100%;
     overflow:hidden;
+}
+
+#buyDescription{
+    position:relative;
+    top:1vh;
 }
