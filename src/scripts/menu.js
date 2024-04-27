@@ -1,5 +1,6 @@
 //menu util stuff
 var menu = {}
+menu.menus = {}
 
 menu.hideMenus = ()=>{
     Array.from(document.getElementById("menuContent").children).forEach((el)=>{
@@ -8,65 +9,22 @@ menu.hideMenus = ()=>{
 }
 menu.hideMenus()
 
-//settings
-var settings = {}
-q("#settings").style.display = "block"
-
-let settingEls = []
-
-settings.reset = ()=>{
-    q("#settingList").innerHTML = ""
-    Object.keys(game.settings).forEach((name)=>{
-        let li = document.createElement("li")
-        li.innerHTML = `<span>Auto Save</span>: <input>`
-        li.q("span").textContent = camelCaseToWords(name)
-
-        li.q("input").value = game.settings[name]
-        if(typeof(game.settingsMd[name])!="undefined"){
-            console.log(game.settingsMd[name])
-            switch (game.settingsMd[name].type) {
-                case "slider":
-                    li.q("input").type="range"
-                    li.q("input").min = game.settingsMd[name].min
-                    li.q("input").max = game.settingsMd[name].max
-                    break;
-                default:
-                    li.q("input").type="text"
-                    break;
-            }
-        
+menu.updateMenus = ()=>{
+    Array.from(q('.menuContainer').children).forEach((e)=>{
+        // console.log(e)
+        if(typeof(menu.menus[e.ariaLabel])!=="undefined"){
+            menu.hideMenus()
+            e.onclick = menu.menus[e.ariaLabel]
         }else{
-            switch (typeof(game.settings[name])) {
-                case "boolean":
-                    li.q("input").type="checkbox"
-                    li.q("input").checked = game.settings[name]
-                    break;
-                case "number":
-                    li.q("input").type="number"
-                    li.q("input").pattern="\d*"
-                    li.q("input").required=true
-                    break;
-                case "bigint":
-                    li.q("input").type="number"
-                    break;
-                default:
-                    li.q("input").type="text"
-                    break;
+            e.onclick=()=>{
+                menu.hideMenus()
             }
         }
 
-        li.ariaLabel = name
-        settingEls.push(li)
-
-        q("#settingList").append(li)
     })
 }
-settings.reset()
-
-settings.update = ()=>{
-    for(e of settingEls){
-        game.settings[e.ariaLabel] = e.q("input").type=="checkbox"?e.q("input").checked:e.q("input").value
-        // console.log(game.settings[e.ariaLabel])
-    }
+menu.menus.credits = ()=>{
+    window.location.href = '../credits.html'
 }
-render.renderFunctions.push(settings.update)
+
+menu.updateMenus()

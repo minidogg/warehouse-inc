@@ -1,3 +1,17 @@
+var registeringProducers = {}
+function addProducer(name,data){
+    registeringProducers[name] = data
+}
+function registerProducers(){
+    Object.keys(game.producers).forEach(key=>{
+        registeringProducers[key].owned = game.producers[key].owned
+        registeringProducers[key].metadata = game.producers[key].metadata
+
+        console.log(registeringProducers[key])
+    })
+    game.producers = registeringProducers
+}
+
 function loadShopItems() {
     /*Producer schema, expect that once a save is started and gets the producer it won't change.
     "interalId":{
@@ -14,7 +28,7 @@ function loadShopItems() {
 
     // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING // -- too bad, -Melon :)
 
-    addProperty(game.producers, "handWorking", {
+    addProducer("handWorking", {
         "name": "Working By Hand",
         "sps": 1,
         "pickup": 1,
@@ -22,10 +36,11 @@ function loadShopItems() {
         "owned": 0,
         "baseCost": 1,
         "costMultiplier": 0.3,
-        "metadata": {}
+        "description":"Back in my day, we had to make our sugar with our barehands!",
+        "metadata": {} //! metadata is preserved along with owned count across sessions.
     });
 
-    addProperty(game.producers, "deliveryTruck", {
+    addProducer("deliveryTruck", {
         "name": "Delivery Truck",
         "sps": 1.4,
         "pickup": 0,
@@ -33,10 +48,11 @@ function loadShopItems() {
         "owned": 0,
         "baseCost": 10,
         "costMultiplier": 0.7,
-        "metadata": {}
+        "metadata": {},
+        "description":""
     });
 
-    addProperty(game.producers, "collectingCrew", {
+    addProducer("collectingCrew", {
         "name": "Collecting Crew",
         "sps": 0.5,
         "pickup": 2,
@@ -47,7 +63,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "ladders", {
+    addProducer("ladders", {
         "name": "Ladders",
         "sps": 2.5,
         "pickup": 0,
@@ -58,7 +74,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "forklift", {
+    addProducer("forklift", {
         "name": "Forklift",
         "sps": 0.2,
         "pickup": 4,
@@ -69,7 +85,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "childLabor", {
+    addProducer("childLabor", {
         "name": "Child Labor",
         "sps": 1,
         "pickup": 6,
@@ -80,7 +96,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "artificialFarms", {
+    addProducer("artificialFarms", {
         "name": "Artificial Farms",
         "sps": 5,
         "pickup": 20,
@@ -91,7 +107,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "machinery", {
+    addProducer("machinery", {
         "name": "Machinery",
         "sps": 10,
         "pickup": 50,
@@ -102,7 +118,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "conveyor", {
+    addProducer("conveyor", {
         "name": "Conveyor",
         "sps": 0,
         "pickup": 1,
@@ -113,7 +129,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "smallStartups", {
+    addProducer("smallStartups", {
         "name": "Small Startups",
         "sps": 20,
         "pickup": 10,
@@ -124,7 +140,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "flourFactories", {
+    addProducer("flourFactories", {
         "name": "Flour Factories",
         "sps": 15,
         "pickup": 30,
@@ -135,7 +151,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "wheatFarm", {
+    addProducer("wheatFarm", {
         "name": "Wheat Farm",
         "sps": 25,
         "pickup": 25,
@@ -146,7 +162,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "chocolateFactory", {
+    addProducer("chocolateFactory", {
         "name": "Chocolate Factory",
         "sps": 40,
         "pickup": 40,
@@ -157,7 +173,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "cacaoFarm", {
+    addProducer("cacaoFarm", {
         "name": "Cacao Farm",
         "sps": 30,
         "pickup": 20,
@@ -167,7 +183,7 @@ function loadShopItems() {
         "costMultiplier": 0.7,
         "metadata": {}
     });
-    addProperty(game.producers, "sugarPlantation", {
+    addProducer("sugarPlantation", {
         "name": "Sugar Plantation",
         "sps": 60,
         "pickup": 50,
@@ -178,7 +194,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "sugarRefinery", {
+    addProducer("sugarRefinery", {
         "name": "Sugar Refinery",
         "sps": 100,
         "pickup": 80,
@@ -189,7 +205,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "candyFactory", {
+    addProducer("candyFactory", {
         "name": "Candy Factory",
         "sps": 150,
         "pickup": 120,
@@ -200,7 +216,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "sugarEmpire", {
+    addProducer("sugarEmpire", {
         "name": "Sugar Empire",
         "sps": 300,
         "pickup": 200,
@@ -211,7 +227,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "sweetMegaCorp", {
+    addProducer("sweetMegaCorp", {
         "name": "Sweet MegaCorp",
         "sps": 500,
         "pickup": 300,
@@ -222,7 +238,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "sugarExtravaganza", {
+    addProducer("sugarExtravaganza", {
         "name": "Sugar Extravaganza",
         "sps": 1000,
         "pickup": 600,
@@ -233,7 +249,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "sugarHeaven", {
+    addProducer("sugarHeaven", {
         "name": "Sugar Heaven",
         "sps": 2000,
         "pickup": 1200,
@@ -243,7 +259,7 @@ function loadShopItems() {
         "costMultiplier": 0.7,
         "metadata": {}
     });
-    addProperty(game.producers, "SugarHarvester", {
+    addProducer("SugarHarvester", {
         "name": "Sugar Harvester",
         "sps": 4000,
         "pickup": 3000,
@@ -254,7 +270,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "SweetenerFactory", {
+    addProducer("SweetenerFactory", {
         "name": "Sweetener Factory",
         "sps": 8000,
         "pickup": 6000,
@@ -265,7 +281,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "SugarMonopoly", {
+    addProducer("SugarMonopoly", {
         "name": "Sugar Monopoly",
         "sps": 16000,
         "pickup": 12000,
@@ -276,7 +292,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "CandyKingdom", {
+    addProducer("CandyKingdom", {
         "name": "Candy Kingdom",
         "sps": 32000,
         "pickup": 24000,
@@ -287,7 +303,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "SugarGalaxy", {
+    addProducer("SugarGalaxy", {
         "name": "Sugar Galaxy",
         "sps": 64000,
         "pickup": 48000,
@@ -298,7 +314,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "CandyUniverse", {
+    addProducer("CandyUniverse", {
         "name": "Candy Universe",
         "sps": 128000,
         "pickup": 96000,
@@ -309,7 +325,7 @@ function loadShopItems() {
         "metadata": {}
     });
     
-    addProperty(game.producers, "SugarCosmos", {
+    addProducer("SugarCosmos", {
         "name": "Sugar Cosmos",
         "sps": 256000,
         "pickup": 192000,
@@ -320,7 +336,7 @@ function loadShopItems() {
         "metadata": {}
     });
 
-    addProperty(game.producers, "SugarSupremacy", {
+    addProducer("SugarSupremacy", {
         "name": "Sugar Supremacy",
         "sps": 8192000,
         "pickup": 6144000,
@@ -330,4 +346,5 @@ function loadShopItems() {
         "costMultiplier": 0.7,
         "metadata": {}
     });
+    registerProducers()
 }

@@ -76,11 +76,12 @@
         <div class="middleContainer">
             <!-- some stuff related to menus should be here -->
             <div class="menuContainer">
-                <div class="menuTab">Stats</div>
-                <div class="menuTab">Settings</div>
-                <div class="menuTab">Account</div>
-                <div class="menuTab" onclick="window.location.href = '../credits.html'">Credits</div>
-                <div class="menuTab">Mods - <i>Coming Soon</i></div>
+                <div class="menuTab" aria-label="stats">Stats - Not Implemented</div>
+                <div class="menuTab" aria-label="settings">Settings</div>
+                <div class="menuTab" aria-label="account">Account - Not Implemented</div>
+                <div class="menuTab" aria-label="minigames">Minigames</div>
+                <div class="menuTab" aria-label="credits">Credits</div>
+                <div class="menuTab" aria-label="mods">Mods - <i>Coming Soon</i></div>
             </div>
             <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
 
@@ -92,6 +93,14 @@
                         <!-- <li>Auto Save: <input type="checkbox"></li> -->
                     </ul>
                 </div>
+
+                <div id="minigames">
+                    <h1 class="coolFade titlebar">Minigames</h1>
+                    <ul id="minigameList" style="font-size:1.5vmin;margin:10px;">
+
+                    </ul>
+                </div>
+
             </div>
         </div>
         <div>
@@ -101,11 +110,25 @@
             <!-- some stuff related to buying most thing should be here -->
             <div class="buyContainer">
                 <h1 class="coolFade titlebar">Warehouse Store</h1>
+                <div class="shopTooltip">
+                    <h1 id="buyName">Placeholder</h1>
+                    <span id="buyPrice">$0</span>
+                    <break></break>
+                    <span id="buySPS">0 SPS</span>
+                    <break></break>
+                    <span id="buyAC">0 Auto Collect</span>
+                    <break></break>
+                    <span id="buyOwned">0 Owned</span>
+                    <br>
+                    <span id="buyDescription">This is some placeholder text.</span>
+
+                </div>
                 <div id="buyMenu">
                     <!-- <div class="buyOption" disabled>
-                    <h1 class="buyOptionName">Delivery Truck</h1>
-                    <span class="buyOptionPrice">$1000 - 1 SPS - 0 Owned</span>
+                        <h1 class="buyOptionName">Placeholder</h1>
+                        <span class="buyOptionPrice">$0 - 0 SPS - 0 Owned</span>
                     </div> -->
+
                 </div>
             </div>
         </div>
@@ -128,6 +151,12 @@
         <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 
         <script>
+            var minigames = {}
+            minigames.api = {}
+            minigames.api.types = {}
+            minigames.api.iframe = document.createElement("iframe")
+
+
             var render = {}
             render.renderFunctions = []
             render.render = () => {
@@ -153,6 +182,8 @@
         <script src="scripts/sounds.js"></script>
         <script src="scripts/menu.js"></script>
         <script src="scripts/news.js"></script>
+        <script src="scripts/minigames.js"></script>
+        <script src="scripts/settings.js"></script>
 
 
         <!--     This should always be the last script/element here -->

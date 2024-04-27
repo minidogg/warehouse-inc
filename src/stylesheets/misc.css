@@ -56,3 +56,18 @@
 .warehouseicon:active {
     transform: scale(0.95) translateX(12%);
 }
+
+break{
+    display:inline-block;
+    width:0vmin;
+    height:1vmin;
+    border:rgba(0,0,0,0.5) solid 0.1vmin;
+}
+
+h1{
+    font-size: 4vmin;
+}
+
+span{
+    font-size: 1.5vmin;
+}

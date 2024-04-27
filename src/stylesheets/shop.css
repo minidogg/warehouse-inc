@@ -18,17 +18,17 @@
     margin-left: 1vmin;
 }
 
-.buyOption:hover{
+.buyOption:hover:not(.buyOptionDisabled){
     background-color: #4f4f4f!important;
 }
-.buyOption:active{
+.buyOption:active:not(.buyOptionDisabled){
     background-color: #3f3f3f!important;
 }
 
 .buyOptionDisabled{
     opacity:0.2!important;
-    cursor: unset!important;;
-    pointer-events:none;
+    cursor: unset!important;
+    /* pointer-events:none; */
 }
 
 .buyOptionUnknown{
@@ -36,4 +36,32 @@
     cursor: unset!important;;
     pointer-events:none;
     filter: contrast(200%);
+}
+
+.shopTooltip{
+    width:90%;
+    padding:5%;
+    background-color: rgba(63, 63, 63, 0.8);
+    border-radius:2vmin;
+    color:white;
+    min-height:15vh;
+    height:fit-content;
+    transition:all 0.2s ease-in-out;
+}
+
+#buyMenu{
+    overflow-y:scroll;
+    width:100%;
+    height:100%;
+}
+
+.buyContainer{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+#buyDescription{
+    position:relative;
+    top:1vh;
 }
