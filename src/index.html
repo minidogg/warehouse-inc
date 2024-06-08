@@ -110,11 +110,25 @@
             <!-- some stuff related to buying most thing should be here -->
             <div class="buyContainer">
                 <h1 class="coolFade titlebar">Warehouse Store</h1>
+                <div class="shopTooltip">
+                    <h1 id="buyName">Placeholder</h1>
+                    <span id="buyPrice">$0</span>
+                    <break></break>
+                    <span id="buySPS">0 SPS</span>
+                    <break></break>
+                    <span id="buyAC">0 Auto Collect</span>
+                    <break></break>
+                    <span id="buyOwned">0 Owned</span>
+                    <br>
+                    <span id="buyDescription">This is some placeholder text.</span>
+
+                </div>
                 <div id="buyMenu">
                     <!-- <div class="buyOption" disabled>
-                    <h1 class="buyOptionName">Delivery Truck</h1>
-                    <span class="buyOptionPrice">$1000 - 1 SPS - 0 Owned</span>
+                        <h1 class="buyOptionName">Placeholder</h1>
+                        <span class="buyOptionPrice">$0 - 0 SPS - 0 Owned</span>
                     </div> -->
+
                 </div>
             </div>
         </div>
@@ -137,6 +151,12 @@
         <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 
         <script>
+            var minigames = {}
+            minigames.api = {}
+            minigames.api.types = {}
+            minigames.api.iframe = document.createElement("iframe")
+
+
             var render = {}
             render.renderFunctions = []
             render.render = () => {

@@ -24,6 +24,10 @@ const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 
 
 document.addEventListener("keypress",(event)=>{if(event.key==="Enter")document.getElementById("popupSubmit").click()});
 
+closePopup = ()=>{
+    q("#popup").classList.add("popupClose")
+    q("#popupCover").classList.add("popupCoverClose")
+}
 showPopup = (title,html,callback)=>{
     q("#popup").classList.remove("popupClose")
     q("#popupCover").classList.remove("popupCoverClose")
@@ -32,9 +36,10 @@ showPopup = (title,html,callback)=>{
     q("#popupHtml").appendChild(html)
 
     let thisCallback = (ev)=>{
-        callback(ev)
-        q("#popup").classList.add("popupClose")
-        q("#popupCover").classList.add("popupCoverClose")
+        if(callback(ev)!==true){
+            closePopup()
+        }
+
     }
 
     q("#popupSubmit").onclick = thisCallback
@@ -46,6 +51,19 @@ showPopup = (title,html,callback)=>{
 
     }
 
+}
+showPopupAsync = async (title,html,autoClose=true)=>{
+    return await new Promise((resolve, reject) => {
+        showPopup(title,html,()=>{
+            resolve(true)
+
+            if(autoClose==true){
+                closePopup()
+            }
+
+            return false
+        })
+    })
 }
 
 showPrompt = async (title,placeholder="",maxLen=-1)=>{
@@ -141,6 +159,11 @@ function getCookieCount() {
 
 function getStoreName() {
     
+}
+
+//is dev
+function isDev(){
+    return /.+:\d+/.test(window.location.host)||/.+\.github\.dev/.test(window.location.host)
 }
 
 /*

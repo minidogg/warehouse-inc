@@ -120,7 +120,7 @@ html,body {
 
     z-index: -1;
     background:url("./src/images/warehouse-panorama.jpg");
-    background-size: 200%;
+    background-size: cover;
     background-position-y: center;
     animation: bgscroll 25s linear infinite;
 }
