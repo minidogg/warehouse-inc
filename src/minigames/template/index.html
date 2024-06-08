@@ -1,31 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <button>Money button</button>
     <p>You have: <span id="sugar"></span> sugar</p>
-
 
     <script src="../api.js"></script>
     <script src="../../scripts/util.js"></script>
     <script>
-        
-        console.log("abc")
-        api.onReady.push(async()=>{
-            console.log("ready!")
-            await api.request.game() // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
-            document.querySelector("button").onclick=()=>{
-                api.do.addSugar(1)
-            }
+      console.log("abc");
+      api.onReady.push(async () => {
+        console.log("ready!");
+        await api.request.game(); // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
+        document.querySelector("button").onclick = () => {
+          api.do.addSugar(1);
+        };
 
-            setInterval(async ()=>{
-                await api.request.game()
-                document.querySelector("#sugar").innerHTML = game.sugar
-            },50)
-        })
+        setInterval(async () => {
+          await api.request.game();
+          document.querySelector("#sugar").innerHTML = game.sugar;
+        }, 50);
+      });
     </script>
-</body>
+  </body>
 </html>

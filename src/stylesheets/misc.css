@@ -1,73 +1,73 @@
 /* Things that you are unsure of where to put go here. */
 #companyName {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    width: 100%;
-    font-size: 3vmin;
-    margin-top: 0vh; 
-    padding: 1vh 0; 
-    background-color: #333; 
-    cursor: pointer;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  font-size: 3vmin;
+  margin-top: 0vh;
+  padding: 1vh 0;
+  background-color: #333;
+  cursor: pointer;
 }
 
 /* New style for #name */
 #name {
-    text-align: right;
-    color: #fff; 
-    margin-top: 0vh;
-    padding: 1vh 0; 
-    background-color: #33333300; 
-    font-size: 3vmin;
-    border: none;
+  text-align: right;
+  color: #fff;
+  margin-top: 0vh;
+  padding: 1vh 0;
+  background-color: #33333300;
+  font-size: 3vmin;
+  border: none;
 }
 #titlebar {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    width: 100%;
-    font-size: 3vmin;
-    margin-top: 0vh; 
-    padding: 1vh 0; 
-    background-color: #333; 
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  font-size: 3vmin;
+  margin-top: 0vh;
+  padding: 1vh 0;
+  background-color: #333;
 }
 
 .titlebar {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    width: 100%;
-    font-size: 3vmin;
-    margin-top: 0vh; 
-    padding: 1vh 0; 
-    background-color: #333; 
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  font-size: 3vmin;
+  margin-top: 0vh;
+  padding: 1vh 0;
+  background-color: #333;
 }
 
 .warehouseicon {
-    cursor: pointer;
-    width: 80%;
-    position: absolute;
-    bottom: 12vmin;
-    transform: translateX(12%);
-    transition: transform 0.2s;
+  cursor: pointer;
+  width: 80%;
+  position: absolute;
+  bottom: 12vmin;
+  transform: translateX(12%);
+  transition: transform 0.2s;
 }
 
 .warehouseicon:hover {
-    transform: scale(1.01) translateX(12%);
+  transform: scale(1.01) translateX(12%);
 }
 
 .warehouseicon:active {
-    transform: scale(0.95) translateX(12%);
+  transform: scale(0.95) translateX(12%);
 }
 
-break{
-    display:inline-block;
-    width:0vmin;
-    height:1vmin;
-    border:rgba(0,0,0,0.5) solid 0.1vmin;
+break {
+  display: inline-block;
+  width: 0vmin;
+  height: 1vmin;
+  border: rgba(0, 0, 0, 0.5) solid 0.1vmin;
 }
 
-h1{
-    font-size: 4vmin;
+h1 {
+  font-size: 4vmin;
 }
 
-span{
-    font-size: 1.5vmin;
+span {
+  font-size: 1.5vmin;
 }

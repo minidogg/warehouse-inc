@@ -1,25 +1,24 @@
 /* Anything related to resources goes here */
 
-.resourcesContainer{
-    width:90%;
-    margin-top:2vh;
-    display: flex;
-    justify-content: center;
+.resourcesContainer {
+  width: 90%;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
 }
-.resourceCount{
-    font-size: 2.5vmin!important;
+.resourceCount {
+  font-size: 2.5vmin !important;
 
-    color:white;
-    width:25vw;
-    margin-left:2.5vw;
+  color: white;
+  width: 25vw;
+  margin-left: 2.5vw;
 
-    text-align: center;
-
+  text-align: center;
 }
 
-#clickButton{
-    margin-top:0.5vh;
-    display: block;
-    width:20vw;
-    margin-left:5vw;
+#clickButton {
+  margin-top: 0.5vh;
+  display: block;
+  width: 20vw;
+  margin-left: 5vw;
 }

@@ -8,7 +8,7 @@ var currentversion = "";
 async function fetchCurrentVersion() {
   try {
     const response = await fetch(
-      "https://raw.githubusercontent.com/minidogg/warehouse-inc/main/src/data/version"
+      "https://raw.githubusercontent.com/minidogg/warehouse-inc/main/src/database/data/version",
     );
     const data = await response.text();
     currentversion = data;
@@ -69,7 +69,7 @@ saving.resetSave = async () => {
       await showPrompt(
         "Are you sure you want to reset your save and lose all progress? Type 'yes' to confirm",
         "Yes",
-        3
+        3,
       )
     ).toLowerCase() == "yes"
   ) {
@@ -99,7 +99,7 @@ saving.autoSave = () => {
   document.querySelector(".save-icon").style.display = "block";
   setTimeout(
     () => (document.querySelector(".save-icon").style.display = "none"),
-    500
+    500,
   );
   setTimeout(saving.autoSave, parseInt(game.settings.autoSaveRate));
 };

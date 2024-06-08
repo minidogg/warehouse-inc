@@ -1,198 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
+    <link rel="manifest" href="manifest.json" />
 
-        <link rel="manifest" href="manifest.json">
+    <title>Warehouse INC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-        <title>Warehouse INC</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="stylesheets/main.css">
-        <link rel="stylesheet" href="stylesheets/input.css">
-        <link rel="stylesheet" href="stylesheets/container.css">
-        <link rel="stylesheet" href="stylesheets/misc.css">
-        <link rel="stylesheet" href="stylesheets/resources.css">
-        <link rel="stylesheet" href="stylesheets/load.css">
-        <link rel="stylesheet" href="stylesheets/save.css">
-        <link rel="stylesheet" href="stylesheets/menu.css">
-        <link rel="stylesheet" href="stylesheets/notification.css">
-        <link rel="stylesheet" href="stylesheets/popup.css">
-        <link rel="stylesheet" href="stylesheets/shop.css">
-        <link rel="stylesheet" href="stylesheets/topbar.css">
+    <link rel="stylesheet" href="stylesheets/main.css" />
+    <link rel="stylesheet" href="stylesheets/input.css" />
+    <link rel="stylesheet" href="stylesheets/container.css" />
+    <link rel="stylesheet" href="stylesheets/misc.css" />
+    <link rel="stylesheet" href="stylesheets/resources.css" />
+    <link rel="stylesheet" href="stylesheets/load.css" />
+    <link rel="stylesheet" href="stylesheets/save.css" />
+    <link rel="stylesheet" href="stylesheets/menu.css" />
+    <link rel="stylesheet" href="stylesheets/notification.css" />
+    <link rel="stylesheet" href="stylesheets/popup.css" />
+    <link rel="stylesheet" href="stylesheets/shop.css" />
+    <link rel="stylesheet" href="stylesheets/topbar.css" />
 
-        <link rel="icon" type="image/x-icon" href="./images\favicon.ico">
-    </head>
-    <body>
-        <audio id="audioPlayer"></audio>
-        <div id="coverDiv"></div>
+    <link rel="icon" type="image/x-icon" href="./images\favicon.ico" />
+  </head>
+  <body>
+    <audio id="audioPlayer"></audio>
+    <div id="coverDiv"></div>
 
-        <div id="popupCover" class="popupCoverClose"></div>
-        <div id="popup" class="popupClose">
-            <h1 id="popupHeader">Sussy baka?</h1>
-            <div id="popupHtml">
-                <input type="text" placeholder="Maybe?" style="width:100%;">
-            </div>
-            <button id="popupSubmit">Submit</button>
+    <div id="popupCover" class="popupCoverClose"></div>
+    <div id="popup" class="popupClose">
+      <h1 id="popupHeader">Sussy baka?</h1>
+      <div id="popupHtml">
+        <input type="text" placeholder="Maybe?" style="width: 100%" />
+      </div>
+      <button id="popupSubmit">Submit</button>
+    </div>
+
+    <div class="containerWrapper">
+      <div class="topBar">
+        <div class="versionInfo">
+          <p>Warehouse inc <span id="versionNumber">versionNumber</span></p>
         </div>
-        
-        <div class="containerWrapper">
-            <div class="topBar">
-                <div class="versionInfo">
-                    <p>Warehouse inc <span id="versionNumber">versionNumber</span></p>
-                </div>
-                <div class="songInfo">
-                    <p>Current Song: <span id="songName">waiting for song to play...</span></p>
-                </div>
-                <div id="newsFeed">hello world i am joe!</div>
-            </div>
-        </div> 
-        
-
-        <div class="leftContainer">
-            <!-- some stuff related to collecting resources -->
-            <h1 id="companyName" class="coolFade">Loading...</h1>
-            <div class="resourcesContainer">
-                <span style="width:100%;">
-                    <p class="coolFade resourceCount">Total Sugar: <span id="totalCount">0</span></p>
-                    <p class="coolFade resourceCount">Sugar Per Second: <span id="spsCount">0</span></p>
-                    <p class="coolFade resourceCount">Auto Collect Per Second: <span id="ppsCount">0</span></p>
-                    <p class="coolFade resourceCount">Sugar Ready For Collecting: <span id="uncollectedCount">0</span></p>
-                    <button id="clickButton" onclick="sugar.collectSugar();">Collect Sugar</button>
-                    <img src="./images/warehouseicon.png" alt="Clickable Image" class="warehouseicon" style="cursor:pointer;">
-
-                </span>
-
-            </div>
+        <div class="songInfo">
+          <p>
+            Current Song: <span id="songName">waiting for song to play...</span>
+          </p>
         </div>
-        <div class="middleContainer">
-            <!-- some stuff related to menus should be here -->
-            <div class="menuContainer">
-                <div class="menuTab" aria-label="stats">Stats - Not Implemented</div>
-                <div class="menuTab" aria-label="settings">Settings</div>
-                <div class="menuTab" aria-label="account">Account - Not Implemented</div>
-                <div class="menuTab" aria-label="minigames">Minigames</div>
-                <div class="menuTab" aria-label="credits">Credits</div>
-                <div class="menuTab" aria-label="mods">Mods - <i>Coming Soon</i></div>
-            </div>
-            <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
+        <div id="newsFeed">hello world i am joe!</div>
+      </div>
+    </div>
 
-            <div id="menuContent">
-                <!-- All menu elements should go in here. -->
-                <div id="settings">
-                    <h1 class="coolFade titlebar">Settings</h1>
-                    <ul id="settingList" style="font-size:1.5vmin;margin:10px;">
-                        <!-- <li>Auto Save: <input type="checkbox"></li> -->
-                    </ul>
-                </div>
-
-                <div id="minigames">
-                    <h1 class="coolFade titlebar">Minigames</h1>
-                    <ul id="minigameList" style="font-size:1.5vmin;margin:10px;">
-
-                    </ul>
-                </div>
-
-            </div>
+    <div class="leftContainer">
+      <!-- some stuff related to collecting resources -->
+      <h1 id="companyName" class="coolFade">Loading...</h1>
+      <div class="resourcesContainer">
+        <span style="width: 100%">
+          <p class="coolFade resourceCount">
+            Total Sugar: <span id="totalCount">0</span>
+          </p>
+          <p class="coolFade resourceCount">
+            Sugar Per Second: <span id="spsCount">0</span>
+          </p>
+          <p class="coolFade resourceCount">
+            Auto Collect Per Second: <span id="ppsCount">0</span>
+          </p>
+          <p class="coolFade resourceCount">
+            Sugar Ready For Collecting: <span id="uncollectedCount">0</span>
+          </p>
+          <button id="clickButton" onclick="sugar.collectSugar();">
+            Collect Sugar
+          </button>
+          <img
+            src="./images/warehouseicon.png"
+            alt="Clickable Image"
+            class="warehouseicon"
+            style="cursor: pointer"
+          />
+        </span>
+      </div>
+    </div>
+    <div class="middleContainer">
+      <!-- some stuff related to menus should be here -->
+      <div class="menuContainer">
+        <div class="menuTab" aria-label="stats">Stats - Not Implemented</div>
+        <div class="menuTab" aria-label="settings">Settings</div>
+        <div class="menuTab" aria-label="account">
+          Account - Not Implemented
         </div>
-        <div>
-            <h1 class="coolFade titlebar">Upgrades</h1>
-        </div>
-        <div class="rightContainer">
-            <!-- some stuff related to buying most thing should be here -->
-            <div class="buyContainer">
-                <h1 class="coolFade titlebar">Warehouse Store</h1>
-                <div class="shopTooltip">
-                    <h1 id="buyName">Placeholder</h1>
-                    <span id="buyPrice">$0</span>
-                    <break></break>
-                    <span id="buySPS">0 SPS</span>
-                    <break></break>
-                    <span id="buyAC">0 Auto Collect</span>
-                    <break></break>
-                    <span id="buyOwned">0 Owned</span>
-                    <br>
-                    <span id="buyDescription">This is some placeholder text.</span>
+        <div class="menuTab" aria-label="minigames">Minigames</div>
+        <div class="menuTab" aria-label="credits">Credits</div>
+        <div class="menuTab" aria-label="mods">Mods - <i>Coming Soon</i></div>
+      </div>
+      <!-- There should be some tabs here for navigating to different menus like stats and settings, it should also be a grid so that we can easily add more. -->
 
-                </div>
-                <div id="buyMenu">
-                    <!-- <div class="buyOption" disabled>
+      <div id="menuContent">
+        <!-- All menu elements should go in here. -->
+        <div id="settings">
+          <h1 class="coolFade titlebar">Settings</h1>
+          <ul id="settingList" style="font-size: 1.5vmin; margin: 10px">
+            <!-- <li>Auto Save: <input type="checkbox"></li> -->
+          </ul>
+        </div>
+
+        <div id="minigames">
+          <h1 class="coolFade titlebar">Minigames</h1>
+          <ul id="minigameList" style="font-size: 1.5vmin; margin: 10px"></ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 class="coolFade titlebar">Upgrades</h1>
+    </div>
+    <div class="rightContainer">
+      <!-- some stuff related to buying most thing should be here -->
+      <div class="buyContainer">
+        <h1 class="coolFade titlebar">Warehouse Store</h1>
+        <div class="shopTooltip">
+          <h1 id="buyName">Placeholder</h1>
+          <span id="buyPrice">$0</span>
+          <break></break>
+          <span id="buySPS">0 SPS</span>
+          <break></break>
+          <span id="buyAC">0 Auto Collect</span>
+          <break></break>
+          <span id="buyOwned">0 Owned</span>
+          <br />
+          <span id="buyDescription">This is some placeholder text.</span>
+        </div>
+        <div id="buyMenu">
+          <!-- <div class="buyOption" disabled>
                         <h1 class="buyOptionName">Placeholder</h1>
                         <span class="buyOptionPrice">$0 - 0 SPS - 0 Owned</span>
                     </div> -->
-
-                </div>
-            </div>
         </div>
+      </div>
+    </div>
 
-        <script>
-            function mainMenuButton() {
-                document.getElementById("coverDiv").classList.remove("coverDivAnimate")
-                setTimeout(() => {
-                    window.location.href = "../"
-                }, 1000);
-            }
-        </script>
-        
-        <button id="mainMenuButton" onclick="mainMenuButton()"><div class="burguerer"></div><div class="burguerer"></div><div class="burguerer"></div></button>
-        <button id="resetBtn" style="bottom: 65px !important;" onclick="saving.save()">Save</button>
-        <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
-        <div class="save-icon"></div>
-        <div class="notification-container"></div>
+    <script>
+      function mainMenuButton() {
+        document.getElementById("coverDiv").classList.remove("coverDivAnimate");
+        setTimeout(() => {
+          window.location.href = "../";
+        }, 1000);
+      }
+    </script>
 
-        <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
+    <button id="mainMenuButton" onclick="mainMenuButton()">
+      <div class="hamburger-menu"></div>
+      <div class="hamburger-menu"></div>
+      <div class="hamburger-menu"></div>
+    </button>
+    <button
+      id="resetBtn"
+      style="bottom: 65px !important"
+      onclick="saving.save()"
+    >
+      Save
+    </button>
+    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+    <div class="save-icon"></div>
+    <div class="notification-container"></div>
 
-        <script>
-            var minigames = {}
-            minigames.api = {}
-            minigames.api.types = {}
-            minigames.api.iframe = document.createElement("iframe")
+    <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 
+    <script>
+      var minigames = {};
+      minigames.api = {};
+      minigames.api.types = {};
+      minigames.api.iframe = document.createElement("iframe");
 
-            var render = {}
-            render.renderFunctions = []
-            render.render = () => {
-                render.renderFunctions.forEach((e) => {
-                    e()
-                })
-            }
-        </script>
-        <!-- General util scripts THAT DON"T INTERACT WITH ANY GAME PROPERTIES should always be first unless needed to be otherwise. -->
-        <script src="scripts/qquery.js"></script>
-        <script src="scripts/util.js"></script>
-        <script src="scripts/gameutils.js"></script>
+      var render = {};
+      render.renderFunctions = [];
+      render.render = () => {
+        render.renderFunctions.forEach((e) => {
+          e();
+        });
+      };
+    </script>
+    <!-- General util scripts THAT DON"T INTERACT WITH ANY GAME PROPERTIES should always be first unless needed to be otherwise. -->
+    <script src="scripts/utils/qquery.js"></script>
+    <script src="scripts/utils/util.js"></script>
+    <script src="scripts/utils/gameutils.js"></script>
 
-        <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/save.js"></script>
+    <!-- The main then save scripts should always be second and third unless needed to be otherwise.-->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/game/save.js"></script>
 
-        <!-- game scripts -->
-        <script src="scripts/name.js"></script>
-        <script src="scripts/shopitems.js"></script>
-        <script src="scripts/resources.js"></script>
-        <script src="scripts/shop.js"></script>
-        <script src="scripts/sounds.js"></script>
-        <script src="scripts/menu.js"></script>
-        <script src="scripts/news.js"></script>
-        <script src="scripts/minigames.js"></script>
-        <script src="scripts/settings.js"></script>
+    <!-- game scripts -->
+    <script src="scripts/game/name.js"></script>
+    <script src="scripts/shop/shopitems.js"></script>
+    <script src="scripts/game/resources.js"></script>
+    <script src="scripts/shop/shop.js"></script>
+    <script src="scripts/misc/sounds.js"></script>
+    <script src="scripts/ui/menu.js"></script>
+    <script src="scripts/game/news.js"></script>
+    <script src="scripts/game/minigames.js"></script>
+    <script src="scripts/ui/settings.js"></script>
 
-
-        <!--     This should always be the last script/element here -->
-        <script>
-            render.render();
-            setInterval(()=>{
-                render.render()
-            },20);
-            console.log("Haha E!")
-        </script>
-    </body>
+    <!--     This should always be the last script/element here -->
+    <script>
+      render.render();
+      setInterval(() => {
+        render.render();
+      }, 20);
+      console.log("Scripts Loaded!");
+    </script>
+  </body>
 </html>
