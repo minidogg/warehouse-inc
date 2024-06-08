@@ -1,7 +1,18 @@
 var registeringProducers = {};
+
+/**
+ * Adds a producer to the list of registering producers.
+ * @param {string} name - The unique identifier for the producer.
+ * @param {object} data - The data for the producer.
+ */
 function addProducer(name, data) {
   registeringProducers[name] = data;
 }
+
+/**
+ * Registers the producers by copying their owned count and metadata
+ * from the game producers to the registering producers.
+ */
 function registerProducers() {
   Object.keys(game.producers).forEach((key) => {
     registeringProducers[key].owned = game.producers[key].owned;
@@ -13,18 +24,20 @@ function registerProducers() {
 }
 
 function loadShopItems() {
-  /*Producer schema, expect that once a save is started and gets the producer it won't change.
-    "interalId":{
-        "name":"Some name",
-        "sps":1, //sugar per second
-        "pickup":0.5, //how much sugar you can pick up
-        "autopickup": 0, //how much sugar is picked up automatically every second
-        "owned":0,
-        "baseCost":1,
-        "costMultiplier": .5,
-        "metadata":{someData:someData}
-    }
-    */
+  /*
+  Producer schema, expect that once a save is started and gets the producer it won't change.
+  "internalId": {
+      "name": "Some name",
+      "sps": 1, // sugar per second
+      "pickup": 0.5, // how much sugar you can pick up
+      "autopickup": 0, // how much sugar is picked up automatically every second
+      "owned": 0,
+      "baseCost": 1,
+      "costMultiplier": 0.5,
+      "description": "Description of the producer",
+      "metadata": { someData: someData }
+  }
+  */
 
   // ! DO NOT ADD ANY NEW PRODUCERS UNTIL WE AGREE ON SOME METHOD/FORMULA FOR BALANCING // -- too bad, -Melon :)
 
@@ -37,314 +50,344 @@ function loadShopItems() {
     baseCost: 1,
     costMultiplier: 0.3,
     description: "Back in my day, we had to make our sugar with our barehands!",
-    metadata: {}, //! metadata is preserved along with owned count across sessions.
+    metadata: {},
   });
 
   addProducer("deliveryTruck", {
     name: "Delivery Truck",
-    sps: 1.4,
+    sps: 2,
     pickup: 0,
     autopickup: 0,
     owned: 0,
     baseCost: 10,
-    costMultiplier: 0.7,
+    costMultiplier: 0.6,
+    description: "A truck to deliver large amounts of sugar.",
     metadata: {},
-    description: "",
   });
 
   addProducer("collectingCrew", {
     name: "Collecting Crew",
-    sps: 0.5,
+    sps: 3,
     pickup: 2,
-    autopickup: 0.3,
+    autopickup: 1,
     owned: 0,
-    baseCost: 20,
+    baseCost: 25,
     costMultiplier: 0.7,
+    description: "A crew dedicated to collecting sugar efficiently.",
     metadata: {},
   });
 
   addProducer("ladders", {
     name: "Ladders",
-    sps: 2.5,
+    sps: 5,
     pickup: 0,
     autopickup: 0,
     owned: 0,
     baseCost: 50,
-    costMultiplier: 0.4,
+    costMultiplier: 0.8,
+    description: "Use ladders to reach higher sugar deposits.",
     metadata: {},
   });
 
   addProducer("forklift", {
     name: "Forklift",
-    sps: 0.2,
+    sps: 10,
     pickup: 4,
-    autopickup: 1,
+    autopickup: 2,
     owned: 0,
-    baseCost: 200,
-    costMultiplier: 0.7,
+    baseCost: 100,
+    costMultiplier: 0.9,
+    description: "A forklift to carry larger amounts of sugar.",
     metadata: {},
   });
 
   addProducer("childLabor", {
     name: "Child Labor",
-    sps: 1,
+    sps: 20,
     pickup: 6,
-    autopickup: 1.5,
+    autopickup: 3,
     owned: 0,
-    baseCost: 1500,
-    costMultiplier: 0.6,
+    baseCost: 500,
+    costMultiplier: 1.0,
+    description: "Utilize child labor for increased productivity.",
     metadata: {},
   });
 
   addProducer("artificialFarms", {
     name: "Artificial Farms",
-    sps: 5,
-    pickup: 20,
-    autopickup: 0,
+    sps: 50,
+    pickup: 10,
+    autopickup: 5,
     owned: 0,
-    baseCost: 10000,
-    costMultiplier: 0.7,
+    baseCost: 2000,
+    costMultiplier: 1.1,
+    description: "High-tech farms producing large amounts of sugar.",
     metadata: {},
   });
 
   addProducer("machinery", {
     name: "Machinery",
-    sps: 10,
-    pickup: 50,
-    autopickup: 5,
+    sps: 100,
+    pickup: 20,
+    autopickup: 10,
     owned: 0,
-    baseCost: 50000,
-    costMultiplier: 0.7,
+    baseCost: 8000,
+    costMultiplier: 1.2,
+    description: "Advanced machinery for automated sugar production.",
     metadata: {},
   });
 
   addProducer("conveyor", {
     name: "Conveyor",
-    sps: 0,
-    pickup: 1,
-    autopickup: 80,
+    sps: 200,
+    pickup: 5,
+    autopickup: 20,
     owned: 0,
-    baseCost: 80000,
-    costMultiplier: 0.7,
+    baseCost: 32000,
+    costMultiplier: 1.3,
+    description: "Conveyors for streamlined sugar collection.",
     metadata: {},
   });
 
   addProducer("smallStartups", {
     name: "Small Startups",
-    sps: 20,
+    sps: 400,
     pickup: 10,
-    autopickup: 20,
+    autopickup: 30,
     owned: 0,
-    baseCost: 200000,
-    costMultiplier: 0.7,
+    baseCost: 128000,
+    costMultiplier: 1.4,
+    description: "Innovative startups entering the sugar industry.",
     metadata: {},
   });
 
   addProducer("flourFactories", {
     name: "Flour Factories",
-    sps: 15,
-    pickup: 30,
-    autopickup: 25,
+    sps: 800,
+    pickup: 20,
+    autopickup: 40,
     owned: 0,
-    baseCost: 500000,
-    costMultiplier: 0.7,
+    baseCost: 512000,
+    costMultiplier: 1.5,
+    description: "Factories producing sugar from flour.",
     metadata: {},
   });
 
   addProducer("wheatFarm", {
     name: "Wheat Farm",
-    sps: 25,
-    pickup: 25,
-    autopickup: 30,
+    sps: 1600,
+    pickup: 40,
+    autopickup: 80,
     owned: 0,
-    baseCost: 700000,
-    costMultiplier: 0.7,
+    baseCost: 2048000,
+    costMultiplier: 1.6,
+    description: "Farms dedicated to growing sugar wheat.",
     metadata: {},
   });
 
   addProducer("chocolateFactory", {
     name: "Chocolate Factory",
-    sps: 40,
-    pickup: 40,
-    autopickup: 35,
+    sps: 3200,
+    pickup: 80,
+    autopickup: 160,
     owned: 0,
-    baseCost: 1000000,
-    costMultiplier: 0.7,
+    baseCost: 8192000,
+    costMultiplier: 1.7,
+    description: "Factories turning sugar into delicious chocolate.",
     metadata: {},
   });
 
   addProducer("cacaoFarm", {
     name: "Cacao Farm",
-    sps: 30,
-    pickup: 20,
-    autopickup: 40,
+    sps: 6400,
+    pickup: 160,
+    autopickup: 320,
     owned: 0,
-    baseCost: 800000,
-    costMultiplier: 0.7,
+    baseCost: 32768000,
+    costMultiplier: 1.8,
+    description: "Farms dedicated to growing cacao for sugar production.",
     metadata: {},
   });
+
   addProducer("sugarPlantation", {
     name: "Sugar Plantation",
-    sps: 60,
-    pickup: 50,
-    autopickup: 45,
+    sps: 12800,
+    pickup: 320,
+    autopickup: 640,
     owned: 0,
-    baseCost: 1500000,
-    costMultiplier: 0.7,
+    baseCost: 131072000,
+    costMultiplier: 1.9,
+    description: "Large plantations for massive sugar production.",
     metadata: {},
   });
 
   addProducer("sugarRefinery", {
     name: "Sugar Refinery",
-    sps: 100,
-    pickup: 80,
-    autopickup: 60,
+    sps: 25600,
+    pickup: 640,
+    autopickup: 1280,
     owned: 0,
-    baseCost: 3000000,
-    costMultiplier: 0.7,
+    baseCost: 524288000,
+    costMultiplier: 2.0,
+    description: "Refineries processing raw sugar into refined products.",
     metadata: {},
   });
 
   addProducer("candyFactory", {
     name: "Candy Factory",
-    sps: 150,
-    pickup: 120,
-    autopickup: 80,
+    sps: 51200,
+    pickup: 1280,
+    autopickup: 2560,
     owned: 0,
-    baseCost: 6000000,
-    costMultiplier: 0.7,
+    baseCost: 2097152000,
+    costMultiplier: 2.1,
+    description: "Factories producing various sugary candies.",
     metadata: {},
   });
 
   addProducer("sugarEmpire", {
     name: "Sugar Empire",
-    sps: 300,
-    pickup: 200,
-    autopickup: 150,
+    sps: 102400,
+    pickup: 2560,
+    autopickup: 5120,
     owned: 0,
-    baseCost: 12000000,
-    costMultiplier: 0.7,
+    baseCost: 8388608000,
+    costMultiplier: 2.2,
+    description: "An empire built on the foundation of sugar production.",
     metadata: {},
   });
 
   addProducer("sweetMegaCorp", {
     name: "Sweet MegaCorp",
-    sps: 500,
-    pickup: 300,
-    autopickup: 250,
+    sps: 204800,
+    pickup: 5120,
+    autopickup: 10240,
     owned: 0,
-    baseCost: 25000000,
-    costMultiplier: 0.7,
+    baseCost: 33554432000,
+    costMultiplier: 2.3,
+    description: "A mega corporation dominating the sugar industry.",
     metadata: {},
   });
 
   addProducer("sugarExtravaganza", {
     name: "Sugar Extravaganza",
-    sps: 1000,
-    pickup: 600,
-    autopickup: 500,
+    sps: 409600,
+    pickup: 10240,
+    autopickup: 20480,
     owned: 0,
-    baseCost: 50000000,
-    costMultiplier: 0.7,
+    baseCost: 134217728000,
+    costMultiplier: 2.4,
+    description: "An extravaganza of sugar production and collection.",
     metadata: {},
   });
 
   addProducer("sugarHeaven", {
     name: "Sugar Heaven",
-    sps: 2000,
-    pickup: 1200,
-    autopickup: 1000,
+    sps: 819200,
+    pickup: 20480,
+    autopickup: 40960,
     owned: 0,
-    baseCost: 100000000,
-    costMultiplier: 0.7,
+    baseCost: 536870912000,
+    costMultiplier: 2.5,
+    description: "A heavenly place where sugar flows endlessly.",
     metadata: {},
   });
-  addProducer("SugarHarvester", {
+
+  addProducer("sugarHarvester", {
     name: "Sugar Harvester",
-    sps: 4000,
-    pickup: 3000,
-    autopickup: 2500,
+    sps: 1638400,
+    pickup: 40960,
+    autopickup: 81920,
     owned: 0,
-    baseCost: 200000000,
-    costMultiplier: 0.7,
+    baseCost: 2147483648000,
+    costMultiplier: 2.6,
+    description: "Harvesters working tirelessly to collect sugar.",
     metadata: {},
   });
 
-  addProducer("SweetenerFactory", {
+  addProducer("sweetenerFactory", {
     name: "Sweetener Factory",
-    sps: 8000,
-    pickup: 6000,
-    autopickup: 5000,
+    sps: 3276800,
+    pickup: 81920,
+    autopickup: 163840,
     owned: 0,
-    baseCost: 400000000,
-    costMultiplier: 0.7,
+    baseCost: 8589934592000,
+    costMultiplier: 2.7,
+    description: "Factories producing artificial sweeteners.",
     metadata: {},
   });
 
-  addProducer("SugarMonopoly", {
+  addProducer("sugarMonopoly", {
     name: "Sugar Monopoly",
-    sps: 16000,
-    pickup: 12000,
-    autopickup: 10000,
+    sps: 6553600,
+    pickup: 163840,
+    autopickup: 327680,
     owned: 0,
-    baseCost: 800000000,
-    costMultiplier: 0.7,
+    baseCost: 34359738368000,
+    costMultiplier: 2.8,
+    description: "A monopoly controlling the entire sugar market.",
     metadata: {},
   });
 
-  addProducer("CandyKingdom", {
+  addProducer("candyKingdom", {
     name: "Candy Kingdom",
-    sps: 32000,
-    pickup: 24000,
-    autopickup: 20000,
+    sps: 13107200,
+    pickup: 327680,
+    autopickup: 655360,
     owned: 0,
-    baseCost: 1600000000,
-    costMultiplier: 0.7,
+    baseCost: 137438953472000,
+    costMultiplier: 2.9,
+    description: "A kingdom where candy is the primary currency.",
     metadata: {},
   });
 
-  addProducer("SugarGalaxy", {
+  addProducer("sugarGalaxy", {
     name: "Sugar Galaxy",
-    sps: 64000,
-    pickup: 48000,
-    autopickup: 40000,
+    sps: 26214400,
+    pickup: 655360,
+    autopickup: 1310720,
     owned: 0,
-    baseCost: 3200000000,
-    costMultiplier: 0.7,
+    baseCost: 549755813888000,
+    costMultiplier: 3.0,
+    description: "A galaxy filled with stars made of sugar.",
     metadata: {},
   });
 
-  addProducer("CandyUniverse", {
+  addProducer("candyUniverse", {
     name: "Candy Universe",
-    sps: 128000,
-    pickup: 96000,
-    autopickup: 80000,
+    sps: 52428800,
+    pickup: 1310720,
+    autopickup: 2621440,
     owned: 0,
-    baseCost: 6400000000,
-    costMultiplier: 0.7,
+    baseCost: 2199023255552000,
+    costMultiplier: 3.1,
+    description: "A universe where candy reigns supreme.",
     metadata: {},
   });
 
-  addProducer("SugarCosmos", {
+  addProducer("sugarCosmos", {
     name: "Sugar Cosmos",
-    sps: 256000,
-    pickup: 192000,
-    autopickup: 160000,
+    sps: 104857600,
+    pickup: 2621440,
+    autopickup: 5242880,
     owned: 0,
-    baseCost: 12800000000,
-    costMultiplier: 0.7,
+    baseCost: 8796093022208000,
+    costMultiplier: 3.2,
+    description: "The entire cosmos dedicated to sugar.",
     metadata: {},
   });
 
-  addProducer("SugarSupremacy", {
+  addProducer("sugarSupremacy", {
     name: "Sugar Supremacy",
-    sps: 8192000,
-    pickup: 6144000,
-    autopickup: 5120000,
+    sps: 209715200,
+    pickup: 5242880,
+    autopickup: 10485760,
     owned: 0,
-    baseCost: 409600000000,
-    costMultiplier: 0.7,
+    baseCost: 35184372088832000,
+    costMultiplier: 3.3,
+    description: "Supreme dominance over all sugar production.",
     metadata: {},
   });
+
   registerProducers();
 }
