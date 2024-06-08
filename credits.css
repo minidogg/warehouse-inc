@@ -1,46 +1,92 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #242323;
   margin: 0;
+  background: linear-gradient(
+    36deg,
+    #3a3a3a,
+    #1b1b1b
+  ); /* Set background gradient here */
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: white;
+  background-image: url(./src/images/credits.jpg);
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a,
-a:visited {
-  color: #37afff;
-  text-decoration: none;
+.credits-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border: 2px solid #fff;
+  max-width: 30%;
+  overflow-y: hidden;
+  animation: scrollUp 15s linear forwards;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translate(-50%, 60%);
+  }
+  100% {
+    transform: translate(-50%, 5%);
+  }
 }
 
 .container {
-  max-width: 600px;
   padding: 20px;
 }
 
-* {
-  font-size: 2vmax;
-}
-h1,
-h2 {
-  text-align: center;
-}
-h1 {
-  font-size: 5vmax;
-}
-h2 {
-  font-size: 3vmax;
-}
-
 .section {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 30px;
 }
 
 .section-title {
-  border-bottom: 2px solid #37afff;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  line-height: 1.6;
+}
+
+.content a {
+  color: rgb(244, 255, 95);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.content a:hover {
+  color: #ffd700;
+}
+
+.content p {
+  margin-bottom: 15px;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content ul li:before {
+  content: "•";
+  color: #ffd700;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 1.2em;
+}
+
+.content ul li {
+  margin-bottom: 5px;
+  padding-left: 1em;
 }

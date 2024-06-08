@@ -7,8 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-size: cover;
-
   overflow: hidden;
 }
 
@@ -113,14 +111,17 @@ body {
 }
 
 #bgscroll {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
   z-index: -1;
   background: url("./src/images/warehouse-panorama.jpg");
   background-size: cover;
   background-position-y: center;
+  background-position-x: 0px;
   animation: bgscroll 25s linear infinite;
 }
 
@@ -135,9 +136,9 @@ body {
 
 @keyframes bgscroll {
   from {
-    background-position-x: -100%;
+    background-position-x: 0px;
   }
   to {
-    background-position-x: 100%;
+    background-position-x: -2000px;
   }
 }

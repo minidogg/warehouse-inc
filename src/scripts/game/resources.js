@@ -84,7 +84,7 @@ sugar.collectSugar = () => {
       `You collected ${removeExtraDecimals(collectedSugar, 0)} sugar!`,
     );
 
-  deepBelow.runSync("collectSound");
+  // deepBelow.runSync("collectSound");
 };
 
 sugar.sugarGenerationLoop();
