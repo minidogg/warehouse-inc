@@ -1,8 +1,8 @@
 // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
 
-var api = {};
+let api = {};
 api.onReady = [];
-var game = {};
+let game = {};
 
 //listener stuff
 window.addEventListener("message", (e) => {
