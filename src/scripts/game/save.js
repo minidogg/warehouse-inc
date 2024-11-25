@@ -78,6 +78,7 @@ saving.resetSave = async () => {
     setTimeout(() => {
       localStorage.removeItem("save");
       window.onbeforeunload = () => {};
+      window.removeEventListener(beforeUnloadListener)
       window.location.reload(true);
     }, 1000);
   }
@@ -110,6 +111,7 @@ saving.autoSave();
 
 //make funny prompt if try to close
 window.onbeforeunload = confirmExit;
+let beforeUnloadListener = window.addEventListener("beforeunload") = confirmExit
 
 function confirmExit() {
   if (isDev()) {
