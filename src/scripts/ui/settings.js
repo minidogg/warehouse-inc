@@ -62,6 +62,7 @@ settings.update = () => {
 };
 render.renderFunctions.push(settings.update);
 menu.menus.settings = () => {
+  menu.hideMenus()
   q("#settings").style.display = "block";
   console.log("e");
 };

@@ -1,4 +1,5 @@
 minigames.open = () => {
+  menu.hideMenus()
   q("#minigames").style.display = "block";
 };
 
