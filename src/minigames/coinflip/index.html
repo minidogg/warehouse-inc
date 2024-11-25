@@ -5,8 +5,13 @@
     <title>Coin Flip</title>
   </head>
   <body>
-    <button>Money button</button>
+    <h1>Coin Flip</h1>
+    <p>If it is heads you win money<p>
+    <p>Remaining Flips: <span id="remaningFlips"></span></p>
     <p>You have: <span id="sugar"></span> sugar</p>
+    <input id="money" placeholder="How Much Money?" type="number" min="0">
+    <button>Flip</button>
+    <h3>Result: <span id="result"></span></h3>
 
     <script src="../api.js"></script>
     <script src="../../scripts/utils/util.js"></script>
@@ -15,8 +20,17 @@
       api.onReady.push(async () => {
         console.log("ready!");
         await api.request.game(); // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
-        document.querySelector("button").onclick = () => {
-          api.do.addSugar(1);
+        document.querySelector("button").onclick = async() => {
+          await api.request.game(); // ! Do not ever, ever, modify the game object DIRECTLY without requesting the game object.
+          let heads = Math.round(Math.random())==1
+          let betAmount = parseFloat(document.querySelector("#money").value)
+          if(game.sugar<betAmount){
+
+            return;
+          }
+          if(heads)api.do.addSugar(betAmount);
+          if(!heads)api.do.addSugar(-betAmount);
+          document.querySelector("#result").textContent = heads?"Heads":"Tails"
         };
 
         setInterval(async () => {
