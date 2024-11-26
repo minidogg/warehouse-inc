@@ -214,6 +214,7 @@
     <script>
       render.render();
       setInterval(() => {
+        game.lastRenderDate = Date.now() // Intended for use in functions related to giving daily rewards.
         render.render();
       }, 20);
       console.log("Scripts Loaded!");
