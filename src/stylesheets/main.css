@@ -52,3 +52,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #777;
 }
+
+hr{
+  width: 90%;
+  margin:auto;
+}

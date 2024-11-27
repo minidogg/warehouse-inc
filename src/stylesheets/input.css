@@ -25,11 +25,6 @@ button:active {
   transform: translateY(6px);
 }
 
-#resetBtn {
-  position: fixed;
-  bottom: 15px;
-  right: 10px;
-}
 
 #mainMenuButton {
   position: fixed;
