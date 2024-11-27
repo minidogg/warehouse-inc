@@ -88,6 +88,8 @@
             alt="Clickable Image"
             class="warehouseicon"
             style="cursor: pointer"
+            id="warehouseIconBtn"
+            onclick="sugar.collectSugar();"
           />
         </span>
       </div>
@@ -113,6 +115,16 @@
           <ul id="settingList" style="font-size: 1.5vmin; margin: 10px">
             <!-- <li>Auto Save: <input type="checkbox"></li> -->
           </ul>
+          <hr>
+          <div id="saveManagement">
+            <button
+            id="saveBtn"
+            onclick="saving.save()"
+          >
+            Save
+          </button>
+          <button id="resetBtn" onclick="saving.resetSave()">Reset Save</button>
+          </div>
         </div>
 
         <div id="minigames">
@@ -163,14 +175,7 @@
       <div class="hamburger-menu"></div>
       <div class="hamburger-menu"></div>
     </button>
-    <button
-      id="resetBtn"
-      style="bottom: 65px !important"
-      onclick="saving.save()"
-    >
-      Save
-    </button>
-    <button id="resetBtn" onclick="saving.resetSave()">Reset</button>
+
     <div class="save-icon"></div>
     <div class="notification-container"></div>
 

@@ -52,7 +52,7 @@
 #buyMenu {
   overflow-y: scroll;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 25vh); /* I don't know how this works, or why this works. I just know that it works. -unluckycrafter */
 }
 
 .buyContainer {
