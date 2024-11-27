@@ -3,7 +3,7 @@
   bottom: 20px;
   right: 20px;
   display: flex;
-  flex-direction: column-reverse; 
+  flex-direction: column-reverse;
   align-items: flex-end;
 }
 
@@ -12,13 +12,13 @@
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   opacity: 0;
   transition: opacity 0.5s ease;
 
-  font-size:1.5vmin;
+  font-size: 1.5vmin;
 
-  max-width:25vw!important;
+  max-width: 25vw !important;
 
-  z-index:10000000000;
+  z-index: 10000000000;
 }

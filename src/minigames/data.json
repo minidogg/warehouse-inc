@@ -8,5 +8,10 @@
     "name": "Warehouse Boost",
     "file": "./minigames/warehouseBoost/index.html",
     "dev": true
+  },
+  {
+    "name": "Coinflip",
+    "file": "./minigames/coinflip/index.html",
+    "dev": true
   }
 ]

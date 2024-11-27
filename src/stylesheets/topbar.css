@@ -1,32 +1,31 @@
 .topBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px; 
-    background-color: #333; 
-    color: #fff;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    padding: 0 20px;
-    z-index: 100; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
 }
-.topBar>*{
-    margin-right:10vmin;
+.topBar > * {
+  margin-right: 10vmin;
 }
 
 .containerWrapper {
-    position: relative;
-    top: 40px; 
+  position: relative;
+  top: 40px;
 }
 
 #newsFeed {
-    overflow: hidden;
-    white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .versionInfo {
-    font-size: 14px; 
+  font-size: 14px;
 }
-

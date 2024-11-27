@@ -8,14 +8,14 @@
   background-color: #4f4f4f;
   border: #363636 solid 2px;
   transition: background-color 0.1s;
-  font-size:2vmin;
-  cursor:pointer!important;
-  padding-left:1em;
+  font-size: 2vmin;
+  cursor: pointer !important;
+  padding-left: 1em;
 }
 
 .menuTab:hover {
   background-color: #666666;
-  padding-left:1.5em;
+  padding-left: 1.5em;
 }
 
 .menuTab:active {
