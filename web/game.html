@@ -182,18 +182,7 @@
     <!-- DO NOT PUT ANY ELEMENTS BELOW THIS COMMENT -->
 
     <script>
-      var minigames = {};
-      minigames.api = {};
-      minigames.api.types = {};
-      minigames.api.iframe = document.createElement("iframe");
 
-      var render = {};
-      render.renderFunctions = [];
-      render.render = () => {
-        render.renderFunctions.forEach((e) => {
-          e();
-        });
-      };
     </script>
     <!-- General util scripts THAT DON"T INTERACT WITH ANY GAME PROPERTIES should always be first unless needed to be otherwise. -->
     <script src="scripts/utils/qquery.js"></script>
@@ -217,12 +206,7 @@
 
     <!-- This should always be the last script/element here -->
     <script>
-      render.render();
-      setInterval(() => {
-        game.lastRenderDate = Date.now() // Intended for use in functions related to giving daily rewards.
-        render.render();
-      }, 20);
-      console.log("Scripts Loaded!");
+
     </script>
   </body>
 </html>
