@@ -1,0 +1,24 @@
+.notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.notification {
+  background-color: #3333339a;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  font-size: 1.5vmin;
+
+  max-width: 25vw !important;
+
+  z-index: 10000000000;
+}
