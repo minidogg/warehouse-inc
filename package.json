@@ -1,0 +1,27 @@
+{
+  "name": "warehouse-inc",
+  "version": "1.0.0",
+  "description": "An online clicker game worked on by a bunch of my friends in a discord server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"concurrently \"npx webpack --mode=development --watch\" \"cd web && http-server -c-1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minidogg/warehouse-inc.git"
+  },
+  "author": "minidogg",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/minidogg/warehouse-inc/issues"
+  },
+  "homepage": "https://github.com/minidogg/warehouse-inc#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "type": "module"
+}
