@@ -34,3 +34,10 @@ function switchTo(site) {
         document.getElementById("autoplayPopup").style.display = "unset";
     }
 });
+
+for(let item_raw of document.querySelectorAll("[data-switch-to]")){
+    let item = item_raw
+    item.addEventListener("click", ()=>{
+        switchTo(item_raw.getAttribute("data-switch-to"))
+    })
+}
