@@ -118,7 +118,7 @@ body {
   height: 100%;
 
   z-index: -1;
-  background: url("/images/warehouse-panorama.jpg");
+  background: url("../images/warehouse-panorama.jpg");
   background-size: cover;
   background-position-y: center;
   background-position-x: 0px;
